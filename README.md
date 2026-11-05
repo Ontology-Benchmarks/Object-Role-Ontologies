@@ -17,10 +17,10 @@ bottom-up query; `dl.py` translates DL axioms into SPARQL.
 | path | content |
 | --- | --- |
 | `src/ocel_inference/` | the ORO library |
-| `oro_walkthrough.ipynb` | walkthrough: inference on the four paper logs, the Section 7 checks, OWL export |
-| `input/data/` | the four OCEL 2.0 logs of the paper, and per log the DuckDB file that Ontop reads (generated) |
-| `output/` | per log: the OIG and ORO graphs (`oig_graph.html`, `oro_graph.html`) and the ORO as OWL 2 (`oro.ttl`) |
-| `input/staging/` | the mapping that Ontop currently serves (generated) |
+| `oro_walkthrough.ipynb` | walkthrough: inference and top-down checks on the four benchmark OCEL logs covered in the paper.  |
+| `input/data/` | the four OCEL 2.0 logs covered in the paper, and per log the DuckDB file that Ontop reads (generated when run) |
+| `output/` | for each log, the optional visualization graphs (`oig_graph.html`, `oro_graph.html`) and the inferred ORO as an OWL 2 ontology (`oro.ttl`) |
+| `input/staging/` | the mapping that Ontop currently serves. Since ontop can only load one log at a time, the library stages the currently loaded mapping files here. These files are changed as new logs are loaded and served. |
 | `experiments/` | performance evaluation and comparison with OC-DECLARE, TOTeM and OCPQ (see its README) |
 | `.devcontainer/`, `jdbc/` | Docker setup: a Python dev container and an Ontop endpoint with the DuckDB driver (not included, see [Prerequisites](#prerequisites)) |
 
