@@ -71,7 +71,7 @@ class AxiomRecord:
 
     schema: AxiomSchema
     bindings: Dict
-    mode: str                       # "bottom-up" or "top-down"
+    mode: str                       # "bottom-up" / "top-down"
     holds: Optional[bool] = True
     counterexamples: Optional[int] = None
     axioms: Tuple = field(init=False)

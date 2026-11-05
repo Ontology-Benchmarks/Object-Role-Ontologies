@@ -411,11 +411,12 @@ def add_owl(graph, axiom: Axiom, annotations: Optional[Dict] = None) -> None:
 
 
 # ---------------------------------------------------------------------------
-# SPARQL (Table X)
+# SPARQL (Translations)
 # ---------------------------------------------------------------------------
 
 
 class UntranslatableConcept(ValueError):
+    ''' Fall-back in case it cannot be mapped. (should not arise for anything in ALCQI)'''
     """The concept needs a domain for ?x (e.g. ¬C on its own) that the context does not give."""
 
 
@@ -486,7 +487,7 @@ def _binds(c: Concept) -> bool:
 
 
 class Translator:
-    """Compositional translation tau_x of Table X, with fresh variables per translation."""
+    """Compositional translation"""
 
     def __init__(self):
         self._counter = itertools.count()

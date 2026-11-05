@@ -1,7 +1,4 @@
-"""Checks that read the raw OCEL 2.0 JSON instead of the VKG.
-
-The VKG's object table is built from the E2O relation, so objects without any event
-(e.g. orphan documents) never reach Ontop. These checks see them.
+"""Checks that read the raw OCEL 2.0 JSON instead of the VKG for debugging issues and ensuring the VKG behaves as expected.
 """
 
 import json
