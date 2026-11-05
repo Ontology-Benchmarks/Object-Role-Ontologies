@@ -26,8 +26,7 @@ bottom-up query; `dl.py` translates DL axioms into SPARQL.
 
 ## Getting started
 
-Open the folder in VS Code and choose *Reopen in Container*. The container installs the
-library (`pip install -e .`), and Ontop runs at `http://ontop:8080`. Then:
+The library is intended to be used inside a docker container, to effectively manage dependencies and ensure consistent usage across operating systems. The container setup is already handled by this repository. After cloning the repo, open the folder in VS Code and choose *Reopen in Container*. The container installs the necessary python libraries as well as the ontop instance. Then you can simply load a JSON OCEL 2.0 log, infer its role, perform top-down counterexample checks, add axioms, and export the ORO to an OWL ontology file:
 
 ```python
 from ocel_inference import load
@@ -39,4 +38,4 @@ bpi17.axiom("clos", otype="offer", activity="Sent (mail and online)_complete")
 bpi17.export_ttl()                          # output/bpi17/oro.ttl (multiplicities=True adds the per-object/event bounds)
 ```
 
-Ontop serves one log at a time. To switch back to a log loaded earlier, call `.serve()` on it.
+Ontop serves one log at a time. If you need to switch between multiple distinct logs while using the library, use the `.serve()` method.
