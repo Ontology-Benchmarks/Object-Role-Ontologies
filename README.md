@@ -1,6 +1,6 @@
 # ORO: Object-Role Ontology inference for OCEL 2.0
 
-Code and experiments for *Mind the Semantic Process Gap*. ORO turns an OCEL 2.0 event log into a
+Code and experiments for *Mind the Semantic Process Gap*. The ORO framework turns an OCEL 2.0 event log into a
 virtual knowledge graph (DuckDB + Ontop) whose classes and properties are the ORO's own
 (`O_ot`, `Ev_a`, `R_a(ot)`, `playsRole`, `frames`, `nextRole`, `laterRole`), and uses SPARQL to:
 
