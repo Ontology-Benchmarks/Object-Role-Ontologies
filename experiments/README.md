@@ -24,7 +24,47 @@ fresh process (AMD Ryzen 7 255, 32 GB, CachyOS). All LaTeX rows are in **`result
 In `baselines/` the queries use the original numbering: Q4 there is `clos(Offer, Returned)`,
 which the revision dropped (`queries/ocpq/Q4old`).
 
-## Reproduce
+## Reproducing the benchmarks
+
+### Requirements
+
+- **Docker and the dev container**, set up as in the [main README](../README.md#prerequisites),
+  including the DuckDB JDBC jar in `jdbc/`.
+- **Linux 5.19 or newer with cgroup v2 on the Docker host**, for Ontop's peak memory. Check with
+
+  ```bash
+  docker exec ontop_service cat /sys/fs/cgroup/memory.peak   # prints a number of bytes
+  ```
+
+  If it prints an error instead (e.g. WSL2 or Docker Desktop with an older kernel, or
+  Ubuntu 22.04's 5.15), the timings still reproduce, but `ontop_peak_mb` is NaN.
+- **Container names unchanged.** The benchmark restarts Ontop before each run through the Docker
+  socket, by the name `ontop_service` (`BenchmarkConfig.ontop_container`).
+- **For the baselines only:** Rust (`cargo`), the `duckdb` CLI and Python 3 on the host, and the
+  submodules (`git clone --recursive`, or `git submodule update --init`).
+
+Absolute times depend on the hardware (ours is above). Compare the relative results across logs
+and tools rather than the seconds.
+
+### ORO benchmark only (Table 4)
+
+In a terminal inside the dev container (e.g. VS Code's terminal after *Reopen in Container*):
+
+```bash
+python -m ocel_inference.benchmark --runs 4 --results-dir experiments/results/oro_benchmark_rerun/
+```
+
+or set `RUN_BENCHMARK = True` in the last cell of `oro_walkthrough.ipynb`. Use a new results
+folder, or clear the old raw files first (see below).
+
+From the host, wrap the command in a shell. Under a bare `docker exec`, Python's parent process
+has PID 0, and pm4py fails on import with `psutil.NoSuchProcess: process PID not found (pid=0)`:
+
+```bash
+docker exec -w /workspace ontop_dev sh -c "python -m ocel_inference.benchmark --runs 4 --results-dir experiments/results/oro_benchmark_rerun/"
+```
+
+### All experiments
 
 From this folder, on the host (the ORO steps run inside the dev container):
 
@@ -37,7 +77,7 @@ for f in order-management ContainerLogistics ocel2-p2p bpi17_ocel; do
 done
 
 # ORO benchmark (Table 4), in the dev container
-docker exec -w /workspace ontop_dev python -m ocel_inference.benchmark --runs 4 --results-dir experiments/results/oro_benchmark_rerun/
+docker exec -w /workspace ontop_dev sh -c "python -m ocel_inference.benchmark --runs 4 --results-dir experiments/results/oro_benchmark_rerun/"
 
 # Tables 5 and 6: baselines, then the counterexample check against ORO
 python3 -I scripts/run_baselines.py --runs 4
@@ -51,7 +91,7 @@ scripts/run_section7.sh
 python3 -I scripts/latex_tables.py   # writes results/tables.tex
 ```
 
-The runners append to `results/*/raw/*.jsonl`. Clear these files before a fresh run.
+The runners append to `results/*/raw/*.jsonl`. Clear these files before running again to avoid errors.
 
 ## Method
 
@@ -91,7 +131,7 @@ The runners append to `results/*/raw/*.jsonl`. Clear these files before a fresh 
 "Sent" covers both send channels. With only *Sent (mail and online)*, Q5 has 54 violations,
 and both tools return the same 54.
 
-## Memory study (`scripts/memory/`, `results/memory/`, `results/native/`)
+## Memory measures (`scripts/memory/`, `results/memory/`, `results/native/`)
 
 Ontop's JVM heap is capped at 512 MB. Most of ORO's memory is DuckDB's native memory inside the
 Ontop process:

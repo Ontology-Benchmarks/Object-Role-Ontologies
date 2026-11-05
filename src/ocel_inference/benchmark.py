@@ -29,6 +29,7 @@ import socket
 import statistics
 import time
 import urllib.parse
+import warnings
 from concurrent.futures import ProcessPoolExecutor
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
@@ -188,13 +189,21 @@ class DockerEngine:
         return data.decode(errors="replace")
 
     def peak_memory_mb(self, container: str) -> float:
-        # cgroup v2 first, then cgroup v1.
+        """Peak memory of the container's cgroup, or NaN if the kernel does not report it.
+
+        cgroup v2 has memory.peak only from Linux 5.19; older Docker hosts (e.g. WSL2 or
+        Ubuntu 22.04 kernels, 5.15) run cgroup v2 without it, and have no cgroup v1 file either.
+        """
         output = self.exec_output(container, [
             "sh", "-c",
             "cat /sys/fs/cgroup/memory.peak 2>/dev/null "
-            "|| cat /sys/fs/cgroup/memory/memory.max_usage_in_bytes",
-        ])
-        return int(output.strip().split()[-1]) / (1024 * 1024)
+            "|| cat /sys/fs/cgroup/memory/memory.max_usage_in_bytes 2>/dev/null",
+        ]).strip()
+        if not output.isdigit():
+            warnings.warn(f"{container}: the kernel reports no cgroup peak memory "
+                          "(memory.peak needs Linux >= 5.19); ontop_peak_mb is NaN.")
+            return float("nan")
+        return int(output) / (1024 * 1024)
 
 
 # ---------------------------------------------------------------------------
