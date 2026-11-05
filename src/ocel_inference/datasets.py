@@ -1,8 +1,8 @@
-"""The OCEL 2.0 logs used in the paper, loadable by short name."""
+"""Loading OCEL 2.0 logs: any JSON file by path, or the paper's four logs by short name."""
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict
+from typing import Dict, Tuple
 
 DATA_DIR = "input/data"
 OUTPUT_DIR = "output"
@@ -28,20 +28,42 @@ def path(key: str, data_dir: str = DATA_DIR) -> Path:
     return Path(data_dir) / DATASETS[key].file_name
 
 
-def load(key: str, data_dir: str = DATA_DIR, output_dir: str = OUTPUT_DIR,
-         visualize: bool = False, verbose: bool = False):
-    """Run inference on one paper log and wait until Ontop serves it.
+def resolve(log: str, data_dir: str = DATA_DIR) -> Tuple[Path, str]:
+    """The JSON file of a log (a path or a paper log's short name) and its folder name.
 
-    Returns the OCELSchemaInferrer, ready for SPARQL queries and schema checks. Its DuckDB file
-    is kept in ``<data_dir>/<log>/`` (read by Ontop); with ``visualize`` the OIG and ORO graphs
-    are written to ``<output_dir>/<log>/``, where export_ttl() also writes the ORO.
+    A path to one of the paper's files gets that log's folder (e.g. bpi17), so its outputs are the
+    same however it is loaded; any other file gets its stem.
+    """
+    if log in DATASETS:
+        return path(log, data_dir), DATASETS[log].folder
+    json_path = Path(log)
+    if not json_path.is_file():
+        raise FileNotFoundError(
+            f"'{log}' is neither an OCEL 2.0 JSON file nor a paper log ({', '.join(DATASETS)}).")
+    for key, dataset in DATASETS.items():
+        known = path(key, data_dir)
+        if known.is_file() and known.resolve() == json_path.resolve():
+            return json_path, dataset.folder
+    return json_path, json_path.stem
+
+
+def load(log: str, data_dir: str = DATA_DIR, output_dir: str = OUTPUT_DIR,
+         visualize: bool = False, verbose: bool = False):
+    """Run inference on an OCEL 2.0 log and wait until Ontop serves it.
+
+    ``log`` is the path of an OCEL 2.0 JSON file (e.g. "input/data/my_log.json"), or the short
+    name of one of the paper's logs (order_mgmt, logistics, p2p, bpi17). Returns the
+    OCELSchemaInferrer, ready for SPARQL queries and schema checks.
+
+    Files are kept per log, in a folder named after the log (its short name, or the JSON file's
+    stem): the DuckDB file in ``<data_dir>/<folder>/`` (read by Ontop, so it must be under
+    ``input/``, the folder the Ontop container mounts), and with ``visualize`` the OIG and ORO
+    graphs in ``<output_dir>/<folder>/``, where export_ttl() also writes the ORO.
     """
     from .inferrer import OCELSchemaInferrer
 
-    if key not in DATASETS:
-        raise KeyError(f"Unknown dataset '{key}'. Available: {', '.join(DATASETS)}")
-    folder = DATASETS[key].folder
-    inferrer = OCELSchemaInferrer(str(path(key, data_dir)), db_dir=str(Path(data_dir) / folder),
+    json_path, folder = resolve(log, data_dir)
+    inferrer = OCELSchemaInferrer(str(json_path), db_dir=str(Path(data_dir) / folder),
                                   output_dir=str(Path(output_dir) / folder), verbose=verbose)
     inferrer.run_inference(keep_db=True, update_oro_artifacts=True)
     if visualize:

@@ -18,11 +18,41 @@ bottom-up query; `dl.py` translates DL axioms into SPARQL.
 | --- | --- |
 | `src/ocel_inference/` | the ORO library |
 | `oro_walkthrough.ipynb` | walkthrough: inference on the four paper logs, the Section 7 checks, OWL export |
-| `input/data/` | the four OCEL 2.0 logs, and per log the DuckDB file that Ontop reads (generated) |
+| `input/data/` | the four OCEL 2.0 logs of the paper, and per log the DuckDB file that Ontop reads (generated) |
 | `output/` | per log: the OIG and ORO graphs (`oig_graph.html`, `oro_graph.html`) and the ORO as OWL 2 (`oro.ttl`) |
 | `input/staging/` | the mapping that Ontop currently serves (generated) |
 | `experiments/` | performance evaluation and comparison with OC-DECLARE, TOTeM and OCPQ (see its README) |
-| `.devcontainer/`, `jdbc/` | Docker setup: a Python dev container and an Ontop endpoint with the DuckDB driver |
+| `.devcontainer/`, `jdbc/` | Docker setup: a Python dev container and an Ontop endpoint with the DuckDB driver (not included, see [Prerequisites](#prerequisites)) |
+
+## Prerequisites
+
+**Docker and VS Code Dev Containers.** The library runs inside the dev container defined in
+`.devcontainer/`. You need Docker and VS Code with the Dev Containers extension. If you have not
+used dev containers before, follow the
+[Dev Containers documentation](https://code.visualstudio.com/docs/devcontainers/containers)
+(installation) and its [tutorial](https://code.visualstudio.com/docs/devcontainers/tutorial).
+
+**Large files are not in the repository.** You need to provide them yourself before building the
+container.
+
+- **DuckDB JDBC driver (required).** Ontop connects to DuckDB through this driver, and the Ontop
+  image will not build without it. Download
+  [`duckdb_jdbc-1.4.2.0.jar`](https://repo1.maven.org/maven2/org/duckdb/duckdb_jdbc/1.4.2.0/duckdb_jdbc-1.4.2.0.jar)
+  and put it in `jdbc/` with that exact file name (`.devcontainer/ontop.Dockerfile` copies
+  `jdbc/duckdb_jdbc-1.4.2.0.jar`):
+
+  ```bash
+  curl -L -o jdbc/duckdb_jdbc-1.4.2.0.jar \
+    https://repo1.maven.org/maven2/org/duckdb/duckdb_jdbc/1.4.2.0/duckdb_jdbc-1.4.2.0.jar
+  ```
+
+- **Datasets.** Logs are OCEL 2.0 JSON files. The four logs of the paper are included in
+  `input/data/`; any other log you bring yourself and load by its path, e.g.
+  `load("input/data/my_log.json")`.
+
+- **Baselines (experiments only).** OCPQ, oc-DECLARE and TOTeM are git submodules. Clone with
+  `git clone --recursive`, or run `git submodule update --init` in an existing clone. The ORO
+  library itself does not need them.
 
 ## Getting started
 
@@ -31,7 +61,7 @@ The library is intended to be used inside a docker container, to effectively man
 ```python
 from ocel_inference import load
 
-bpi17 = load("bpi17")                       # infer, then wait until Ontop serves the log
+bpi17 = load("input/data/bpi17_ocel.json")  # infer, then wait until Ontop serves the log
 bpi17.infer_and_display_role_categories()  # bottom-up, with each axiom in DL
 bpi17.check("clos", "offer", activity="Sent (mail and online)_complete")  # top-down
 bpi17.axiom("clos", otype="offer", activity="Sent (mail and online)_complete")
