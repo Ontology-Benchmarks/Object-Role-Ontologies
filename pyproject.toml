@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ocel-schema-inferrer"
+version = "0.2.0"
+description = "Object-role ontology (ORO) inference and schema checks over OCEL 2.0 logs"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "duckdb>=1.4.4,<1.5",  # storage format must stay readable by jdbc/duckdb_jdbc-1.4.2.0.jar used by Ontop
+  "pandas",
+  "pm4py",
+  "requests",
+  "SPARQLWrapper",
+  "pyvis",
+  "rdflib",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ocel_inference = ["assets/*"]

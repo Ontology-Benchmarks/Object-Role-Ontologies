@@ -1,0 +1,40 @@
+services:
+  dev:
+    build:
+      context: ..
+      dockerfile: .devcontainer/conda.Dockerfile
+    container_name: ontop_dev
+    volumes:
+      - ../:/workspace
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+    tty: true
+    stdin_open: true
+
+  ontop:
+    user: root
+    build:
+      context: ..
+      dockerfile: .devcontainer/ontop.Dockerfile
+    container_name: ontop_service
+    environment:
+      # Configure the ontop paths to point to the generic staged mapping, properties, and lenses files.
+      ONTOP_MAPPING_FILE: /opt/ontop/input/staging/ocel_mapping.obda
+      ONTOP_PROPERTIES_FILE: /opt/ontop/input/staging/ocel.properties
+      ONTOP_LENSES_FILE: /opt/ontop/input/staging/ocel_lenses.json
+      ONTOP_LOG_ENTRYPOINT: "true"
+      ONTOP_LAZY_INIT: "true"
+      ONTOP_LOG_LEVEL: "all"
+      ONTOP_DEV_MODE: "true"
+    # Mount only the input and jdbc folders
+    volumes:
+      - ../input:/opt/ontop/input
+      - ../jdbc:/opt/ontop/jdbc
+    # Ensure the container runs with the correct working directory and calls the image entrypoint explicitly
+    working_dir: /opt/ontop
+    ports:
+      - "8080:8080"
+    # Keep the container running; the image's ENTRYPOINT will be used.
+    restart: unless-stopped
+    entrypoint: '/opt/ontop/entrypoint.sh'

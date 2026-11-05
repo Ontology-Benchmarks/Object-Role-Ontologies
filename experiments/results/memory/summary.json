@@ -1,0 +1,363 @@
+{
+  "default": {
+    "Order Management": {
+      "runs": 4,
+      "same_results_as_default": true,
+      "preprocessing_s": [
+        6.742032900976483,
+        0.0930946999902818
+      ],
+      "bottom_up_s": [
+        2.8493410317460075,
+        0.057323855258232505
+      ],
+      "top_down_mean_s": [
+        0.1504161535602095,
+        0.002303071010875867
+      ],
+      "total_s": [
+        9.59137393272249,
+        0.11201685107718794
+      ],
+      "py_peak_mb": [
+        1418.833984375,
+        17.71127536643802
+      ],
+      "ontop_peak_mb": [
+        5203.1181640625,
+        166.8706189860399
+      ],
+      "ontop_anon_peak_mb": [
+        5107.107421875,
+        164.77474863793995
+      ],
+      "ontop_file_peak_mb": [
+        65.5849609375,
+        12.48578023183333
+      ],
+      "ontop_rss_peak_mb": [
+        5161.525390625,
+        163.51638716489538
+      ],
+      "oro_peak_mb": 6621.9521484375,
+      "scenarios": {}
+    },
+    "Container Logistics": {
+      "runs": 4,
+      "same_results_as_default": true,
+      "preprocessing_s": [
+        2.8127362922386965,
+        0.04109210984195718
+      ],
+      "bottom_up_s": [
+        3.710354885282868,
+        0.16751571008596003
+      ],
+      "top_down_mean_s": [
+        0.0506742708958672,
+        0.012858119914012839
+      ],
+      "total_s": [
+        6.5230911775215645,
+        0.1594888372082826
+      ],
+      "py_peak_mb": [
+        814.92578125,
+        32.13269774044464
+      ],
+      "ontop_peak_mb": [
+        2666.7548828125,
+        250.21343223676476
+      ],
+      "ontop_anon_peak_mb": [
+        2496.3564453125,
+        294.64467783985475
+      ],
+      "ontop_file_peak_mb": [
+        68.6328125,
+        6.0734939780625865
+      ],
+      "ontop_rss_peak_mb": [
+        2552.0283203125,
+        294.3615941693097
+      ],
+      "oro_peak_mb": 3481.6806640625,
+      "scenarios": {
+        "Q1": {
+          "mean_s": 0.04021297849249095,
+          "counterexamples": 3
+        }
+      }
+    },
+    "Procure-to-Pay": {
+      "runs": 4,
+      "same_results_as_default": true,
+      "preprocessing_s": [
+        2.3804120155255077,
+        0.04298037846699182
+      ],
+      "bottom_up_s": [
+        4.749820669516339,
+        0.14559546632056228
+      ],
+      "top_down_mean_s": [
+        0.0337872155036065,
+        0.0004885383674669355
+      ],
+      "total_s": [
+        7.130232685041847,
+        0.1441942048028484
+      ],
+      "py_peak_mb": [
+        787.55859375,
+        33.755022744259776
+      ],
+      "ontop_peak_mb": [
+        2679.5244140625,
+        29.44534555731733
+      ],
+      "ontop_anon_peak_mb": [
+        2509.8427734375,
+        32.70983915001181
+      ],
+      "ontop_file_peak_mb": [
+        65.1884765625,
+        0.028947570410697537
+      ],
+      "ontop_rss_peak_mb": [
+        2565.291015625,
+        32.78330383558034
+      ],
+      "oro_peak_mb": 3467.0830078125,
+      "scenarios": {}
+    },
+    "BPI 2017": {
+      "runs": 4,
+      "same_results_as_default": true,
+      "preprocessing_s": [
+        2.3598438547342084,
+        0.05858015155080565
+      ],
+      "bottom_up_s": [
+        1.9178188650039374,
+        0.08836659024088771
+      ],
+      "top_down_mean_s": [
+        0.036153702227485325,
+        0.009513940564585661
+      ],
+      "total_s": [
+        4.277662719738146,
+        0.09952659776678646
+      ],
+      "py_peak_mb": [
+        809.6220703125,
+        17.565042114902287
+      ],
+      "ontop_peak_mb": [
+        1713.3095703125,
+        185.73014803841266
+      ],
+      "ontop_anon_peak_mb": [
+        1525.982421875,
+        247.46939285040034
+      ],
+      "ontop_file_peak_mb": [
+        57.447265625,
+        5.144534216020405
+      ],
+      "ontop_rss_peak_mb": [
+        1581.92578125,
+        247.56385114198844
+      ],
+      "oro_peak_mb": 2522.931640625,
+      "scenarios": {
+        "Q2": {
+          "mean_s": 0.026258940997649916,
+          "counterexamples": 4
+        },
+        "Q3": {
+          "mean_s": 0.11657474748790264,
+          "counterexamples": 1965
+        },
+        "Q4": {
+          "mean_s": 0.07157658174401149,
+          "counterexamples": 1172
+        }
+      }
+    }
+  },
+  "duckdb1g": {
+    "Order Management": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to pin block of size 256.0 KiB (953.6 MiB/953.6 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    },
+    "Container Logistics": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to pin block of size 256.0 KiB (953.7 MiB/953.6 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    },
+    "Procure-to-Pay": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to pin block of size 256.0 KiB (953.4 MiB/953.6 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    },
+    "BPI 2017": {
+      "runs": 4,
+      "same_results_as_default": true,
+      "preprocessing_s": [
+        2.4323688847580343,
+        0.14907334135659683
+      ],
+      "bottom_up_s": [
+        2.114673750511429,
+        0.030554576389216367
+      ],
+      "top_down_mean_s": [
+        0.04578250496484482,
+        0.013469324562740921
+      ],
+      "total_s": [
+        4.547042635269463,
+        0.17552394686624284
+      ],
+      "py_peak_mb": [
+        815.0947265625,
+        25.47417071798657
+      ],
+      "ontop_peak_mb": [
+        1795.5263671875,
+        192.4944504602604
+      ],
+      "ontop_anon_peak_mb": [
+        1663.1064453125,
+        208.2446144112854
+      ],
+      "ontop_file_peak_mb": [
+        54.87890625,
+        0.0
+      ],
+      "ontop_rss_peak_mb": [
+        1719.3017578125,
+        208.15715534215866
+      ],
+      "oro_peak_mb": 2610.62109375,
+      "scenarios": {
+        "Q2": {
+          "mean_s": 0.026092848500411492,
+          "counterexamples": 4
+        },
+        "Q3": {
+          "mean_s": 0.1928952367452439,
+          "counterexamples": 1965
+        },
+        "Q4": {
+          "mean_s": 0.09825143425405258,
+          "counterexamples": 1172
+        }
+      }
+    }
+  },
+  "duckdb256m": {
+    "Order Management": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to pin block of size 256.0 KiB (244.5 MiB/244.1 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    },
+    "Container Logistics": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to pin block of size 256.0 KiB (244.9 MiB/244.1 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    },
+    "Procure-to-Pay": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to allocate data of size 128.0 KiB (244.2 MiB/244.1 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    },
+    "BPI 2017": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to pin block of size 256.0 KiB (244.0 MiB/244.1 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    }
+  },
+  "duckdb256m_xmx256m": {
+    "Order Management": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to pin block of size 256.0 KiB (244.1 MiB/244.1 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    },
+    "Container Logistics": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to pin block of size 256.0 KiB (244.0 MiB/244.1 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    },
+    "Procure-to-Pay": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to allocate data of size 128.0 KiB (244.3 MiB/244.1 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    },
+    "BPI 2017": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to pin block of size 256.0 KiB (244.0 MiB/244.1 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    }
+  },
+  "duckdb2g_hung_run3": {
+    "Order Management": {
+      "status": "failed",
+      "error": [
+        "=== Order Management: run 3/4 ==="
+      ]
+    },
+    "Container Logistics": {
+      "status": "failed",
+      "error": []
+    },
+    "Procure-to-Pay": {
+      "status": "failed",
+      "error": []
+    },
+    "BPI 2017": {
+      "status": "failed",
+      "error": []
+    }
+  },
+  "duckdb512m": {
+    "Order Management": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to pin block of size 256.0 KiB (488.6 MiB/488.2 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    },
+    "Container Logistics": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to allocate data of size 4.0 KiB (488.8 MiB/488.2 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    },
+    "Procure-to-Pay": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to pin block of size 256.0 KiB (488.7 MiB/488.2 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    },
+    "BPI 2017": {
+      "status": "failed",
+      "error": [
+        "'EndPointInternalError: The endpoint returned the HTTP status code 500. \\n\\nResponse:\\nb\"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: could not allocate block of size 256.0 KiB (488.1 MiB/488.2 MiB used)\\\\n\\\\nPossible solutions:\\\\n* Reducing the number of threads (SET threads=X)\\\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\\\n* Increasing the memory limit (SET memory_limit=\\'...GB\\')\\\\n\\\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads\"'"
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+[submodule "experiments/baselines/ocpq"]
+	path = experiments/baselines/ocpq
+	url = https://github.com/aarkue/ocpq.git
+[submodule "experiments/baselines/oc-DECLARE"]
+	path = experiments/baselines/oc-DECLARE
+	url = https://github.com/aarkue/oc-DECLARE.git
+[submodule "experiments/baselines/TOTeM-temporal-object-type-model"]
+	path = experiments/baselines/TOTeM-temporal-object-type-model
+	url = https://github.com/LukasLiss/TOTeM-temporal-object-type-model.git

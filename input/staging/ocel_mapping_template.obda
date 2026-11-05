@@ -1,0 +1,34 @@
+[PrefixDeclaration]
+ex:		http://www.example.com/
+ocel:		https://stl.mie.utoronto.ca/ontologies/ocel/
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+xsd:		http://www.w3.org/2001/XMLSchema#
+
+[MappingDeclaration] @collection [[
+
+mappingId	events
+target		ex:{eid} a ocel:Event ; ocel:hasActivity ocel:{activity} ; ocel:timestamp {timestamp}^^xsd:dateTime .
+source		SELECT * FROM log_events
+
+mappingId	e2o
+target		ex:{eid} ocel:involves ex:{object_id} .
+source		SELECT eid, object_id FROM log_e2o
+
+mappingId	objects
+target		ex:{object_id} a ocel:Object ; ocel:earliestEvent ex:{earliest_event_id} ; ocel:latestEvent ex:{latest_event_id} .
+source		SELECT object_id, earliest_event_id, latest_event_id FROM objects
+
+mappingId	object_interaction_graph
+target		ex:o2o_{oid1}_{oid2}_{event_id} a ocel:ObjectRelationship ; ocel:relatesA ex:{oid1} ; ocel:relatesB ex:{oid2} ; ocel:viaEvent ex:{event_id} .
+source		SELECT oid1, oid2, event_id FROM o2o
+
+mappingId	aggregated_object_interaction_graph
+target		ex:eventRole_{activity}_{otype} a ex:EventObjectRole ; ex:playsRoleIn ocel:{activity} ; ex:isRoleOf ex:otype_{otype} ; ex:participationPopulation {part_pop}^^xsd:integer ; ex:totalPopulation {total_pop}^^xsd:integer ; ex:objectRoleMinCardinality {object_role_min_card}^^xsd:integer ; ex:objectRoleMaxCardinality {object_role_max_card}^^xsd:integer ; ex:eventRoleMinCardinality {event_role_min_card}^^xsd:integer ; ex:eventRoleMaxCardinality {event_role_max_card}^^xsd:integer ; ex:minCardinality {min_card}^^xsd:integer ; ex:maxCardinality {max_card}^^xsd:integer .
+source		SELECT activity, otype, part_pop, total_pop, object_role_min_card, object_role_max_card, event_role_min_card, event_role_max_card, min_card, max_card FROM o2o_event_object_roles
+
+mappingId	objects_type_{{otype}}
+target		ex:{object_id} a ex:otype_{{otype}} .
+source		SELECT object_id FROM obj_{{otype}}
+
+]]

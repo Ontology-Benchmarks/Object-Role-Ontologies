@@ -1,0 +1,74 @@
+=== Order Management: run 1/4 ===
+--- Starting Inference for order-management.json (with Ontop/SPARQL) ---
+Inference completed for 21008 events in 6.87 seconds.
+[ontology-role] creation_role query took 0.2808 seconds
+[ontology-role] closure_role query took 0.1216 seconds
+[ontology-role] transformation_role query took 2.1473 seconds
+[ontology-role] single_use_role query took 0.0519 seconds
+[ontology-role] resource_like_role query took 0.0497 seconds
+[ontology-role] resource_object_type query took 0.0528 seconds
+[ontology-role] external_object_type query took 0.1755 seconds
+    preprocessing=6.87s ontop_startup=2.57s bottom_up=2.88s top_down_mean=0.1508s (n=172) py_peak=1416MB ontop_peak=5396MB
+=== Order Management: run 2/4 ===
+--- Starting Inference for order-management.json (with Ontop/SPARQL) ---
+Inference completed for 21008 events in 6.65 seconds.
+[ontology-role] creation_role query took 0.2875 seconds
+[ontology-role] closure_role query took 0.1290 seconds
+[ontology-role] transformation_role query took 2.1733 seconds
+[ontology-role] single_use_role query took 0.0444 seconds
+[ontology-role] resource_like_role query took 0.0465 seconds
+[ontology-role] resource_object_type query took 0.0528 seconds
+[ontology-role] external_object_type query took 0.1676 seconds
+    preprocessing=6.65s ontop_startup=2.92s bottom_up=2.91s top_down_mean=0.1528s (n=172) py_peak=1444MB ontop_peak=5074MB
+=== Order Management: run 3/4 ===
+--- Starting Inference for order-management.json (with Ontop/SPARQL) ---
+Inference completed for 21008 events in 6.71 seconds.
+[ontology-role] creation_role query took 0.2777 seconds
+[ontology-role] closure_role query took 0.1158 seconds
+[ontology-role] transformation_role query took 2.1026 seconds
+[ontology-role] single_use_role query took 0.0515 seconds
+[ontology-role] resource_like_role query took 0.0508 seconds
+[ontology-role] resource_object_type query took 0.0517 seconds
+[ontology-role] external_object_type query took 0.1749 seconds
+    preprocessing=6.71s ontop_startup=2.88s bottom_up=2.83s top_down_mean=0.1473s (n=172) py_peak=1403MB ontop_peak=5053MB
+=== Order Management: run 4/4 ===
+--- Starting Inference for order-management.json (with Ontop/SPARQL) ---
+Inference completed for 21008 events in 6.73 seconds.
+[ontology-role] creation_role query took 0.2816 seconds
+[ontology-role] closure_role query took 0.1212 seconds
+[ontology-role] transformation_role query took 2.0647 seconds
+[ontology-role] single_use_role query took 0.0498 seconds
+[ontology-role] resource_like_role query took 0.0455 seconds
+[ontology-role] resource_object_type query took 0.0465 seconds
+[ontology-role] external_object_type query took 0.1654 seconds
+    preprocessing=6.73s ontop_startup=2.74s bottom_up=2.78s top_down_mean=0.1507s (n=172) py_peak=1412MB ontop_peak=5288MB
+dataset                    Order Management
+load_transform_s_mean              1.892059
+load_transform_s_std               0.047954
+duckdb_load_s_mean                 2.469604
+duckdb_load_s_std                  0.015356
+oig_s_mean                         2.379565
+oig_s_std                          0.042925
+mapping_generation_s_mean          0.000805
+mapping_generation_s_std           0.000345
+preprocessing_s_mean               6.742033
+preprocessing_s_std                0.093095
+ontop_startup_s_mean               2.779603
+ontop_startup_s_std                0.157995
+bottom_up_s_mean                   2.849341
+bottom_up_s_std                    0.057324
+top_down_mean_s_mean               0.150416
+top_down_mean_s_std                0.002303
+total_s_mean                       9.591374
+total_s_std                        0.112017
+py_peak_mb_mean                 1418.833984
+py_peak_mb_std                    17.711275
+ontop_peak_mb_mean              5203.118164
+ontop_peak_mb_std                166.870619
+runs                               4.000000
+top_down_queries                 172.000000
+% tab:performance
+Order Management     & $6.74 \pm 0.09$ & $2.85 \pm 0.06$ & $0.150 \pm 0.002$ & $9.59 \pm 0.11$ & 1418.83 & 5203.12 \\
+% tab:comparison_bu (ORO columns)
+Order Management     & 9.59 & \tbd & \tbd & 6621.95 & \tbd & \tbd \\
+% tab:comparison_td (ORO columns)

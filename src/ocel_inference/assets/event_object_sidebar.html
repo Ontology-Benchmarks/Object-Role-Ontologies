@@ -1,0 +1,31 @@
+<div id="event-object-sidebar">
+    <div id="event-object-toggle" title="Toggle Sidebar">◀</div>
+    <div id="event-object-sidebar-header">OCEL Role Explorer</div>
+    <div id="event-object-filters">
+        <div class="event-object-filter-field">
+            <label for="event-object-activity-filter">Activity</label>
+            <div id="event-object-activity-filter-list" class="event-object-filter-list"></div>
+        </div>
+        <div class="event-object-filter-field">
+            <label for="event-object-object-filter">Object Type</label>
+            <div id="event-object-object-filter-list" class="event-object-filter-list"></div>
+        </div>
+        <button id="event-object-clear-filters" type="button">Clear Filters</button>
+    </div>
+    <div id="event-object-summary">All nodes in the graph are collapsed by default. Select activities and object types to filter the view.</div>
+    <div id="event-object-details-title">Selected Details</div>
+    <div id="event-object-details">
+        <table id="event-object-table">
+            <thead>
+                <tr>
+                    <th style="width: 24%;">Role</th>
+                    <th style="width: 20%;">Activity</th>
+                    <th style="width: 20%;">Object Type</th>
+                    <th style="width: 36%;">Population Stats</th>
+                </tr>
+            </thead>
+            <tbody id="event-object-table-body"></tbody>
+        </table>
+        <div id="event-object-empty">Select an element in the graph to view details.</div>
+    </div>
+</div>

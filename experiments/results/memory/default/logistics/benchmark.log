@@ -1,0 +1,75 @@
+=== Container Logistics: run 1/4 ===
+--- Starting Inference for ContainerLogistics.json (with Ontop/SPARQL) ---
+Inference completed for 35372 events in 2.79 seconds.
+[ontology-role] creation_role query took 0.3280 seconds
+[ontology-role] closure_role query took 0.1458 seconds
+[ontology-role] transformation_role query took 3.1279 seconds
+[ontology-role] single_use_role query took 0.0554 seconds
+[ontology-role] resource_like_role query took 0.0475 seconds
+[ontology-role] resource_object_type query took 0.0553 seconds
+[ontology-role] external_object_type query took 0.1939 seconds
+    preprocessing=2.79s ontop_startup=2.57s bottom_up=3.96s top_down_mean=0.0478s (n=130) py_peak=841MB ontop_peak=2588MB
+=== Container Logistics: run 2/4 ===
+--- Starting Inference for ContainerLogistics.json (with Ontop/SPARQL) ---
+Inference completed for 35372 events in 2.86 seconds.
+[ontology-role] creation_role query took 0.3131 seconds
+[ontology-role] closure_role query took 0.1342 seconds
+[ontology-role] transformation_role query took 2.8955 seconds
+[ontology-role] single_use_role query took 0.0528 seconds
+[ontology-role] resource_like_role query took 0.0452 seconds
+[ontology-role] resource_object_type query took 0.0484 seconds
+[ontology-role] external_object_type query took 0.1717 seconds
+    preprocessing=2.86s ontop_startup=2.59s bottom_up=3.67s top_down_mean=0.0429s (n=130) py_peak=792MB ontop_peak=2525MB
+=== Container Logistics: run 3/4 ===
+--- Starting Inference for ContainerLogistics.json (with Ontop/SPARQL) ---
+Inference completed for 35372 events in 2.77 seconds.
+[ontology-role] creation_role query took 0.3041 seconds
+[ontology-role] closure_role query took 0.1240 seconds
+[ontology-role] transformation_role query took 2.8631 seconds
+[ontology-role] single_use_role query took 0.0491 seconds
+[ontology-role] resource_like_role query took 0.0445 seconds
+[ontology-role] resource_object_type query took 0.0520 seconds
+[ontology-role] external_object_type query took 0.1739 seconds
+    preprocessing=2.77s ontop_startup=2.61s bottom_up=3.61s top_down_mean=0.0424s (n=130) py_peak=844MB ontop_peak=2515MB
+=== Container Logistics: run 4/4 ===
+--- Starting Inference for ContainerLogistics.json (with Ontop/SPARQL) ---
+Inference completed for 35372 events in 2.83 seconds.
+[ontology-role] creation_role query took 0.2900 seconds
+[ontology-role] closure_role query took 0.1312 seconds
+[ontology-role] transformation_role query took 2.8459 seconds
+[ontology-role] single_use_role query took 0.0497 seconds
+[ontology-role] resource_like_role query took 0.0490 seconds
+[ontology-role] resource_object_type query took 0.0576 seconds
+[ontology-role] external_object_type query took 0.1755 seconds
+    preprocessing=2.83s ontop_startup=2.60s bottom_up=3.60s top_down_mean=0.0696s (n=130) py_peak=782MB ontop_peak=3039MB
+dataset                    Container Logistics
+load_transform_s_mean                 1.642578
+load_transform_s_std                  0.037076
+duckdb_load_s_mean                    0.670555
+duckdb_load_s_std                     0.014893
+oig_s_mean                            0.498743
+oig_s_std                             0.010342
+mapping_generation_s_mean             0.000861
+mapping_generation_s_std              0.000250
+preprocessing_s_mean                  2.812736
+preprocessing_s_std                   0.041092
+ontop_startup_s_mean                  2.592591
+ontop_startup_s_std                   0.017655
+bottom_up_s_mean                      3.710355
+bottom_up_s_std                       0.167516
+top_down_mean_s_mean                  0.050674
+top_down_mean_s_std                   0.012858
+total_s_mean                          6.523091
+total_s_std                           0.159489
+py_peak_mb_mean                     814.925781
+py_peak_mb_std                       32.132698
+ontop_peak_mb_mean                 2666.754883
+ontop_peak_mb_std                   250.213432
+runs                                  4.000000
+top_down_queries                    130.000000
+% tab:performance
+Container Logistics  & $2.81 \pm 0.04$ & $3.71 \pm 0.17$ & $0.051 \pm 0.013$ & $6.52 \pm 0.16$ & 814.93 & 2666.75 \\
+% tab:comparison_bu (ORO columns)
+Container Logistics  & 6.52 & \tbd & \tbd & 3481.68 & \tbd & \tbd \\
+% tab:comparison_td (ORO columns)
+Q1 & Container Logistics & init(Forklift, Weigh) & 3 & 0.040 & \tbd \\

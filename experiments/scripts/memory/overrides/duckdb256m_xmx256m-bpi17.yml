@@ -1,0 +1,5 @@
+services:
+  ontop:
+    environment:
+      ONTOP_DB_URL: "jdbc:duckdb:/opt/ontop/input/data/bpi17/bpi17_ocel.duckdb;memory_limit=256MB"
+      ONTOP_JAVA_ARGS: "-Xmx256m"

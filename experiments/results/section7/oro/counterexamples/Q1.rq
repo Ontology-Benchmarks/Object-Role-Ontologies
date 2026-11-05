@@ -1,0 +1,17 @@
+PREFIX ex: <http://www.example.com/>
+PREFIX ocel: <https://stl.mie.utoronto.ca/ontologies/ocel/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?obj ?event ?eventTimestamp
+WHERE {
+    ?obj rdf:type <http://www.example.com/otype_forklift> ;
+         ocel:earliestEvent ?earliestEvent .
+
+    ?earliestEvent ocel:timestamp ?earliestTimestamp .
+
+    ?event ocel:involves ?obj ;
+           ocel:hasActivity <https://stl.mie.utoronto.ca/ontologies/ocel/Weigh> ;
+           ocel:timestamp ?eventTimestamp .
+
+    FILTER(?eventTimestamp > ?earliestTimestamp)
+}
+ORDER BY ?obj ?eventTimestamp ?event

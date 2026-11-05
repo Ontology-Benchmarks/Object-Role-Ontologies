@@ -1,0 +1,13 @@
+dataset,run,qid,description,seconds,rows,counterexamples
+BPI 2017,0,Q2,exactly one closure per offer,0.02620765200117603,4,4
+BPI 2017,0,Q3,"clos(Offer, Sent)",0.08489179398748092,1965,1965
+BPI 2017,0,Q4,"clos(Offer, Returned)",0.05035778600722551,1172,1172
+BPI 2017,1,Q2,exactly one closure per offer,0.026419754984090105,4,4
+BPI 2017,1,Q3,"clos(Offer, Sent)",0.07643349599675275,1965,1965
+BPI 2017,1,Q4,"clos(Offer, Returned)",0.04703195599722676,1172,1172
+BPI 2017,2,Q2,exactly one closure per offer,0.02633697201963514,4,4
+BPI 2017,2,Q3,"clos(Offer, Sent)",0.2990554139832966,1965,1965
+BPI 2017,2,Q4,"clos(Offer, Returned)",0.14752073099953122,1172,1172
+BPI 2017,3,Q2,exactly one closure per offer,0.025407014996744692,4,4
+BPI 2017,3,Q3,"clos(Offer, Sent)",0.3112002430134453,1965,1965
+BPI 2017,3,Q4,"clos(Offer, Returned)",0.14809526401222683,1172,1172

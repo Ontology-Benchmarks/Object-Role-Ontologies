@@ -1,0 +1,63 @@
+Container Logistics run 0 Q1: 39.6 ms, 1986 rows, 3 objects
+Container Logistics run 0 Q4: 24.2 ms, 30 rows, 30 objects
+Container Logistics run 1 Q1: 40.7 ms, 1986 rows, 3 objects
+Container Logistics run 1 Q4: 24.0 ms, 30 rows, 30 objects
+Container Logistics run 2 Q1: 42.1 ms, 1986 rows, 3 objects
+Container Logistics run 2 Q4: 23.7 ms, 30 rows, 30 objects
+Container Logistics run 3 Q1: 42.5 ms, 1986 rows, 3 objects
+Container Logistics run 3 Q4: 27.3 ms, 30 rows, 30 objects
+BPI 2017 run 0 Q2: 27.5 ms, 4 rows, 4 objects
+BPI 2017 run 0 Q3: 80.4 ms, 1965 rows, 1965 objects
+BPI 2017 run 0 Q5: 44.9 ms, 0 rows, 0 objects
+BPI 2017 run 0 Q5e: 34.5 ms, 0 rows, 0 objects
+BPI 2017 run 0 Q6: 76.0 ms, 902 rows, 902 objects
+BPI 2017 run 1 Q2: 29.7 ms, 4 rows, 4 objects
+BPI 2017 run 1 Q3: 255.7 ms, 1965 rows, 1965 objects
+BPI 2017 run 1 Q5: 47.9 ms, 0 rows, 0 objects
+BPI 2017 run 1 Q5e: 37.5 ms, 0 rows, 0 objects
+BPI 2017 run 1 Q6: 78.1 ms, 902 rows, 902 objects
+BPI 2017 run 2 Q2: 28.9 ms, 4 rows, 4 objects
+BPI 2017 run 2 Q3: 76.9 ms, 1965 rows, 1965 objects
+BPI 2017 run 2 Q5: 44.9 ms, 0 rows, 0 objects
+BPI 2017 run 2 Q5e: 36.5 ms, 0 rows, 0 objects
+BPI 2017 run 2 Q6: 73.4 ms, 902 rows, 902 objects
+BPI 2017 run 3 Q2: 25.4 ms, 4 rows, 4 objects
+BPI 2017 run 3 Q3: 79.1 ms, 1965 rows, 1965 objects
+BPI 2017 run 3 Q5: 47.7 ms, 0 rows, 0 objects
+BPI 2017 run 3 Q5e: 34.6 ms, 0 rows, 0 objects
+BPI 2017 run 3 Q6: 74.4 ms, 902 rows, 902 objects
+[OCPQ] Q1 run 0: 603.29ms violated=1986
+[OCPQ] Q4 run 0: 1.94ms violated=30
+[OCPQ] Q1 run 1: 537.61ms violated=1986
+[OCPQ] Q4 run 1: 9.77ms violated=30
+[OCPQ] Q1 run 2: 520.96ms violated=1986
+[OCPQ] Q4 run 2: 3.14ms violated=30
+[OCPQ] Q1 run 3: 537.14ms violated=1986
+[OCPQ] Q4 run 3: 4.24ms violated=30
+[OCPQ] Q2 run 0: 0.96ms violated=4
+[OCPQ] Q3 run 0: 2.90ms violated=1965
+[OCPQ] Q5 run 0: 1.63ms violated=0
+[OCPQ] Q5e run 0: 0.86ms violated=0
+[OCPQ] Q6 run 0: 0.90ms violated=902
+[OCPQ] Q2 run 1: 0.95ms violated=4
+[OCPQ] Q3 run 1: 3.82ms violated=1965
+[OCPQ] Q5 run 1: 1.02ms violated=0
+[OCPQ] Q5e run 1: 0.63ms violated=0
+[OCPQ] Q6 run 1: 1.33ms violated=902
+[OCPQ] Q2 run 2: 1.15ms violated=4
+[OCPQ] Q3 run 2: 4.98ms violated=1965
+[OCPQ] Q5 run 2: 2.27ms violated=0
+[OCPQ] Q5e run 2: 1.02ms violated=0
+[OCPQ] Q6 run 2: 1.08ms violated=902
+[OCPQ] Q2 run 3: 1.34ms violated=4
+[OCPQ] Q3 run 3: 3.46ms violated=1965
+[OCPQ] Q5 run 3: 1.12ms violated=0
+[OCPQ] Q5e run 3: 0.74ms violated=0
+[OCPQ] Q6 run 3: 0.95ms violated=902
+Q1 equivalent {'oro_rows': 1986, 'ocpq_rows': 1986, 'oro_objects': 3, 'ocpq_objects': 3, 'only_oro': [], 'only_ocpq': [], 'equivalent': True}
+Q2 equivalent {'oro_rows': 4, 'ocpq_rows': 4, 'oro_objects': 4, 'ocpq_objects': 4, 'only_oro': [], 'only_ocpq': [], 'equivalent': True}
+Q3 equivalent {'oro_rows': 1965, 'ocpq_rows': 1965, 'oro_objects': 1965, 'ocpq_objects': 1965, 'only_oro': [], 'only_ocpq': [], 'equivalent': True}
+Q4 equivalent {'oro_rows': 30, 'ocpq_rows': 30, 'oro_objects': 30, 'ocpq_objects': 30, 'only_oro': [], 'only_ocpq': [], 'equivalent': True}
+Q5 equivalent {'oro_rows': 0, 'ocpq_rows': 0, 'oro_objects': 0, 'ocpq_objects': 0, 'only_oro': [], 'only_ocpq': [], 'equivalent': True}
+Q5e equivalent {'oro_rows': 0, 'ocpq_rows': 0, 'oro_objects': 0, 'ocpq_objects': 0, 'only_oro': [], 'only_ocpq': [], 'equivalent': True}
+Q6 equivalent {'oro_rows': 902, 'ocpq_rows': 902, 'oro_objects': 902, 'ocpq_objects': 902, 'only_oro': [], 'only_ocpq': [], 'equivalent': True}

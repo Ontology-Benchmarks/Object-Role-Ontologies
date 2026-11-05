@@ -1,0 +1,103 @@
+{
+  "nodes": [
+    {
+      "Box": [
+        {
+          "newEventVars": {
+            "0": [
+              "Returned_complete"
+            ]
+          },
+          "newObjectVars": {
+            "0": [
+              "offer"
+            ]
+          },
+          "filters": [
+            {
+              "type": "O2E",
+              "object": 0,
+              "event": 0,
+              "qualifier": null
+            }
+          ],
+          "sizeFilters": [],
+          "constraints": [
+            {
+              "type": "SizeFilter",
+              "filter": {
+                "type": "NumChilds",
+                "child_name": "A",
+                "min": null,
+                "max": 0
+              }
+            }
+          ]
+        },
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "Box": [
+        {
+          "newEventVars": {
+            "1": [
+              "Create Application_complete",
+              "Submitted_complete",
+              "Concept_complete",
+              "Accepted_complete",
+              "Create Offer_complete",
+              "Created_complete",
+              "Sent (mail and online)_complete",
+              "Complete_complete",
+              "Validating_complete",
+              "Returned_complete",
+              "Incomplete_complete",
+              "Pending_complete",
+              "Complete application_complete",
+              "Cancelled_complete",
+              "Sent (online only)_complete",
+              "Validate application_complete",
+              "Call incomplete files_complete",
+              "Handle leads_complete",
+              "Denied_complete",
+              "Refused_complete",
+              "Assess potential fraud_complete",
+              "Call after offers_complete"
+            ]
+          },
+          "newObjectVars": {},
+          "filters": [
+            {
+              "type": "O2E",
+              "object": 0,
+              "event": 1,
+              "qualifier": null
+            },
+            {
+              "type": "TimeBetweenEvents",
+              "from_event": 0,
+              "to_event": 1,
+              "min_seconds": 1e-06,
+              "max_seconds": null
+            }
+          ],
+          "sizeFilters": [],
+          "constraints": []
+        },
+        []
+      ]
+    }
+  ],
+  "edgeNames": [
+    [
+      [
+        0,
+        1
+      ],
+      "A"
+    ]
+  ]
+}

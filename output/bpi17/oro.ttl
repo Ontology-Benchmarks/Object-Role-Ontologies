@@ -1,0 +1,2602 @@
+@prefix ex: <http://www.example.com/> .
+@prefix oro: <http://www.example.com/oro/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+oro:dl a owl:AnnotationProperty .
+
+<http://www.example.com/oro/log/bpi17_ocel> a owl:Ontology ;
+    rdfs:label "Object Role Ontology of bpi17_ocel" ;
+    rdfs:comment "T-box of the ORO: core axioms (Section 4) and the behavioural axioms inferred bottom-up on the log. The A-box is virtual (Ontop VKG over DuckDB) and uses the same IRIs." .
+
+oro:nonEmpty a owl:AnnotationProperty .
+
+oro:schema a owl:AnnotationProperty .
+
+oro:Event a owl:Class ;
+    rdfs:label "Event" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/Ev/Accepted_complete> <http://www.example.com/oro/Ev/Assess%20potential%20fraud_complete> <http://www.example.com/oro/Ev/Call%20after%20offers_complete> <http://www.example.com/oro/Ev/Call%20incomplete%20files_complete> <http://www.example.com/oro/Ev/Cancelled_complete> <http://www.example.com/oro/Ev/Complete%20application_complete> <http://www.example.com/oro/Ev/Complete_complete> <http://www.example.com/oro/Ev/Concept_complete> <http://www.example.com/oro/Ev/Create%20Application_complete> <http://www.example.com/oro/Ev/Create%20Offer_complete> <http://www.example.com/oro/Ev/Created_complete> <http://www.example.com/oro/Ev/Denied_complete> <http://www.example.com/oro/Ev/Handle%20leads_complete> <http://www.example.com/oro/Ev/Incomplete_complete> <http://www.example.com/oro/Ev/Pending_complete> <http://www.example.com/oro/Ev/Refused_complete> <http://www.example.com/oro/Ev/Returned_complete> <http://www.example.com/oro/Ev/Sent%20%28mail%20and%20online%29_complete> <http://www.example.com/oro/Ev/Sent%20%28online%20only%29_complete> <http://www.example.com/oro/Ev/Submitted_complete> <http://www.example.com/oro/Ev/Validate%20application_complete> <http://www.example.com/oro/Ev/Validating_complete> ) ] .
+
+oro:Object a owl:Class ;
+    rdfs:label "O" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( ex:otype_application ex:otype_offer ex:otype_resource ex:otype_workflow ) ] .
+
+<http://www.example.com/oro/Reuse/application/Accepted_complete> a owl:Class ;
+    rdfs:label "Reuse_{Accepted_complete}(application)" ;
+    owl:equivalentClass _:N079d561933e641bbb1d0d6652bc5aa5c .
+
+<http://www.example.com/oro/Reuse/application/Call%20incomplete%20files_complete> a owl:Class ;
+    rdfs:label "Reuse_{Call incomplete files_complete}(application)" ;
+    owl:equivalentClass _:N86bc301ab52743a8b6a95f1af241bb4e .
+
+<http://www.example.com/oro/Reuse/application/Cancelled_complete> a owl:Class ;
+    rdfs:label "Reuse_{Cancelled_complete}(application)" ;
+    owl:equivalentClass _:N80f924535a634e6b86bcd338ac188f99 .
+
+<http://www.example.com/oro/Reuse/application/Create%20Offer_complete> a owl:Class ;
+    rdfs:label "Reuse_{Create Offer_complete}(application)" ;
+    owl:equivalentClass _:N7e16d444fa52454c8f43ee5ecbc90fbb .
+
+<http://www.example.com/oro/Reuse/application/Created_complete> a owl:Class ;
+    rdfs:label "Reuse_{Created_complete}(application)" ;
+    owl:equivalentClass _:N4ad1eb70064c401a8fd0c8f13ad47850 .
+
+<http://www.example.com/oro/Reuse/application/Incomplete_complete> a owl:Class ;
+    rdfs:label "Reuse_{Incomplete_complete}(application)" ;
+    owl:equivalentClass _:N57a53148a89b476cb8d0282c82ae19d9 .
+
+<http://www.example.com/oro/Reuse/application/Refused_complete> a owl:Class ;
+    rdfs:label "Reuse_{Refused_complete}(application)" ;
+    owl:equivalentClass _:N9b041899a26949d5b55a32a3dfdc323e .
+
+<http://www.example.com/oro/Reuse/application/Returned_complete> a owl:Class ;
+    rdfs:label "Reuse_{Returned_complete}(application)" ;
+    owl:equivalentClass _:N86ecb4d1442b46e6b4099634f23be56b .
+
+<http://www.example.com/oro/Reuse/application/Sent%20%28mail%20and%20online%29_complete> a owl:Class ;
+    rdfs:label "Reuse_{Sent (mail and online)_complete}(application)" ;
+    owl:equivalentClass _:N78d0e9d3297c445d8cf08edab247afc0 .
+
+<http://www.example.com/oro/Reuse/application/Sent%20%28online%20only%29_complete> a owl:Class ;
+    rdfs:label "Reuse_{Sent (online only)_complete}(application)" ;
+    owl:equivalentClass _:N6e47e8e25bc74e029b25cdef98798ea8 .
+
+<http://www.example.com/oro/Reuse/application/Validate%20application_complete> a owl:Class ;
+    rdfs:label "Reuse_{Validate application_complete}(application)" ;
+    owl:equivalentClass _:Na42a152f9d814de4a05937560147311f .
+
+<http://www.example.com/oro/Reuse/application/Validating_complete> a owl:Class ;
+    rdfs:label "Reuse_{Validating_complete}(application)" ;
+    owl:equivalentClass _:N8820cb1ff0594353a03094ada06bbf4d .
+
+<http://www.example.com/oro/R/application/Accepted_complete> a owl:Class ;
+    rdfs:label "R_{Accepted_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Accepted_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Assess%20potential%20fraud_complete> a owl:Class ;
+    rdfs:label "R_{Assess potential fraud_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Assess%20potential%20fraud_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Call%20after%20offers_complete> a owl:Class ;
+    rdfs:label "R_{Call after offers_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Call%20after%20offers_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Call%20incomplete%20files_complete> a owl:Class ;
+    rdfs:label "R_{Call incomplete files_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Call%20incomplete%20files_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Cancelled_complete> a owl:Class ;
+    rdfs:label "R_{Cancelled_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Cancelled_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Complete%20application_complete> a owl:Class ;
+    rdfs:label "R_{Complete application_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Complete%20application_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Complete_complete> a owl:Class ;
+    rdfs:label "R_{Complete_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Complete_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Concept_complete> a owl:Class ;
+    rdfs:label "R_{Concept_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Concept_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Create%20Offer_complete> a owl:Class ;
+    rdfs:label "R_{Create Offer_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Offer_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Created_complete> a owl:Class ;
+    rdfs:label "R_{Created_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Created_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Denied_complete> a owl:Class ;
+    rdfs:label "R_{Denied_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Denied_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Handle%20leads_complete> a owl:Class ;
+    rdfs:label "R_{Handle leads_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Handle%20leads_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Incomplete_complete> a owl:Class ;
+    rdfs:label "R_{Incomplete_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Incomplete_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Pending_complete> a owl:Class ;
+    rdfs:label "R_{Pending_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Pending_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Refused_complete> a owl:Class ;
+    rdfs:label "R_{Refused_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Refused_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Returned_complete> a owl:Class ;
+    rdfs:label "R_{Returned_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Returned_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Sent%20%28mail%20and%20online%29_complete> a owl:Class ;
+    rdfs:label "R_{Sent (mail and online)_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Sent%20%28mail%20and%20online%29_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Sent%20%28online%20only%29_complete> a owl:Class ;
+    rdfs:label "R_{Sent (online only)_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Sent%20%28online%20only%29_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Submitted_complete> a owl:Class ;
+    rdfs:label "R_{Submitted_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Submitted_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Validate%20application_complete> a owl:Class ;
+    rdfs:label "R_{Validate application_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Validate%20application_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/application/Validating_complete> a owl:Class ;
+    rdfs:label "R_{Validating_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Validating_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/offer/Returned_complete> a owl:Class ;
+    rdfs:label "R_{Returned_complete}(offer)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Returned_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_offer ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/offer/Sent%20%28mail%20and%20online%29_complete> a owl:Class ;
+    rdfs:label "R_{Sent (mail and online)_complete}(offer)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Sent%20%28mail%20and%20online%29_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_offer ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/offer/Sent%20%28online%20only%29_complete> a owl:Class ;
+    rdfs:label "R_{Sent (online only)_complete}(offer)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Sent%20%28online%20only%29_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_offer ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/Reuse/resource/Accepted_complete> a owl:Class ;
+    rdfs:label "Reuse_{Accepted_complete}(resource)" ;
+    owl:equivalentClass _:N4eb5de16c81e41fba36260ddbaa6c82c,
+        _:N5100f10f997e49efb9bdf01e6902040c .
+
+<http://www.example.com/oro/Reuse/resource/Assess%20potential%20fraud_complete> a owl:Class ;
+    rdfs:label "Reuse_{Assess potential fraud_complete}(resource)" ;
+    owl:equivalentClass _:N6f6d064cb20445c39f68333e67e5cb99,
+        _:Nb9d7cd42d1ba49a8b1b7e6d87456c604 .
+
+<http://www.example.com/oro/Reuse/resource/Call%20after%20offers_complete> a owl:Class ;
+    rdfs:label "Reuse_{Call after offers_complete}(resource)" ;
+    owl:equivalentClass _:N440fbf444bdc4f6b9874b290838103f8,
+        _:Nea476fb9ca8c4e94b4bc381f0aaeb199 .
+
+<http://www.example.com/oro/Reuse/resource/Call%20incomplete%20files_complete> a owl:Class ;
+    rdfs:label "Reuse_{Call incomplete files_complete}(resource)" ;
+    owl:equivalentClass _:N1b5edd0f727f4244afffb1df369095b9,
+        _:Nebd708e18f8547b79a090c45e2d42b59 .
+
+<http://www.example.com/oro/Reuse/resource/Cancelled_complete> a owl:Class ;
+    rdfs:label "Reuse_{Cancelled_complete}(resource)" ;
+    owl:equivalentClass _:N473ba4f2021a42ccb1e3dc1af6d96df6,
+        _:Nb3f47fb9d932432a8002478a195dd9a8 .
+
+<http://www.example.com/oro/Reuse/resource/Complete%20application_complete> a owl:Class ;
+    rdfs:label "Reuse_{Complete application_complete}(resource)" ;
+    owl:equivalentClass _:N45c11088141b44b4b7572c6bbdfaed43,
+        _:N53b6d6640e974f098abc9b5eba4f0ac1 .
+
+<http://www.example.com/oro/Reuse/resource/Complete_complete> a owl:Class ;
+    rdfs:label "Reuse_{Complete_complete}(resource)" ;
+    owl:equivalentClass _:N398efd001c1341408430caa005a186cc,
+        _:Nd12f6f13a87f4402b5a4e8137600816a .
+
+<http://www.example.com/oro/Reuse/resource/Concept_complete> a owl:Class ;
+    rdfs:label "Reuse_{Concept_complete}(resource)" ;
+    owl:equivalentClass _:N163de4e287474d1ab4257f04bc95834e,
+        _:Nd98f9ffa24aa4176af3cf7ef4c811a2f .
+
+<http://www.example.com/oro/Reuse/resource/Create%20Application_complete> a owl:Class ;
+    rdfs:label "Reuse_{Create Application_complete}(resource)" ;
+    owl:equivalentClass _:Nbfd1203e81674dbdbd12a9a9ada0eabd,
+        _:Nc6ff65ed2e714cba9fd0cdac4d3cb208 .
+
+<http://www.example.com/oro/Reuse/resource/Create%20Offer_complete> a owl:Class ;
+    rdfs:label "Reuse_{Create Offer_complete}(resource)" ;
+    owl:equivalentClass _:N144e5b47f0eb4885a925e6ccf4773b07,
+        _:N3cafb008f4b941aaa503bd377f98e492 .
+
+<http://www.example.com/oro/Reuse/resource/Created_complete> a owl:Class ;
+    rdfs:label "Reuse_{Created_complete}(resource)" ;
+    owl:equivalentClass _:Na3ae35cab7304c0b9a8f1f3118f71e16,
+        _:Nf2856c26bb1a41ebbe46912b9b1c4c28 .
+
+<http://www.example.com/oro/Reuse/resource/Denied_complete> a owl:Class ;
+    rdfs:label "Reuse_{Denied_complete}(resource)" ;
+    owl:equivalentClass _:N0ba0efede68a48bfba6dcb76672a3531,
+        _:N340a2aa9370642f8aaf57b26a7b6d98f .
+
+<http://www.example.com/oro/Reuse/resource/Handle%20leads_complete> a owl:Class ;
+    rdfs:label "Reuse_{Handle leads_complete}(resource)" ;
+    owl:equivalentClass _:N3f3c8f956e0145b08daa243d435e471a,
+        _:N5c94b1f9d0e344c38516f8910f706ef4 .
+
+<http://www.example.com/oro/Reuse/resource/Incomplete_complete> a owl:Class ;
+    rdfs:label "Reuse_{Incomplete_complete}(resource)" ;
+    owl:equivalentClass _:N1b22bda3103442cfa9b9c828267daa49,
+        _:Nc76a336f209b47848846fe8ad4fc4e4e .
+
+<http://www.example.com/oro/Reuse/resource/Pending_complete> a owl:Class ;
+    rdfs:label "Reuse_{Pending_complete}(resource)" ;
+    owl:equivalentClass _:N04b83704f915472f808582bdef5c9b19,
+        _:Nc066216b84eb42ee91d88f80dfcceadd .
+
+<http://www.example.com/oro/Reuse/resource/Refused_complete> a owl:Class ;
+    rdfs:label "Reuse_{Refused_complete}(resource)" ;
+    owl:equivalentClass _:N7d6812c0a3a949148b893158665fd66e,
+        _:Nf9edd64f02d1482dab9513cd0fc91d0f .
+
+<http://www.example.com/oro/Reuse/resource/Returned_complete> a owl:Class ;
+    rdfs:label "Reuse_{Returned_complete}(resource)" ;
+    owl:equivalentClass _:N0e9a3f0a8f95467da770c3087c6fc08f,
+        _:N7d58e1fb21c3495ab7eaefabbac08fa7 .
+
+<http://www.example.com/oro/Reuse/resource/Sent%20%28mail%20and%20online%29_complete> a owl:Class ;
+    rdfs:label "Reuse_{Sent (mail and online)_complete}(resource)" ;
+    owl:equivalentClass _:N40ad6ff52c3945fea592d3ca4a4ed52c,
+        _:N8b9b65e2cacd4218abad9540ef2e423b .
+
+<http://www.example.com/oro/Reuse/resource/Sent%20%28online%20only%29_complete> a owl:Class ;
+    rdfs:label "Reuse_{Sent (online only)_complete}(resource)" ;
+    owl:equivalentClass _:N4ea235e71c44459597b47049991827b3,
+        _:N8c9eb579748b4d21ac923802bb3e75f0 .
+
+<http://www.example.com/oro/Reuse/resource/Submitted_complete> a owl:Class ;
+    rdfs:label "Reuse_{Submitted_complete}(resource)" ;
+    owl:equivalentClass _:N19cf63c991f244ca9a82f7331d99ff61,
+        _:N2487aedfec5a48749638d1fd7a9ff6a8 .
+
+<http://www.example.com/oro/Reuse/resource/Validate%20application_complete> a owl:Class ;
+    rdfs:label "Reuse_{Validate application_complete}(resource)" ;
+    owl:equivalentClass _:N234260dc06bb4727b581575c858a86ee,
+        _:Nf09568f48ada4e17bc41e8398b9f647e .
+
+<http://www.example.com/oro/Reuse/resource/Validating_complete> a owl:Class ;
+    rdfs:label "Reuse_{Validating_complete}(resource)" ;
+    owl:equivalentClass _:N3f25c6334e8f40089dc806727df4fae0,
+        _:N9dbeddf270254025a32e78e2b2317b21 .
+
+<http://www.example.com/oro/Ev/Complete_complete> a owl:Class ;
+    rdfs:label "Ev_{Complete_complete}" .
+
+<http://www.example.com/oro/Ev/Concept_complete> a owl:Class ;
+    rdfs:label "Ev_{Concept_complete}" .
+
+<http://www.example.com/oro/Ev/Create%20Application_complete> a owl:Class ;
+    rdfs:label "Ev_{Create Application_complete}" .
+
+<http://www.example.com/oro/Ev/Create%20Offer_complete> a owl:Class ;
+    rdfs:label "Ev_{Create Offer_complete}" .
+
+<http://www.example.com/oro/Ev/Denied_complete> a owl:Class ;
+    rdfs:label "Ev_{Denied_complete}" .
+
+<http://www.example.com/oro/Ev/Incomplete_complete> a owl:Class ;
+    rdfs:label "Ev_{Incomplete_complete}" .
+
+<http://www.example.com/oro/Ev/Pending_complete> a owl:Class ;
+    rdfs:label "Ev_{Pending_complete}" .
+
+<http://www.example.com/oro/Ev/Submitted_complete> a owl:Class ;
+    rdfs:label "Ev_{Submitted_complete}" .
+
+<http://www.example.com/oro/Ev/Validating_complete> a owl:Class ;
+    rdfs:label "Ev_{Validating_complete}" .
+
+<http://www.example.com/oro/R/application/Create%20Application_complete> a owl:Class ;
+    rdfs:label "R_{Create Application_complete}(application)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Application_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_application ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:RStart .
+
+<http://www.example.com/oro/R/offer/Accepted_complete> a owl:Class ;
+    rdfs:label "R_{Accepted_complete}(offer)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Accepted_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_offer ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd .
+
+<http://www.example.com/oro/R/offer/Cancelled_complete> a owl:Class ;
+    rdfs:label "R_{Cancelled_complete}(offer)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Cancelled_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_offer ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd .
+
+<http://www.example.com/oro/R/offer/Created_complete> a owl:Class ;
+    rdfs:label "R_{Created_complete}(offer)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Created_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_offer ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:RStart .
+
+<http://www.example.com/oro/R/offer/Refused_complete> a owl:Class ;
+    rdfs:label "R_{Refused_complete}(offer)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Refused_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_offer ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd .
+
+<http://www.example.com/oro/R/resource/Accepted_complete> a owl:Class ;
+    rdfs:label "R_{Accepted_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Accepted_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Assess%20potential%20fraud_complete> a owl:Class ;
+    rdfs:label "R_{Assess potential fraud_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Assess%20potential%20fraud_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Call%20after%20offers_complete> a owl:Class ;
+    rdfs:label "R_{Call after offers_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Call%20after%20offers_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Call%20incomplete%20files_complete> a owl:Class ;
+    rdfs:label "R_{Call incomplete files_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Call%20incomplete%20files_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Cancelled_complete> a owl:Class ;
+    rdfs:label "R_{Cancelled_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Cancelled_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Complete%20application_complete> a owl:Class ;
+    rdfs:label "R_{Complete application_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Complete%20application_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Complete_complete> a owl:Class ;
+    rdfs:label "R_{Complete_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Complete_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Concept_complete> a owl:Class ;
+    rdfs:label "R_{Concept_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Concept_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Create%20Application_complete> a owl:Class ;
+    rdfs:label "R_{Create Application_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Application_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Create%20Offer_complete> a owl:Class ;
+    rdfs:label "R_{Create Offer_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Offer_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Created_complete> a owl:Class ;
+    rdfs:label "R_{Created_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Created_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Denied_complete> a owl:Class ;
+    rdfs:label "R_{Denied_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Denied_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Handle%20leads_complete> a owl:Class ;
+    rdfs:label "R_{Handle leads_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Handle%20leads_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Incomplete_complete> a owl:Class ;
+    rdfs:label "R_{Incomplete_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Incomplete_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Pending_complete> a owl:Class ;
+    rdfs:label "R_{Pending_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Pending_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Refused_complete> a owl:Class ;
+    rdfs:label "R_{Refused_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Refused_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Returned_complete> a owl:Class ;
+    rdfs:label "R_{Returned_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Returned_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Sent%20%28mail%20and%20online%29_complete> a owl:Class ;
+    rdfs:label "R_{Sent (mail and online)_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Sent%20%28mail%20and%20online%29_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Sent%20%28online%20only%29_complete> a owl:Class ;
+    rdfs:label "R_{Sent (online only)_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Sent%20%28online%20only%29_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Submitted_complete> a owl:Class ;
+    rdfs:label "R_{Submitted_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Submitted_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Validate%20application_complete> a owl:Class ;
+    rdfs:label "R_{Validate application_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Validate%20application_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Validating_complete> a owl:Class ;
+    rdfs:label "R_{Validating_complete}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Validating_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/Ev/Accepted_complete> a owl:Class ;
+    rdfs:label "Ev_{Accepted_complete}" .
+
+<http://www.example.com/oro/Ev/Assess%20potential%20fraud_complete> a owl:Class ;
+    rdfs:label "Ev_{Assess potential fraud_complete}" .
+
+<http://www.example.com/oro/Ev/Call%20after%20offers_complete> a owl:Class ;
+    rdfs:label "Ev_{Call after offers_complete}" .
+
+<http://www.example.com/oro/Ev/Call%20incomplete%20files_complete> a owl:Class ;
+    rdfs:label "Ev_{Call incomplete files_complete}" .
+
+<http://www.example.com/oro/Ev/Cancelled_complete> a owl:Class ;
+    rdfs:label "Ev_{Cancelled_complete}" .
+
+<http://www.example.com/oro/Ev/Complete%20application_complete> a owl:Class ;
+    rdfs:label "Ev_{Complete application_complete}" .
+
+<http://www.example.com/oro/Ev/Created_complete> a owl:Class ;
+    rdfs:label "Ev_{Created_complete}" .
+
+<http://www.example.com/oro/Ev/Handle%20leads_complete> a owl:Class ;
+    rdfs:label "Ev_{Handle leads_complete}" .
+
+<http://www.example.com/oro/Ev/Refused_complete> a owl:Class ;
+    rdfs:label "Ev_{Refused_complete}" .
+
+<http://www.example.com/oro/Ev/Returned_complete> a owl:Class ;
+    rdfs:label "Ev_{Returned_complete}" .
+
+<http://www.example.com/oro/Ev/Sent%20%28mail%20and%20online%29_complete> a owl:Class ;
+    rdfs:label "Ev_{Sent (mail and online)_complete}" .
+
+<http://www.example.com/oro/Ev/Sent%20%28online%20only%29_complete> a owl:Class ;
+    rdfs:label "Ev_{Sent (online only)_complete}" .
+
+<http://www.example.com/oro/Ev/Validate%20application_complete> a owl:Class ;
+    rdfs:label "Ev_{Validate application_complete}" .
+
+<http://www.example.com/oro/R/workflow/Assess%20potential%20fraud_complete> a owl:Class ;
+    rdfs:label "R_{Assess potential fraud_complete}(workflow)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Assess%20potential%20fraud_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_workflow ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd,
+        oro:RStart .
+
+<http://www.example.com/oro/R/workflow/Call%20after%20offers_complete> a owl:Class ;
+    rdfs:label "R_{Call after offers_complete}(workflow)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Call%20after%20offers_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_workflow ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd,
+        oro:RStart .
+
+<http://www.example.com/oro/R/workflow/Call%20incomplete%20files_complete> a owl:Class ;
+    rdfs:label "R_{Call incomplete files_complete}(workflow)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Call%20incomplete%20files_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_workflow ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd,
+        oro:RStart .
+
+<http://www.example.com/oro/R/workflow/Complete%20application_complete> a owl:Class ;
+    rdfs:label "R_{Complete application_complete}(workflow)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Complete%20application_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_workflow ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd,
+        oro:RStart .
+
+<http://www.example.com/oro/R/workflow/Handle%20leads_complete> a owl:Class ;
+    rdfs:label "R_{Handle leads_complete}(workflow)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Handle%20leads_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_workflow ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd,
+        oro:RStart .
+
+<http://www.example.com/oro/R/workflow/Validate%20application_complete> a owl:Class ;
+    rdfs:label "R_{Validate application_complete}(workflow)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Validate%20application_complete> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_workflow ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd,
+        oro:RStart .
+
+<http://www.example.com/oro/Role/application> a owl:Class ;
+    rdfs:label "Role(application)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/application> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/application> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/application/Accepted_complete> <http://www.example.com/oro/R/application/Assess%20potential%20fraud_complete> <http://www.example.com/oro/R/application/Call%20after%20offers_complete> <http://www.example.com/oro/R/application/Call%20incomplete%20files_complete> <http://www.example.com/oro/R/application/Cancelled_complete> <http://www.example.com/oro/R/application/Complete%20application_complete> <http://www.example.com/oro/R/application/Complete_complete> <http://www.example.com/oro/R/application/Concept_complete> <http://www.example.com/oro/R/application/Create%20Application_complete> <http://www.example.com/oro/R/application/Create%20Offer_complete> <http://www.example.com/oro/R/application/Created_complete> <http://www.example.com/oro/R/application/Denied_complete> <http://www.example.com/oro/R/application/Handle%20leads_complete> <http://www.example.com/oro/R/application/Incomplete_complete> <http://www.example.com/oro/R/application/Pending_complete> <http://www.example.com/oro/R/application/Refused_complete> <http://www.example.com/oro/R/application/Returned_complete> <http://www.example.com/oro/R/application/Sent%20%28mail%20and%20online%29_complete> <http://www.example.com/oro/R/application/Sent%20%28online%20only%29_complete> <http://www.example.com/oro/R/application/Submitted_complete> <http://www.example.com/oro/R/application/Validate%20application_complete> <http://www.example.com/oro/R/application/Validating_complete> ) ] .
+
+<http://www.example.com/oro/Role/offer> a owl:Class ;
+    rdfs:label "Role(offer)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/offer> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/offer> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/offer/Accepted_complete> <http://www.example.com/oro/R/offer/Cancelled_complete> <http://www.example.com/oro/R/offer/Created_complete> <http://www.example.com/oro/R/offer/Refused_complete> <http://www.example.com/oro/R/offer/Returned_complete> <http://www.example.com/oro/R/offer/Sent%20%28mail%20and%20online%29_complete> <http://www.example.com/oro/R/offer/Sent%20%28online%20only%29_complete> ) ] .
+
+<http://www.example.com/oro/Role/resource> a owl:Class ;
+    rdfs:label "Role(resource)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/resource> ;
+            owl:onProperty oro:nextRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/resource> ;
+            owl:onProperty oro:laterRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/resource/Accepted_complete> <http://www.example.com/oro/R/resource/Assess%20potential%20fraud_complete> <http://www.example.com/oro/R/resource/Call%20after%20offers_complete> <http://www.example.com/oro/R/resource/Call%20incomplete%20files_complete> <http://www.example.com/oro/R/resource/Cancelled_complete> <http://www.example.com/oro/R/resource/Complete%20application_complete> <http://www.example.com/oro/R/resource/Complete_complete> <http://www.example.com/oro/R/resource/Concept_complete> <http://www.example.com/oro/R/resource/Create%20Application_complete> <http://www.example.com/oro/R/resource/Create%20Offer_complete> <http://www.example.com/oro/R/resource/Created_complete> <http://www.example.com/oro/R/resource/Denied_complete> <http://www.example.com/oro/R/resource/Handle%20leads_complete> <http://www.example.com/oro/R/resource/Incomplete_complete> <http://www.example.com/oro/R/resource/Pending_complete> <http://www.example.com/oro/R/resource/Refused_complete> <http://www.example.com/oro/R/resource/Returned_complete> <http://www.example.com/oro/R/resource/Sent%20%28mail%20and%20online%29_complete> <http://www.example.com/oro/R/resource/Sent%20%28online%20only%29_complete> <http://www.example.com/oro/R/resource/Submitted_complete> <http://www.example.com/oro/R/resource/Validate%20application_complete> <http://www.example.com/oro/R/resource/Validating_complete> ) ] .
+
+<http://www.example.com/oro/Role/workflow> a owl:Class ;
+    rdfs:label "Role(workflow)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/workflow> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/workflow> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/workflow/Assess%20potential%20fraud_complete> <http://www.example.com/oro/R/workflow/Call%20after%20offers_complete> <http://www.example.com/oro/R/workflow/Call%20incomplete%20files_complete> <http://www.example.com/oro/R/workflow/Complete%20application_complete> <http://www.example.com/oro/R/workflow/Handle%20leads_complete> <http://www.example.com/oro/R/workflow/Validate%20application_complete> ) ] .
+
+oro:laterRole a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "laterRole" ;
+    rdfs:domain oro:Role ;
+    rdfs:range oro:Role .
+
+oro:Role a owl:Class ;
+    rdfs:label "Role" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/Role/application> <http://www.example.com/oro/Role/offer> <http://www.example.com/oro/Role/resource> <http://www.example.com/oro/Role/workflow> ) ] .
+
+oro:nextRole a owl:ObjectProperty ;
+    rdfs:label "nextRole" ;
+    rdfs:domain oro:Role ;
+    rdfs:range oro:Role ;
+    rdfs:subPropertyOf oro:laterRole .
+
+ex:otype_workflow a owl:Class ;
+    rdfs:label "O_workflow" ;
+    rdfs:subClassOf _:N234edfce98ed4825bd58b4fca2e08e50,
+        _:N3172bca8d4ce489abf8722b45a4fc3d8,
+        _:Nb953892f131d4fdf8b9ec81486b6e46e,
+        _:Nc2698baca61a4683bb05e668c93e4068,
+        _:Ne2c177d3faa940659825b14198d3deb5,
+        _:Ne8e188c52c544985bd39b23cd1429c02 .
+
+ex:otype_offer a owl:Class ;
+    rdfs:label "O_offer" ;
+    rdfs:subClassOf _:N1dbfd6d935ae42a29111791611226dee,
+        _:N4557c6c9c7a9457782137511ff9a818e,
+        _:N4abf61e484cd4d1ead275f8fc4e9a7de,
+        _:N6975209a060d4cf6a355e76cf7f88675,
+        _:N6bb49f68930b43fab4b720bcc28b969a,
+        _:Na03f467b8fd3447996acda8a41314d86,
+        _:Ndc46ca45d15a43cfbed7d6da36960194 .
+
+oro:RStart a owl:Class ;
+    rdfs:label "R_start" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( oro:Role [ a owl:Class ;
+                        owl:complementOf [ a owl:Restriction ;
+                                owl:onProperty [ owl:inverseOf oro:nextRole ] ;
+                                owl:someValuesFrom oro:Role ] ] ) ] .
+
+oro:REnd a owl:Class ;
+    rdfs:label "R_end" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( oro:Role [ a owl:Class ;
+                        owl:complementOf [ a owl:Restriction ;
+                                owl:onProperty oro:nextRole ;
+                                owl:someValuesFrom oro:Role ] ] ) ] .
+
+ex:otype_application a owl:Class ;
+    rdfs:label "O_application" ;
+    rdfs:subClassOf _:N0cbcd60b9899468a855a7c16d8ef061c,
+        _:N10a619a92cc74b6e9b03040229e71c06,
+        _:N11463d41b7844a14948eec3c0cf5a6ca,
+        _:N281aa6e841414fa99070c621e1698ad9,
+        _:N2bd06b56b1ed42f4883468facbfdf4a3,
+        _:N3b1c832b8b75426782e0ed866971ef28,
+        _:N4a1e8371c19048c89006a5ae0a9d3646,
+        _:N995d117131aa4db3baa9cca43fafd41a,
+        _:Na1031d0c1bc44f4d8d50cd6f5ab41c21,
+        _:Nd7bb4d51fd63450abb5f2545afefccd6 .
+
+oro:frames a owl:ObjectProperty ;
+    rdfs:label "frames" ;
+    rdfs:domain oro:Event ;
+    rdfs:range oro:Role .
+
+ex:otype_resource a owl:Class ;
+    rdfs:label "O_resource" ;
+    oro:dl "O_resource ⊑ ∀playsRole.¬(R_init(resource) ⊔ R_close(resource))" ;
+    oro:schema "ext" .
+
+oro:playsRole a owl:ObjectProperty ;
+    rdfs:label "playsRole" ;
+    rdfs:domain oro:Object ;
+    rdfs:range oro:Role .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Denied_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Denied_complete> ;
+    owl:annotatedTarget _:N340a2aa9370642f8aaf57b26a7b6d98f .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(workflow, Call incomplete files_complete)" ;
+    oro:dl "R_{Call incomplete files_complete}(workflow) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/workflow/Call%20incomplete%20files_complete> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "single(workflow, Complete application_complete)" ;
+    oro:dl "O_workflow ⊑ (≤1 playsRole.R_{Complete application_complete}(workflow))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_workflow ;
+    owl:annotatedTarget _:N234edfce98ed4825bd58b4fca2e08e50 .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(offer, Accepted_complete)" ;
+    oro:dl "R_{Accepted_complete}(offer) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/offer/Accepted_complete> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Incomplete_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Incomplete_complete> ;
+    owl:annotatedTarget _:N1b22bda3103442cfa9b9c828267daa49 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Denied_complete> ;
+    owl:annotatedTarget _:N0ba0efede68a48bfba6dcb76672a3531 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(workflow, Call incomplete files_complete)" ;
+    oro:dl "O_workflow ⊑ (≤1 playsRole.R_{Call incomplete files_complete}(workflow))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_workflow ;
+    owl:annotatedTarget _:Ne8e188c52c544985bd39b23cd1429c02 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(application, Assess potential fraud_complete)" ;
+    oro:dl "O_application ⊑ (≤1 playsRole.R_{Assess potential fraud_complete}(application))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_application ;
+    owl:annotatedTarget _:N995d117131aa4db3baa9cca43fafd41a .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Incomplete_complete> ;
+    owl:annotatedTarget _:Nc76a336f209b47848846fe8ad4fc4e4e .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/workflow> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/workflow> .
+
+[] a owl:Axiom ;
+    rdfs:label "single(workflow, Call after offers_complete)" ;
+    oro:dl "O_workflow ⊑ (≤1 playsRole.R_{Call after offers_complete}(workflow))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_workflow ;
+    owl:annotatedTarget _:N3172bca8d4ce489abf8722b45a4fc3d8 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Call%20after%20offers_complete> ;
+    owl:annotatedTarget _:N440fbf444bdc4f6b9874b290838103f8 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Returned_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Returned_complete> ;
+    owl:annotatedTarget _:N7d58e1fb21c3495ab7eaefabbac08fa7 .
+
+[] a owl:Axiom ;
+    rdfs:label "init(workflow, Call after offers_complete)" ;
+    oro:dl "R_{Call after offers_complete}(workflow) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/workflow/Call%20after%20offers_complete> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Complete application_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Complete%20application_complete> ;
+    owl:annotatedTarget _:N53b6d6640e974f098abc9b5eba4f0ac1 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(offer, Sent (online only)_complete)" ;
+    oro:dl "O_offer ⊑ (≤1 playsRole.R_{Sent (online only)_complete}(offer))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_offer ;
+    owl:annotatedTarget _:Ndc46ca45d15a43cfbed7d6da36960194 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Returned_complete> ;
+    owl:annotatedTarget _:N0e9a3f0a8f95467da770c3087c6fc08f .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Create Offer_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Create%20Offer_complete> ;
+    owl:annotatedTarget _:N144e5b47f0eb4885a925e6ccf4773b07 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Concept_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Concept_complete> ;
+    owl:annotatedTarget _:Nd98f9ffa24aa4176af3cf7ef4c811a2f .
+
+[] a owl:Axiom ;
+    rdfs:label "single(application, Concept_complete)" ;
+    oro:dl "O_application ⊑ (≤1 playsRole.R_{Concept_complete}(application))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_application ;
+    owl:annotatedTarget _:N3b1c832b8b75426782e0ed866971ef28 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Concept_complete> ;
+    owl:annotatedTarget _:N163de4e287474d1ab4257f04bc95834e .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(workflow, Assess potential fraud_complete)" ;
+    oro:dl "R_{Assess potential fraud_complete}(workflow) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/workflow/Assess%20potential%20fraud_complete> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Complete_complete> ;
+    owl:annotatedTarget _:Nd12f6f13a87f4402b5a4e8137600816a .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/application> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/application> .
+
+[] a owl:Axiom ;
+    rdfs:label "single(application, Pending_complete)" ;
+    oro:dl "O_application ⊑ (≤1 playsRole.R_{Pending_complete}(application))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_application ;
+    owl:annotatedTarget _:N0cbcd60b9899468a855a7c16d8ef061c .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(workflow, Validate application_complete)" ;
+    oro:dl "R_{Validate application_complete}(workflow) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/workflow/Validate%20application_complete> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "single(offer, Refused_complete)" ;
+    oro:dl "O_offer ⊑ (≤1 playsRole.R_{Refused_complete}(offer))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_offer ;
+    owl:annotatedTarget _:N4557c6c9c7a9457782137511ff9a818e .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(application, Returned_complete)" ;
+    oro:dl "O_application ⊓ (≥2 playsRole.R_{Returned_complete}(application)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/application/Returned_complete> ;
+    owl:annotatedTarget _:N86ecb4d1442b46e6b4099634f23be56b .
+
+[] a owl:Axiom ;
+    rdfs:label "single(offer, Created_complete)" ;
+    oro:dl "O_offer ⊑ (≤1 playsRole.R_{Created_complete}(offer))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_offer ;
+    owl:annotatedTarget _:Na03f467b8fd3447996acda8a41314d86 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Sent%20%28mail%20and%20online%29_complete> ;
+    owl:annotatedTarget _:N40ad6ff52c3945fea592d3ca4a4ed52c .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Create%20Offer_complete> ;
+    owl:annotatedTarget _:N3cafb008f4b941aaa503bd377f98e492 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Call incomplete files_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Call%20incomplete%20files_complete> ;
+    owl:annotatedTarget _:N1b5edd0f727f4244afffb1df369095b9 .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(workflow, Call after offers_complete)" ;
+    oro:dl "R_{Call after offers_complete}(workflow) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/workflow/Call%20after%20offers_complete> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(application, Cancelled_complete)" ;
+    oro:dl "O_application ⊓ (≥2 playsRole.R_{Cancelled_complete}(application)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/application/Cancelled_complete> ;
+    owl:annotatedTarget _:N80f924535a634e6b86bcd338ac188f99 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Pending_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Pending_complete> ;
+    owl:annotatedTarget _:N04b83704f915472f808582bdef5c9b19 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Complete%20application_complete> ;
+    owl:annotatedTarget _:N45c11088141b44b4b7572c6bbdfaed43 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(offer, Sent (mail and online)_complete)" ;
+    oro:dl "O_offer ⊑ (≤1 playsRole.R_{Sent (mail and online)_complete}(offer))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_offer ;
+    owl:annotatedTarget _:N6bb49f68930b43fab4b720bcc28b969a .
+
+[] a owl:Axiom ;
+    rdfs:label "single(workflow, Assess potential fraud_complete)" ;
+    oro:dl "O_workflow ⊑ (≤1 playsRole.R_{Assess potential fraud_complete}(workflow))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_workflow ;
+    owl:annotatedTarget _:Ne2c177d3faa940659825b14198d3deb5 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(application, Sent (online only)_complete)" ;
+    oro:dl "O_application ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(application)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/application/Sent%20%28online%20only%29_complete> ;
+    owl:annotatedTarget _:N6e47e8e25bc74e029b25cdef98798ea8 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Cancelled_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Cancelled_complete> ;
+    owl:annotatedTarget _:N473ba4f2021a42ccb1e3dc1af6d96df6 .
+
+[] a owl:Axiom ;
+    rdfs:label "init(workflow, Complete application_complete)" ;
+    oro:dl "R_{Complete application_complete}(workflow) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/workflow/Complete%20application_complete> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "init(workflow, Validate application_complete)" ;
+    oro:dl "R_{Validate application_complete}(workflow) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/workflow/Validate%20application_complete> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Refused_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Refused_complete> ;
+    owl:annotatedTarget _:Nf9edd64f02d1482dab9513cd0fc91d0f .
+
+[] a owl:Axiom ;
+    rdfs:label "init(offer, Created_complete)" ;
+    oro:dl "R_{Created_complete}(offer) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/offer/Created_complete> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "single(offer, Returned_complete)" ;
+    oro:dl "O_offer ⊑ (≤1 playsRole.R_{Returned_complete}(offer))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_offer ;
+    owl:annotatedTarget _:N1dbfd6d935ae42a29111791611226dee .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(application, Validating_complete)" ;
+    oro:dl "O_application ⊓ (≥2 playsRole.R_{Validating_complete}(application)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/application/Validating_complete> ;
+    owl:annotatedTarget _:N8820cb1ff0594353a03094ada06bbf4d .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Accepted_complete> ;
+    owl:annotatedTarget _:N5100f10f997e49efb9bdf01e6902040c .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Submitted_complete> ;
+    owl:annotatedTarget _:N19cf63c991f244ca9a82f7331d99ff61 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/application> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/application> .
+
+[] a owl:Axiom ;
+    rdfs:label "single(application, Complete application_complete)" ;
+    oro:dl "O_application ⊑ (≤1 playsRole.R_{Complete application_complete}(application))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_application ;
+    owl:annotatedTarget _:N11463d41b7844a14948eec3c0cf5a6ca .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(application, Create Offer_complete)" ;
+    oro:dl "O_application ⊓ (≥2 playsRole.R_{Create Offer_complete}(application)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/application/Create%20Offer_complete> ;
+    owl:annotatedTarget _:N7e16d444fa52454c8f43ee5ecbc90fbb .
+
+[] a owl:Axiom ;
+    rdfs:label "single(offer, Accepted_complete)" ;
+    oro:dl "O_offer ⊑ (≤1 playsRole.R_{Accepted_complete}(offer))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_offer ;
+    owl:annotatedTarget _:N4abf61e484cd4d1ead275f8fc4e9a7de .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(offer, Refused_complete)" ;
+    oro:dl "R_{Refused_complete}(offer) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/offer/Refused_complete> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(application, Refused_complete)" ;
+    oro:dl "O_application ⊓ (≥2 playsRole.R_{Refused_complete}(application)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/application/Refused_complete> ;
+    owl:annotatedTarget _:N9b041899a26949d5b55a32a3dfdc323e .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Created_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Created_complete> ;
+    owl:annotatedTarget _:Na3ae35cab7304c0b9a8f1f3118f71e16 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Complete_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Complete_complete> ;
+    owl:annotatedTarget _:N398efd001c1341408430caa005a186cc .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/resource> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/resource> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(application, Call incomplete files_complete)" ;
+    oro:dl "O_application ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(application)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/application/Call%20incomplete%20files_complete> ;
+    owl:annotatedTarget _:N86bc301ab52743a8b6a95f1af241bb4e .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/offer> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/offer> .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Created_complete> ;
+    owl:annotatedTarget _:Nf2856c26bb1a41ebbe46912b9b1c4c28 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Handle leads_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Handle%20leads_complete> ;
+    owl:annotatedTarget _:N5c94b1f9d0e344c38516f8910f706ef4 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(offer, Cancelled_complete)" ;
+    oro:dl "O_offer ⊑ (≤1 playsRole.R_{Cancelled_complete}(offer))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_offer ;
+    owl:annotatedTarget _:N6975209a060d4cf6a355e76cf7f88675 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(application, Handle leads_complete)" ;
+    oro:dl "O_application ⊑ (≤1 playsRole.R_{Handle leads_complete}(application))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_application ;
+    owl:annotatedTarget _:Nd7bb4d51fd63450abb5f2545afefccd6 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/workflow> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/workflow> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Call after offers_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Call%20after%20offers_complete> ;
+    owl:annotatedTarget _:Nea476fb9ca8c4e94b4bc381f0aaeb199 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Handle%20leads_complete> ;
+    owl:annotatedTarget _:N3f3c8f956e0145b08daa243d435e471a .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/offer> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/offer> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Sent (mail and online)_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Sent%20%28mail%20and%20online%29_complete> ;
+    owl:annotatedTarget _:N8b9b65e2cacd4218abad9540ef2e423b .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Assess potential fraud_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Assess%20potential%20fraud_complete> ;
+    owl:annotatedTarget _:Nb9d7cd42d1ba49a8b1b7e6d87456c604 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(workflow, Validate application_complete)" ;
+    oro:dl "O_workflow ⊑ (≤1 playsRole.R_{Validate application_complete}(workflow))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_workflow ;
+    owl:annotatedTarget _:Nb953892f131d4fdf8b9ec81486b6e46e .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(offer, Cancelled_complete)" ;
+    oro:dl "R_{Cancelled_complete}(offer) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/offer/Cancelled_complete> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/resource> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/resource> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Accepted_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Accepted_complete> ;
+    owl:annotatedTarget _:N4eb5de16c81e41fba36260ddbaa6c82c .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Cancelled_complete> ;
+    owl:annotatedTarget _:Nb3f47fb9d932432a8002478a195dd9a8 .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(workflow, Complete application_complete)" ;
+    oro:dl "R_{Complete application_complete}(workflow) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/workflow/Complete%20application_complete> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(application, Created_complete)" ;
+    oro:dl "O_application ⊓ (≥2 playsRole.R_{Created_complete}(application)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/application/Created_complete> ;
+    owl:annotatedTarget _:N4ad1eb70064c401a8fd0c8f13ad47850 .
+
+[] a owl:Axiom ;
+    rdfs:label "init(application, Create Application_complete)" ;
+    oro:dl "R_{Create Application_complete}(application) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/application/Create%20Application_complete> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "single(application, Create Application_complete)" ;
+    oro:dl "O_application ⊑ (≤1 playsRole.R_{Create Application_complete}(application))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_application ;
+    owl:annotatedTarget _:N2bd06b56b1ed42f4883468facbfdf4a3 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(application, Sent (mail and online)_complete)" ;
+    oro:dl "O_application ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(application)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/application/Sent%20%28mail%20and%20online%29_complete> ;
+    owl:annotatedTarget _:N78d0e9d3297c445d8cf08edab247afc0 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Pending_complete> ;
+    owl:annotatedTarget _:Nc066216b84eb42ee91d88f80dfcceadd .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Assess%20potential%20fraud_complete> ;
+    owl:annotatedTarget _:N6f6d064cb20445c39f68333e67e5cb99 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(application, Denied_complete)" ;
+    oro:dl "O_application ⊑ (≤1 playsRole.R_{Denied_complete}(application))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_application ;
+    owl:annotatedTarget _:N10a619a92cc74b6e9b03040229e71c06 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Call%20incomplete%20files_complete> ;
+    owl:annotatedTarget _:Nebd708e18f8547b79a090c45e2d42b59 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Refused_complete> ;
+    owl:annotatedTarget _:N7d6812c0a3a949148b893158665fd66e .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Validate%20application_complete> ;
+    owl:annotatedTarget _:Nf09568f48ada4e17bc41e8398b9f647e .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(workflow, Handle leads_complete)" ;
+    oro:dl "R_{Handle leads_complete}(workflow) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/workflow/Handle%20leads_complete> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(application, Validate application_complete)" ;
+    oro:dl "O_application ⊓ (≥2 playsRole.R_{Validate application_complete}(application)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/application/Validate%20application_complete> ;
+    owl:annotatedTarget _:Na42a152f9d814de4a05937560147311f .
+
+[] a owl:Axiom ;
+    rdfs:label "init(workflow, Assess potential fraud_complete)" ;
+    oro:dl "R_{Assess potential fraud_complete}(workflow) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/workflow/Assess%20potential%20fraud_complete> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Sent (online only)_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Sent%20%28online%20only%29_complete> ;
+    owl:annotatedTarget _:N8c9eb579748b4d21ac923802bb3e75f0 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(application, Incomplete_complete)" ;
+    oro:dl "O_application ⊓ (≥2 playsRole.R_{Incomplete_complete}(application)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/application/Incomplete_complete> ;
+    owl:annotatedTarget _:N57a53148a89b476cb8d0282c82ae19d9 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Submitted_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Submitted_complete> ;
+    owl:annotatedTarget _:N2487aedfec5a48749638d1fd7a9ff6a8 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Validating_complete> ;
+    owl:annotatedTarget _:N9dbeddf270254025a32e78e2b2317b21 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Validate application_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Validate%20application_complete> ;
+    owl:annotatedTarget _:N234260dc06bb4727b581575c858a86ee .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Create Application_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Create%20Application_complete> ;
+    owl:annotatedTarget _:Nbfd1203e81674dbdbd12a9a9ada0eabd .
+
+[] a owl:Axiom ;
+    rdfs:label "single(application, Call after offers_complete)" ;
+    oro:dl "O_application ⊑ (≤1 playsRole.R_{Call after offers_complete}(application))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_application ;
+    owl:annotatedTarget _:Na1031d0c1bc44f4d8d50cd6f5ab41c21 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Sent%20%28online%20only%29_complete> ;
+    owl:annotatedTarget _:N4ea235e71c44459597b47049991827b3 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Validating_complete)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Validating_complete> ;
+    owl:annotatedTarget _:N3f25c6334e8f40089dc806727df4fae0 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(workflow, Handle leads_complete)" ;
+    oro:dl "O_workflow ⊑ (≤1 playsRole.R_{Handle leads_complete}(workflow))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_workflow ;
+    owl:annotatedTarget _:Nc2698baca61a4683bb05e668c93e4068 .
+
+[] a owl:Axiom ;
+    rdfs:label "init(workflow, Call incomplete files_complete)" ;
+    oro:dl "R_{Call incomplete files_complete}(workflow) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/workflow/Call%20incomplete%20files_complete> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "single(application, Complete_complete)" ;
+    oro:dl "O_application ⊑ (≤1 playsRole.R_{Complete_complete}(application))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_application ;
+    owl:annotatedTarget _:N281aa6e841414fa99070c621e1698ad9 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Accepted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Assess potential fraud_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call after offers_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Call incomplete files_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Cancelled_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Complete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Concept_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Offer_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Created_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Denied_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Handle leads_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Incomplete_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Pending_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Refused_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Returned_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (mail and online)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Sent (online only)_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Submitted_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validate application_complete}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Validating_complete}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Create%20Application_complete> ;
+    owl:annotatedTarget _:Nc6ff65ed2e714cba9fd0cdac4d3cb208 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(application, Accepted_complete)" ;
+    oro:dl "O_application ⊓ (≥2 playsRole.R_{Accepted_complete}(application)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/application/Accepted_complete> ;
+    owl:annotatedTarget _:N079d561933e641bbb1d0d6652bc5aa5c .
+
+[] a owl:Axiom ;
+    rdfs:label "init(workflow, Handle leads_complete)" ;
+    oro:dl "R_{Handle leads_complete}(workflow) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/workflow/Handle%20leads_complete> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "single(application, Submitted_complete)" ;
+    oro:dl "O_application ⊑ (≤1 playsRole.R_{Submitted_complete}(application))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_application ;
+    owl:annotatedTarget _:N4a1e8371c19048c89006a5ae0a9d3646 .
+
+_:N00405ee723ac4d29b8ffb99ba5476ab4 rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Create%20Application_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N009af0d1784d41e78e42387850491e82 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/application/Refused_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N01b15d7872254378ab18d3b90b7de103 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Complete_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N0475d11bce6b48eeb8583435f12fb2ee rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Denied_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N0b1e0662133340c9bb4a7990fba04477 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Pending_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N0bd85243e0364a9faaefaeb2372fb721 rdf:first ex:otype_application ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/application/Created_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N0ca0df2e15484629a214f5e075216332 rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Assess%20potential%20fraud_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N0cc75889ae3c4691928eb8511412912f rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Complete%20application_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N0cf003c289844b5eb35cedbb78bb3269 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Handle%20leads_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N0d0540be2efb4affb9e97316bfb4321d a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Call%20incomplete%20files_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N0f112a118d5d4ec195423ca8bb141d1c rdf:first ex:otype_application ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/application/Create%20Offer_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N10d71a27716a414fad8270fdd651e987 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Create%20Offer_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N10e56d45978a4133be233d7b2ed6a665 rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Sent%20%28mail%20and%20online%29_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N10f1fc164341412aa24ab2a197fc4a7e rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Validate%20application_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N11f5536c8a9842b19264ef167bfebb13 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/application/Returned_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N186befe6cbb84359b8fabe5020bbdb9a rdf:first ex:otype_application ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/application/Cancelled_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N195683b89d3b4cc58b3bdca0c96563c0 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Call%20after%20offers_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N1a73ae77eb5f406ead1475725620506b rdf:first ex:otype_resource ;
+    rdf:rest _:N01b15d7872254378ab18d3b90b7de103 .
+
+_:N1be9de9d14c14dbe9cb925887bcd43ed a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Assess%20potential%20fraud_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N1ca1cfa2b4e142688d6a9ba24fb41768 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Complete_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N1ca7716f18f94e82938ea2fea4828419 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Submitted_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N20dc14fc7c6b41978d313ae5e981d3d7 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Pending_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N21f7da5a07644db08221389058318dfc rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Accepted_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N22247a1cb4354c4d97812f21736b54bf rdf:first ex:otype_application ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/application/Incomplete_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N24de90980a1b426483e11ee563f2fe43 rdf:first _:N1be9de9d14c14dbe9cb925887bcd43ed ;
+    rdf:rest () .
+
+_:N29c611544c1e4c85be4e40e652ac46aa a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Handle%20leads_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N29ec9e8517ea4c6a971ada1aa69f7417 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Created_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N2d7abcd918194bb7b92de4c0bd61c670 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Create%20Offer_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N34b9f32827e046eda9559d4192d035d9 rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Call%20incomplete%20files_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N34c932f9db7049d5a65a0c6d062adc14 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Denied_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N36981c3aa7fa4db1a34b79d0100b1c74 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Concept_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N374bdfa0a7054a31bb5b5f685b670d21 rdf:first _:N36981c3aa7fa4db1a34b79d0100b1c74 ;
+    rdf:rest () .
+
+_:N37a4414c7ab443009a2bf2b9e0336d70 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Cancelled_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N399b512b4f004d0c8cfaf49aa43021b5 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/application/Sent%20%28online%20only%29_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N3beed93a14944e068fdaff595d029e70 rdf:first ex:otype_application ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/application/Validating_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N3dd851f54a3b492ea1ed26d2446ea587 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Concept_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N3f10cc7bffcf40039b9e13dad701b9e3 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/application/Accepted_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N3f52540cd2cb49beb1e917546d2341fc rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Validate%20application_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N45949504f1004926986d793214bc3d49 rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Validating_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N467b7c651c574def95081b263cb966bd rdf:first ex:otype_resource ;
+    rdf:rest ( _:N20dc14fc7c6b41978d313ae5e981d3d7 ) .
+
+_:N46cb9863fc6743c4b17a8731a063d4bb rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Create%20Application_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N49b5f26645b1468a96de67c66ee50698 rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Returned_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N4ab8490cb6db4344bf87ae3b4b987356 rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Call%20after%20offers_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N4bc9fd62aeb94de2ad0a78abb7dc23a4 rdf:first ex:otype_application ;
+    rdf:rest ( _:N009af0d1784d41e78e42387850491e82 ) .
+
+_:N4fdf6b0393ad40569e85d53c1af793d7 rdf:first ex:otype_resource ;
+    rdf:rest _:N1ca7716f18f94e82938ea2fea4828419 .
+
+_:N50cbed041ec3461f8bcd8b128723019e rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Submitted_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N50d40c2d2aad493481b47840cf620281 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Sent%20%28online%20only%29_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N51ccfd8793534b7d9109f351b568af06 rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Validating_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N52611d700f4a4164a05522f03601f354 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Sent%20%28mail%20and%20online%29_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N5682ae904bb74c048864d054d37c3594 rdf:first ex:otype_resource ;
+    rdf:rest ( _:N1ca1cfa2b4e142688d6a9ba24fb41768 ) .
+
+_:N56b5fdb9ecbc456bbbfa323ab93dc9dd rdf:first ex:otype_resource ;
+    rdf:rest _:N195683b89d3b4cc58b3bdca0c96563c0 .
+
+_:N58157b0e1a3d4af0bec23f057dcd853d rdf:first _:N34c932f9db7049d5a65a0c6d062adc14 ;
+    rdf:rest () .
+
+_:N587e8484e81a40a381e36b98dfbd6f9e rdf:first ex:otype_resource ;
+    rdf:rest _:N3dd851f54a3b492ea1ed26d2446ea587 .
+
+_:N5cf7a8e9b0a74fcf8521d7f084863711 rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Cancelled_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N5f664b6e6f8b40de8b825acffe60eaa0 rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Created_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N615c2c4b3efe4708a15ab55b35e1ee9a rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Refused_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N628e55cb294f439d9c8a370bea90d007 rdf:first ex:otype_resource ;
+    rdf:rest _:N2d7abcd918194bb7b92de4c0bd61c670 .
+
+_:N6829be5008704d39a1cc55033eed985c rdf:first ex:otype_resource ;
+    rdf:rest _:N24de90980a1b426483e11ee563f2fe43 .
+
+_:N69cc2954b2354a4b81d0ea6daa6a84ba rdf:first ex:otype_resource ;
+    rdf:rest _:N10f1fc164341412aa24ab2a197fc4a7e .
+
+_:N6d391f49a465486f8037580461c33040 rdf:first ex:otype_application ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/application/Sent%20%28mail%20and%20online%29_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N73fc6c5962044d0e83bab692d39d5634 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/application/Call%20incomplete%20files_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N744d7722151148f4bcc41f3a633b63b0 rdf:first ex:otype_resource ;
+    rdf:rest _:N58157b0e1a3d4af0bec23f057dcd853d .
+
+_:N762201ec4e674c49b838215a9c2cb7ec rdf:first ex:otype_application ;
+    rdf:rest ( _:N11f5536c8a9842b19264ef167bfebb13 ) .
+
+_:N7827016b214b4bbf806a35495103ab73 rdf:first ex:otype_resource ;
+    rdf:rest _:N46cb9863fc6743c4b17a8731a063d4bb .
+
+_:N7b083aacba2d487c8f21d33beeb13a1d a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Sent%20%28online%20only%29_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N7cfb780292ca455c874cd1ace5309657 rdf:first ex:otype_resource ;
+    rdf:rest ( _:N7b083aacba2d487c8f21d33beeb13a1d ) .
+
+_:N7dc4c3c0feea49e7a0da3b1b0c0b4e4c rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Complete%20application_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N7e6cce04d66b476aa6b3a3070029c038 rdf:first ex:otype_resource ;
+    rdf:rest _:N50d40c2d2aad493481b47840cf620281 .
+
+_:N8a417fbef0454203b0c60433c4648a5a rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/application/Validate%20application_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N8ba4660761264541bca909aaa5e93c60 rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Refused_complete> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N8c220c58c8164b1f9fbfe259f69f747d rdf:first ex:otype_resource ;
+    rdf:rest ( _:N0d0540be2efb4affb9e97316bfb4321d ) .
+
+_:N8ee218941b8f452b8632289bea4f3686 rdf:first ex:otype_resource ;
+    rdf:rest _:N29ec9e8517ea4c6a971ada1aa69f7417 .
+
+_:N98da0dd398924ed28f7269615efaa1e3 rdf:first _:N73fc6c5962044d0e83bab692d39d5634 ;
+    rdf:rest () .
+
+_:N98f8a6beb5d94e71b13ea246b8711e41 rdf:first _:N399b512b4f004d0c8cfaf49aa43021b5 ;
+    rdf:rest () .
+
+_:N99154209eb664a9f9d50c563f4df8495 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Incomplete_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N9a7c85a396a54f39bdafbd67302ec2dc rdf:first ex:otype_application ;
+    rdf:rest _:N98f8a6beb5d94e71b13ea246b8711e41 .
+
+_:N9ba59ed0e64f4c6f92e4dcd973638431 rdf:first ex:otype_resource ;
+    rdf:rest ( _:N10d71a27716a414fad8270fdd651e987 ) .
+
+_:Na58c6463c0cc4a2c977918b7fb481451 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Incomplete_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:Nafdd602b509944529675e51373b76db0 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Returned_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:Nb07d53e517f34de992c249f1c141faca rdf:first ex:otype_application ;
+    rdf:rest _:N3f10cc7bffcf40039b9e13dad701b9e3 .
+
+_:Nb37aae1c39f6406fb17465df76523298 rdf:first ex:otype_resource ;
+    rdf:rest ( _:N0cf003c289844b5eb35cedbb78bb3269 ) .
+
+_:Nb44849e325a6442bbc362d7f5203a40c rdf:first ex:otype_resource ;
+    rdf:rest ( _:Na58c6463c0cc4a2c977918b7fb481451 ) .
+
+_:Nb79eaac7ae8e4b538b484d9598e5b060 rdf:first ex:otype_resource ;
+    rdf:rest ( _:N29c611544c1e4c85be4e40e652ac46aa ) .
+
+_:Nbd3063f5257c437dbf2a1446fb28e08c rdf:first ex:otype_resource ;
+    rdf:rest _:N50cbed041ec3461f8bcd8b128723019e .
+
+_:Nbf500be785b24d19b93a049e7157c817 rdf:first ex:otype_resource ;
+    rdf:rest ( _:N52611d700f4a4164a05522f03601f354 ) .
+
+_:Nc6193dadcba0426b896f90b5109ffc14 rdf:first ex:otype_resource ;
+    rdf:rest _:N37a4414c7ab443009a2bf2b9e0336d70 .
+
+_:Nc8651eec7c6c40d4bb1a056ab46db977 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Accepted_complete> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:Ncc9c8e40c78d442a80d20eee81869248 rdf:first ex:otype_resource ;
+    rdf:rest _:N3f52540cd2cb49beb1e917546d2341fc .
+
+_:Ncf0548e666bf46e798c25265b8a54046 rdf:first ex:otype_resource ;
+    rdf:rest _:N0b1e0662133340c9bb4a7990fba04477 .
+
+_:Nd75b8db677db4e36a8ee9bc2c5333eb3 rdf:first ex:otype_resource ;
+    rdf:rest _:Nc8651eec7c6c40d4bb1a056ab46db977 .
+
+_:Nd8b1f4424c41426f92cc79031cd9e700 rdf:first ex:otype_resource ;
+    rdf:rest _:N99154209eb664a9f9d50c563f4df8495 .
+
+_:Ne2ff06caf4234c84a049383a1062dead rdf:first ex:otype_resource ;
+    rdf:rest _:N374bdfa0a7054a31bb5b5f685b670d21 .
+
+_:Nec36681684cb4af1a8a0047e9e3d56ce rdf:first ex:otype_application ;
+    rdf:rest _:N8a417fbef0454203b0c60433c4648a5a .
+
+_:Nefb2fdd5b8274f08aa437a32df7a5332 rdf:first ex:otype_resource ;
+    rdf:rest ( _:Nafdd602b509944529675e51373b76db0 ) .
+
+_:Nfa9783fecda24fcdae9d0c867fdcc0e2 rdf:first ex:otype_application ;
+    rdf:rest _:N98da0dd398924ed28f7269615efaa1e3 .
+
+_:N04b83704f915472f808582bdef5c9b19 a owl:Class ;
+    owl:intersectionOf _:Ncf0548e666bf46e798c25265b8a54046 .
+
+_:N079d561933e641bbb1d0d6652bc5aa5c a owl:Class ;
+    owl:intersectionOf _:Nb07d53e517f34de992c249f1c141faca .
+
+_:N0ba0efede68a48bfba6dcb76672a3531 a owl:Class ;
+    owl:intersectionOf _:N0475d11bce6b48eeb8583435f12fb2ee .
+
+_:N0cbcd60b9899468a855a7c16d8ef061c a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/application/Pending_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N0e9a3f0a8f95467da770c3087c6fc08f a owl:Class ;
+    owl:intersectionOf _:N49b5f26645b1468a96de67c66ee50698 .
+
+_:N10a619a92cc74b6e9b03040229e71c06 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/application/Denied_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N11463d41b7844a14948eec3c0cf5a6ca a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/application/Complete%20application_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N144e5b47f0eb4885a925e6ccf4773b07 a owl:Class ;
+    owl:intersectionOf _:N9ba59ed0e64f4c6f92e4dcd973638431 .
+
+_:N163de4e287474d1ab4257f04bc95834e a owl:Class ;
+    owl:intersectionOf _:N587e8484e81a40a381e36b98dfbd6f9e .
+
+_:N19cf63c991f244ca9a82f7331d99ff61 a owl:Class ;
+    owl:intersectionOf _:Nbd3063f5257c437dbf2a1446fb28e08c .
+
+_:N1b22bda3103442cfa9b9c828267daa49 a owl:Class ;
+    owl:intersectionOf _:Nd8b1f4424c41426f92cc79031cd9e700 .
+
+_:N1b5edd0f727f4244afffb1df369095b9 a owl:Class ;
+    owl:intersectionOf _:N34b9f32827e046eda9559d4192d035d9 .
+
+_:N1dbfd6d935ae42a29111791611226dee a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/offer/Returned_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N234260dc06bb4727b581575c858a86ee a owl:Class ;
+    owl:intersectionOf _:N69cc2954b2354a4b81d0ea6daa6a84ba .
+
+_:N234edfce98ed4825bd58b4fca2e08e50 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/workflow/Complete%20application_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N2487aedfec5a48749638d1fd7a9ff6a8 a owl:Class ;
+    owl:intersectionOf _:N4fdf6b0393ad40569e85d53c1af793d7 .
+
+_:N281aa6e841414fa99070c621e1698ad9 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/application/Complete_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N2bd06b56b1ed42f4883468facbfdf4a3 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/application/Create%20Application_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N3172bca8d4ce489abf8722b45a4fc3d8 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/workflow/Call%20after%20offers_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N340a2aa9370642f8aaf57b26a7b6d98f a owl:Class ;
+    owl:intersectionOf _:N744d7722151148f4bcc41f3a633b63b0 .
+
+_:N398efd001c1341408430caa005a186cc a owl:Class ;
+    owl:intersectionOf _:N1a73ae77eb5f406ead1475725620506b .
+
+_:N3b1c832b8b75426782e0ed866971ef28 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/application/Concept_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N3cafb008f4b941aaa503bd377f98e492 a owl:Class ;
+    owl:intersectionOf _:N628e55cb294f439d9c8a370bea90d007 .
+
+_:N3f25c6334e8f40089dc806727df4fae0 a owl:Class ;
+    owl:intersectionOf _:N45949504f1004926986d793214bc3d49 .
+
+_:N3f3c8f956e0145b08daa243d435e471a a owl:Class ;
+    owl:intersectionOf _:Nb37aae1c39f6406fb17465df76523298 .
+
+_:N40ad6ff52c3945fea592d3ca4a4ed52c a owl:Class ;
+    owl:intersectionOf _:Nbf500be785b24d19b93a049e7157c817 .
+
+_:N440fbf444bdc4f6b9874b290838103f8 a owl:Class ;
+    owl:intersectionOf _:N56b5fdb9ecbc456bbbfa323ab93dc9dd .
+
+_:N4557c6c9c7a9457782137511ff9a818e a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/offer/Refused_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N45c11088141b44b4b7572c6bbdfaed43 a owl:Class ;
+    owl:intersectionOf _:N0cc75889ae3c4691928eb8511412912f .
+
+_:N473ba4f2021a42ccb1e3dc1af6d96df6 a owl:Class ;
+    owl:intersectionOf _:N5cf7a8e9b0a74fcf8521d7f084863711 .
+
+_:N4a1e8371c19048c89006a5ae0a9d3646 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/application/Submitted_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N4abf61e484cd4d1ead275f8fc4e9a7de a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/offer/Accepted_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N4ad1eb70064c401a8fd0c8f13ad47850 a owl:Class ;
+    owl:intersectionOf _:N0bd85243e0364a9faaefaeb2372fb721 .
+
+_:N4ea235e71c44459597b47049991827b3 a owl:Class ;
+    owl:intersectionOf _:N7cfb780292ca455c874cd1ace5309657 .
+
+_:N4eb5de16c81e41fba36260ddbaa6c82c a owl:Class ;
+    owl:intersectionOf _:Nd75b8db677db4e36a8ee9bc2c5333eb3 .
+
+_:N5100f10f997e49efb9bdf01e6902040c a owl:Class ;
+    owl:intersectionOf _:N21f7da5a07644db08221389058318dfc .
+
+_:N53b6d6640e974f098abc9b5eba4f0ac1 a owl:Class ;
+    owl:intersectionOf _:N7dc4c3c0feea49e7a0da3b1b0c0b4e4c .
+
+_:N57a53148a89b476cb8d0282c82ae19d9 a owl:Class ;
+    owl:intersectionOf _:N22247a1cb4354c4d97812f21736b54bf .
+
+_:N5c94b1f9d0e344c38516f8910f706ef4 a owl:Class ;
+    owl:intersectionOf _:Nb79eaac7ae8e4b538b484d9598e5b060 .
+
+_:N6975209a060d4cf6a355e76cf7f88675 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/offer/Cancelled_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N6bb49f68930b43fab4b720bcc28b969a a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/offer/Sent%20%28mail%20and%20online%29_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N6e47e8e25bc74e029b25cdef98798ea8 a owl:Class ;
+    owl:intersectionOf _:N9a7c85a396a54f39bdafbd67302ec2dc .
+
+_:N6f6d064cb20445c39f68333e67e5cb99 a owl:Class ;
+    owl:intersectionOf _:N0ca0df2e15484629a214f5e075216332 .
+
+_:N78d0e9d3297c445d8cf08edab247afc0 a owl:Class ;
+    owl:intersectionOf _:N6d391f49a465486f8037580461c33040 .
+
+_:N7d58e1fb21c3495ab7eaefabbac08fa7 a owl:Class ;
+    owl:intersectionOf _:Nefb2fdd5b8274f08aa437a32df7a5332 .
+
+_:N7d6812c0a3a949148b893158665fd66e a owl:Class ;
+    owl:intersectionOf _:N615c2c4b3efe4708a15ab55b35e1ee9a .
+
+_:N7e16d444fa52454c8f43ee5ecbc90fbb a owl:Class ;
+    owl:intersectionOf _:N0f112a118d5d4ec195423ca8bb141d1c .
+
+_:N80f924535a634e6b86bcd338ac188f99 a owl:Class ;
+    owl:intersectionOf _:N186befe6cbb84359b8fabe5020bbdb9a .
+
+_:N86bc301ab52743a8b6a95f1af241bb4e a owl:Class ;
+    owl:intersectionOf _:Nfa9783fecda24fcdae9d0c867fdcc0e2 .
+
+_:N86ecb4d1442b46e6b4099634f23be56b a owl:Class ;
+    owl:intersectionOf _:N762201ec4e674c49b838215a9c2cb7ec .
+
+_:N8820cb1ff0594353a03094ada06bbf4d a owl:Class ;
+    owl:intersectionOf _:N3beed93a14944e068fdaff595d029e70 .
+
+_:N8b9b65e2cacd4218abad9540ef2e423b a owl:Class ;
+    owl:intersectionOf _:N10e56d45978a4133be233d7b2ed6a665 .
+
+_:N8c9eb579748b4d21ac923802bb3e75f0 a owl:Class ;
+    owl:intersectionOf _:N7e6cce04d66b476aa6b3a3070029c038 .
+
+_:N995d117131aa4db3baa9cca43fafd41a a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/application/Assess%20potential%20fraud_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:N9b041899a26949d5b55a32a3dfdc323e a owl:Class ;
+    owl:intersectionOf _:N4bc9fd62aeb94de2ad0a78abb7dc23a4 .
+
+_:N9dbeddf270254025a32e78e2b2317b21 a owl:Class ;
+    owl:intersectionOf _:N51ccfd8793534b7d9109f351b568af06 .
+
+_:Na03f467b8fd3447996acda8a41314d86 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/offer/Created_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:Na1031d0c1bc44f4d8d50cd6f5ab41c21 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/application/Call%20after%20offers_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:Na3ae35cab7304c0b9a8f1f3118f71e16 a owl:Class ;
+    owl:intersectionOf _:N5f664b6e6f8b40de8b825acffe60eaa0 .
+
+_:Na42a152f9d814de4a05937560147311f a owl:Class ;
+    owl:intersectionOf _:Nec36681684cb4af1a8a0047e9e3d56ce .
+
+_:Nb3f47fb9d932432a8002478a195dd9a8 a owl:Class ;
+    owl:intersectionOf _:Nc6193dadcba0426b896f90b5109ffc14 .
+
+_:Nb953892f131d4fdf8b9ec81486b6e46e a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/workflow/Validate%20application_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:Nb9d7cd42d1ba49a8b1b7e6d87456c604 a owl:Class ;
+    owl:intersectionOf _:N6829be5008704d39a1cc55033eed985c .
+
+_:Nbfd1203e81674dbdbd12a9a9ada0eabd a owl:Class ;
+    owl:intersectionOf _:N00405ee723ac4d29b8ffb99ba5476ab4 .
+
+_:Nc066216b84eb42ee91d88f80dfcceadd a owl:Class ;
+    owl:intersectionOf _:N467b7c651c574def95081b263cb966bd .
+
+_:Nc2698baca61a4683bb05e668c93e4068 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/workflow/Handle%20leads_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:Nc6ff65ed2e714cba9fd0cdac4d3cb208 a owl:Class ;
+    owl:intersectionOf _:N7827016b214b4bbf806a35495103ab73 .
+
+_:Nc76a336f209b47848846fe8ad4fc4e4e a owl:Class ;
+    owl:intersectionOf _:Nb44849e325a6442bbc362d7f5203a40c .
+
+_:Nd12f6f13a87f4402b5a4e8137600816a a owl:Class ;
+    owl:intersectionOf _:N5682ae904bb74c048864d054d37c3594 .
+
+_:Nd7bb4d51fd63450abb5f2545afefccd6 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/application/Handle%20leads_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:Nd98f9ffa24aa4176af3cf7ef4c811a2f a owl:Class ;
+    owl:intersectionOf _:Ne2ff06caf4234c84a049383a1062dead .
+
+_:Ndc46ca45d15a43cfbed7d6da36960194 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/offer/Sent%20%28online%20only%29_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:Ne2c177d3faa940659825b14198d3deb5 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/workflow/Assess%20potential%20fraud_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:Ne8e188c52c544985bd39b23cd1429c02 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/workflow/Call%20incomplete%20files_complete> ;
+    owl:onProperty oro:playsRole .
+
+_:Nea476fb9ca8c4e94b4bc381f0aaeb199 a owl:Class ;
+    owl:intersectionOf _:N4ab8490cb6db4344bf87ae3b4b987356 .
+
+_:Nebd708e18f8547b79a090c45e2d42b59 a owl:Class ;
+    owl:intersectionOf _:N8c220c58c8164b1f9fbfe259f69f747d .
+
+_:Nf09568f48ada4e17bc41e8398b9f647e a owl:Class ;
+    owl:intersectionOf _:Ncc9c8e40c78d442a80d20eee81869248 .
+
+_:Nf2856c26bb1a41ebbe46912b9b1c4c28 a owl:Class ;
+    owl:intersectionOf _:N8ee218941b8f452b8632289bea4f3686 .
+
+_:Nf9edd64f02d1482dab9513cd0fc91d0f a owl:Class ;
+    owl:intersectionOf _:N8ba4660761264541bca909aaa5e93c60 .
+

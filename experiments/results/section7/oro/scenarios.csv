@@ -1,0 +1,29 @@
+dataset,run,qid,description,seconds,rows,counterexamples
+Container Logistics,0,Q1,"init(Forklift, Weigh)",0.03960682696197182,1986,3
+Container Logistics,0,Q4,"budg(TransportDocument, {Reschedule Container, Depart}, 2)",0.024170254939235747,30,30
+Container Logistics,1,Q1,"init(Forklift, Weigh)",0.04066349903587252,1986,3
+Container Logistics,1,Q4,"budg(TransportDocument, {Reschedule Container, Depart}, 2)",0.024036237969994545,30,30
+Container Logistics,2,Q1,"init(Forklift, Weigh)",0.04206773196347058,1986,3
+Container Logistics,2,Q4,"budg(TransportDocument, {Reschedule Container, Depart}, 2)",0.023739027907140553,30,30
+Container Logistics,3,Q1,"init(Forklift, Weigh)",0.04251909605227411,1986,3
+Container Logistics,3,Q4,"budg(TransportDocument, {Reschedule Container, Depart}, 2)",0.027256404981017113,30,30
+BPI 2017,0,Q2,exactly one closure per offer,0.027486238977871835,4,4
+BPI 2017,0,Q3,"clos(Offer, Sent)",0.08037090196739882,1965,1965
+BPI 2017,0,Q5,"carr_next(Offer, Sent, Returned)",0.044908170006237924,0,0
+BPI 2017,0,Q5e,"carr(Offer, Sent, Returned)",0.03453647100832313,0,0
+BPI 2017,0,Q6,"carr_forward(Offer, Sent, Returned)",0.07603525300510228,902,902
+BPI 2017,1,Q2,exactly one closure per offer,0.02972284099087119,4,4
+BPI 2017,1,Q3,"clos(Offer, Sent)",0.25573020498268306,1965,1965
+BPI 2017,1,Q5,"carr_next(Offer, Sent, Returned)",0.04794122208841145,0,0
+BPI 2017,1,Q5e,"carr(Offer, Sent, Returned)",0.03749288199469447,0,0
+BPI 2017,1,Q6,"carr_forward(Offer, Sent, Returned)",0.07808973791543394,902,902
+BPI 2017,2,Q2,exactly one closure per offer,0.028896083938889205,4,4
+BPI 2017,2,Q3,"clos(Offer, Sent)",0.0769473280524835,1965,1965
+BPI 2017,2,Q5,"carr_next(Offer, Sent, Returned)",0.044876280007883906,0,0
+BPI 2017,2,Q5e,"carr(Offer, Sent, Returned)",0.036450888030231,0,0
+BPI 2017,2,Q6,"carr_forward(Offer, Sent, Returned)",0.07335169590078294,902,902
+BPI 2017,3,Q2,exactly one closure per offer,0.02537472906988114,4,4
+BPI 2017,3,Q3,"clos(Offer, Sent)",0.07906621193978935,1965,1965
+BPI 2017,3,Q5,"carr_next(Offer, Sent, Returned)",0.047709464095532894,0,0
+BPI 2017,3,Q5e,"carr(Offer, Sent, Returned)",0.03460313496179879,0,0
+BPI 2017,3,Q6,"carr_forward(Offer, Sent, Returned)",0.0744157419539988,902,902

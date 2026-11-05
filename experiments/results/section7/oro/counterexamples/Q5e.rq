@@ -1,0 +1,26 @@
+PREFIX ex: <http://www.example.com/>
+PREFIX ocel: <https://stl.mie.utoronto.ca/ontologies/ocel/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?obj ?event ?eventTimestamp ?eventActivity
+WHERE {
+    VALUES ?eventActivity { <https://stl.mie.utoronto.ca/ontologies/ocel/Returned_complete> }
+    ?obj rdf:type <http://www.example.com/otype_offer> .
+    ?event ocel:involves ?obj ;
+           ocel:hasActivity ?eventActivity ;
+           ocel:timestamp ?eventTimestamp .
+    OPTIONAL {
+        {
+            SELECT ?obj (MIN(?sourceTimestamp) AS ?firstSourceTimestamp)
+            WHERE {
+                VALUES ?sourceActivity { <https://stl.mie.utoronto.ca/ontologies/ocel/Sent%20%28mail%20and%20online%29_complete> <https://stl.mie.utoronto.ca/ontologies/ocel/Sent%20%28online%20only%29_complete> }
+                ?obj rdf:type <http://www.example.com/otype_offer> .
+                ?sourceEvent ocel:involves ?obj ;
+                             ocel:hasActivity ?sourceActivity ;
+                             ocel:timestamp ?sourceTimestamp .
+            }
+            GROUP BY ?obj
+        }
+    }
+    FILTER(!BOUND(?firstSourceTimestamp) || ?firstSourceTimestamp >= ?eventTimestamp)
+}
+ORDER BY ?obj ?eventTimestamp ?event

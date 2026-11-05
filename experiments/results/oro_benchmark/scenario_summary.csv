@@ -1,0 +1,5 @@
+qid,dataset,description,counterexamples,counterexamples_min,rows,mean_s,std_s,runs
+Q1,Container Logistics,"init(Forklift, Weigh)",3,3,1986,0.0415520224996726,0.001247154206437494,4
+Q2,BPI 2017,exactly one closure per offer,4,4,4,0.029234071749669965,0.000780588093845548,4
+Q3,BPI 2017,"clos(Offer, Sent)",1965,1965,1965,0.16610161124845035,0.09752241737800478,4
+Q4,BPI 2017,"clos(Offer, Returned)",1172,1172,1172,0.09878398100408958,0.0554676494753689,4

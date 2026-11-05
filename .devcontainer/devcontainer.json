@@ -1,0 +1,20 @@
+{
+    "name": "oro",
+    "dockerComposeFile": ["./docker-compose.yml"],
+    "service": "dev",
+    "workspaceFolder": "/workspace",
+    "postCreateCommand": "pip install --no-cache-dir -r requirements.txt && pip install -e .",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-toolsai.jupyter",
+                "ms-toolsai.jupyter-keymap",
+                "ms-toolsai.jupyter-renderers",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "GitHub.copilot",
+                "anthropic.claude-code"
+            ]
+        }
+    }
+}

@@ -1,0 +1,4 @@
+services:
+  ontop:
+    environment:
+      ONTOP_DB_URL: "jdbc:duckdb:/opt/ontop/input/data/order_mgmt/order-management.duckdb;memory_limit=2GB"

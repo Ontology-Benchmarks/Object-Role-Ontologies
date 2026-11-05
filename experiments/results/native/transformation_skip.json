@@ -1,0 +1,110 @@
+{
+  "Order Management": {
+    "with transformation": {
+      "bottom_up_s": 3.069151875512034,
+      "total_s": 10.468143182013591,
+      "top_down_mean_s": 0.16451706077557815,
+      "py_peak_mb": 1386.89453125,
+      "ontop_peak_mb": 5595.2939453125,
+      "ontop_peak_range_mb": [
+        4969.07421875,
+        6595.46875
+      ],
+      "transformation_s": 2.272331215746817
+    },
+    "without": {
+      "bottom_up_s": 0.8981820910121314,
+      "total_s": 8.292382886764244,
+      "top_down_mean_s": 0.16624986294791175,
+      "py_peak_mb": 1394.947265625,
+      "ontop_peak_mb": 5061.734375,
+      "ontop_peak_range_mb": [
+        4976.2421875,
+        5193.171875
+      ],
+      "transformation_s": 0.0
+    },
+    "same_top_down_and_scenarios": true
+  },
+  "Container Logistics": {
+    "with transformation": {
+      "bottom_up_s": 3.873577757018211,
+      "total_s": 7.028488905023551,
+      "top_down_mean_s": 0.04543169013201035,
+      "py_peak_mb": 781.9814453125,
+      "ontop_peak_mb": 2207.884765625,
+      "ontop_peak_range_mb": [
+        2157.11328125,
+        2286.87109375
+      ],
+      "transformation_s": 3.0695058339988464
+    },
+    "without": {
+      "bottom_up_s": 0.9241317860141862,
+      "total_s": 4.274015387753025,
+      "top_down_mean_s": 0.05018843573847195,
+      "py_peak_mb": 793.302734375,
+      "ontop_peak_mb": 897.0439453125,
+      "ontop_peak_range_mb": [
+        892.171875,
+        901.171875
+      ],
+      "transformation_s": 0.0
+    },
+    "same_top_down_and_scenarios": true
+  },
+  "Procure-to-Pay": {
+    "with transformation": {
+      "bottom_up_s": 5.09311458049342,
+      "total_s": 7.834981041240098,
+      "top_down_mean_s": 0.037322862422216635,
+      "py_peak_mb": 787.00390625,
+      "ontop_peak_mb": 2316.5302734375,
+      "ontop_peak_range_mb": [
+        2253.875,
+        2359.59765625
+      ],
+      "transformation_s": 4.244792740500998
+    },
+    "without": {
+      "bottom_up_s": 0.9532180250243982,
+      "total_s": 3.6497894060230465,
+      "top_down_mean_s": 0.03859577901089829,
+      "py_peak_mb": 780.9169921875,
+      "ontop_peak_mb": 994.474609375,
+      "ontop_peak_range_mb": [
+        970.03515625,
+        1025.25
+      ],
+      "transformation_s": 0.0
+    },
+    "same_top_down_and_scenarios": true
+  },
+  "BPI 2017": {
+    "with transformation": {
+      "bottom_up_s": 2.1348428227502154,
+      "total_s": 4.863027005005279,
+      "top_down_mean_s": 0.040009420903793474,
+      "py_peak_mb": 766.89453125,
+      "ontop_peak_mb": 1660.8740234375,
+      "ontop_peak_range_mb": [
+        1474.61328125,
+        2169.921875
+      ],
+      "transformation_s": 1.3628372810053406
+    },
+    "without": {
+      "bottom_up_s": 0.8447072042763466,
+      "total_s": 3.6016434112752904,
+      "top_down_mean_s": 0.044475692190536716,
+      "py_peak_mb": 780.37109375,
+      "ontop_peak_mb": 1556.6650390625,
+      "ontop_peak_range_mb": [
+        1032.89453125,
+        2214.0625
+      ],
+      "transformation_s": 0.0
+    },
+    "same_top_down_and_scenarios": true
+  }
+}

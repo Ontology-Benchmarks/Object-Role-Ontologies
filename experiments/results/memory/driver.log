@@ -1,0 +1,36 @@
+default              Order Management     ok
+default              Container Logistics  ok
+default              Procure-to-Pay       ok
+default              BPI 2017             ok
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb1g/order_mgmt/. in container ontop_dev
+duckdb1g             Order Management     FAILED (1)
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb1g/logistics/. in container ontop_dev
+duckdb1g             Container Logistics  FAILED (1)
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb1g/p2p/. in container ontop_dev
+duckdb1g             Procure-to-Pay       FAILED (1)
+duckdb1g             BPI 2017             ok
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb512m/order_mgmt/. in container ontop_dev
+duckdb512m           Order Management     FAILED (1)
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb512m/logistics/. in container ontop_dev
+duckdb512m           Container Logistics  FAILED (1)
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb512m/p2p/. in container ontop_dev
+duckdb512m           Procure-to-Pay       FAILED (1)
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb512m/bpi17/. in container ontop_dev
+duckdb512m           BPI 2017             FAILED (1)
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb256m/order_mgmt/. in container ontop_dev
+duckdb256m           Order Management     FAILED (1)
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb256m/logistics/. in container ontop_dev
+duckdb256m           Container Logistics  FAILED (1)
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb256m/p2p/. in container ontop_dev
+duckdb256m           Procure-to-Pay       FAILED (1)
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb256m/bpi17/. in container ontop_dev
+duckdb256m           BPI 2017             FAILED (1)
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb256m_xmx256m/order_mgmt/. in container ontop_dev
+duckdb256m_xmx256m   Order Management     FAILED (1)
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb256m_xmx256m/logistics/. in container ontop_dev
+duckdb256m_xmx256m   Container Logistics  FAILED (1)
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb256m_xmx256m/p2p/. in container ontop_dev
+duckdb256m_xmx256m   Procure-to-Pay       FAILED (1)
+Error response from daemon: Could not find the file /tmp/oro_memory/duckdb256m_xmx256m/bpi17/. in container ontop_dev
+duckdb256m_xmx256m   BPI 2017             FAILED (1)
+ontop_service recreated with the compose defaults

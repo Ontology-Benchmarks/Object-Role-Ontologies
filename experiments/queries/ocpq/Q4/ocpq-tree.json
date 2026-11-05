@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    {
+      "Box": [
+        {
+          "newEventVars": {},
+          "newObjectVars": {
+            "0": [
+              "Transport Document"
+            ]
+          },
+          "filters": [],
+          "sizeFilters": [],
+          "constraints": [
+            {
+              "type": "SizeFilter",
+              "filter": {
+                "type": "NumChilds",
+                "child_name": "A",
+                "min": null,
+                "max": 2
+              }
+            }
+          ]
+        },
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "Box": [
+        {
+          "newEventVars": {
+            "0": [
+              "Reschedule Container",
+              "Depart"
+            ]
+          },
+          "newObjectVars": {},
+          "filters": [
+            {
+              "type": "O2E",
+              "object": 0,
+              "event": 0,
+              "qualifier": null
+            }
+          ],
+          "sizeFilters": [],
+          "constraints": []
+        },
+        []
+      ]
+    }
+  ],
+  "edgeNames": [
+    [
+      [
+        0,
+        1
+      ],
+      "A"
+    ]
+  ]
+}

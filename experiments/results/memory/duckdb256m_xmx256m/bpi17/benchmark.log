@@ -1,0 +1,73 @@
+=== BPI 2017: run 1/4 ===
+--- Starting Inference for bpi17_ocel.json (with Ontop/SPARQL) ---
+Inference completed for 23561 events in 2.66 seconds.
+[ontology-role] creation_role query took 0.2741 seconds
+[ontology-role] closure_role query took 0.1156 seconds
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.14/site-packages/SPARQLWrapper/Wrapper.py", line 926, in _query
+    response = urlopener(request)
+  File "/opt/conda/lib/python3.14/urllib/request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/lib/python3.14/urllib/request.py", line 493, in open
+    response = meth(req, response)
+  File "/opt/conda/lib/python3.14/urllib/request.py", line 602, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "/opt/conda/lib/python3.14/urllib/request.py", line 531, in error
+    return self._call_chain(*args)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/conda/lib/python3.14/urllib/request.py", line 464, in _call_chain
+    result = func(*args)
+  File "/opt/conda/lib/python3.14/urllib/request.py", line 611, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 500: 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.14/concurrent/futures/process.py", line 254, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/workspace/src/ocel_inference/benchmark.py", line 355, in run_single
+    inferred_df = inferrer.categorize_roles_by_ontology(categories=[category])
+  File "/workspace/src/ocel_inference/role_ontology.py", line 60, in categorize_roles_by_ontology
+    self._raise_ontology_query_error(error)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/workspace/src/ocel_inference/role_ontology.py", line 689, in _raise_ontology_query_error
+    raise error
+  File "/workspace/src/ocel_inference/role_ontology.py", line 58, in categorize_roles_by_ontology
+    inferred_df = host.query_sparql(category.query)
+  File "/workspace/src/ocel_inference/inferrer.py", line 163, in query_sparql
+    results = self.sparql_wrapper.query().convert()
+              ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/opt/conda/lib/python3.14/site-packages/SPARQLWrapper/Wrapper.py", line 960, in query
+    return QueryResult(self._query())
+                       ~~~~~~~~~~~^^
+  File "/opt/conda/lib/python3.14/site-packages/SPARQLWrapper/Wrapper.py", line 938, in _query
+    raise EndPointInternalError(e.read())
+SPARQLWrapper.SPARQLExceptions.EndPointInternalError: EndPointInternalError: The endpoint returned the HTTP status code 500. 
+
+Response:
+b"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to pin block of size 256.0 KiB (244.0 MiB/244.1 MiB used)\n\nPossible solutions:\n* Reducing the number of threads (SET threads=X)\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\n* Increasing the memory limit (SET memory_limit='...GB')\n\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads"
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/src/ocel_inference/benchmark.py", line 571, in <module>
+    benchmark = run_benchmark(selected, runs=args.runs, warmup_runs=args.warmup_runs, results_dir=args.results_dir)
+  File "/workspace/src/ocel_inference/benchmark.py", line 530, in run_benchmark
+    result = pool.submit(run_single, dataset, config, run_index).result()
+  File "/opt/conda/lib/python3.14/concurrent/futures/_base.py", line 454, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/opt/conda/lib/python3.14/concurrent/futures/_base.py", line 396, in __get_result
+    raise self._exception
+SPARQLWrapper.SPARQLExceptions.EndPointInternalError: EndPointInternalError: The endpoint returned the HTTP status code 500. 
+
+Response:
+'EndPointInternalError: The endpoint returned the HTTP status code 500. \n\nResponse:\nb"it.unibz.inf.ontop.exception.OntopQueryEvaluationException: java.sql.SQLException: Out of Memory Error: failed to pin block of size 256.0 KiB (244.0 MiB/244.1 MiB used)\\n\\nPossible solutions:\\n* Reducing the number of threads (SET threads=X)\\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\\n* Increasing the memory limit (SET memory_limit=\'...GB\')\\n\\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads"'

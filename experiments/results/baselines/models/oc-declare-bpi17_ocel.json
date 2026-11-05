@@ -1,0 +1,4452 @@
+[
+  {
+    "from": "Create Application_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Concept_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Accepted_complete",
+    "to": "Complete_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Offer_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (mail and online)_complete",
+    "to": "Complete_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validating_complete",
+    "to": "Incomplete_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Incomplete_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Incomplete_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Pending_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete application_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Handle leads_complete",
+    "to": "Validating_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Denied_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Submitted_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Concept_complete",
+    "to": "Created_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Offer_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Created_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "DF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "offer"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validating_complete",
+    "to": "Returned_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Returned_complete",
+    "to": "Complete_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Incomplete_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Pending_complete",
+    "to": "Returned_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Cancelled_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Incomplete_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validate application_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Denied_complete",
+    "to": "Complete_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Refused_complete",
+    "to": "Validating_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Refused_complete",
+    "to": "Validating_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call after offers_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call after offers_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Application_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Submitted_complete",
+    "to": "Complete_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Concept_complete",
+    "to": "Handle leads_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Created_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Created_complete",
+    "to": "Complete_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Returned_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Incomplete_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Pending_complete",
+    "to": "Created_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Cancelled_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Created_complete",
+    "arc_type": "DP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "offer"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validate application_complete",
+    "to": "Incomplete_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Handle leads_complete",
+    "to": "Created_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Denied_complete",
+    "to": "Validating_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Denied_complete",
+    "to": "Validating_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Application_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Submitted_complete",
+    "to": "Handle leads_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Submitted_complete",
+    "to": "Handle leads_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (mail and online)_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (mail and online)_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (mail and online)_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validating_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Pending_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete application_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete application_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validate application_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call incomplete files_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call incomplete files_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Handle leads_complete",
+    "to": "Submitted_complete",
+    "arc_type": "DP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Denied_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Refused_complete",
+    "to": "Created_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "offer"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call after offers_complete",
+    "to": "Validating_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Submitted_complete",
+    "to": "Created_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Accepted_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validating_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete application_complete",
+    "to": "Created_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Complete_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Application_complete",
+    "to": "Complete_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Concept_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Accepted_complete",
+    "to": "Validating_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validating_complete",
+    "to": "Pending_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Incomplete_complete",
+    "to": "Created_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Pending_complete",
+    "to": "Complete_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Cancelled_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Returned_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validate application_complete",
+    "to": "Complete_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call incomplete files_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Handle leads_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Denied_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Refused_complete",
+    "to": "Complete_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Assess potential fraud_complete",
+    "to": "Returned_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call after offers_complete",
+    "to": "Complete application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call after offers_complete",
+    "to": "Complete application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Accepted_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (mail and online)_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validating_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Returned_complete",
+    "to": "Pending_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Pending_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call incomplete files_complete",
+    "to": "Validating_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call incomplete files_complete",
+    "to": "Validating_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Handle leads_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Refused_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Assess potential fraud_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Assess potential fraud_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call after offers_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call after offers_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Application_complete",
+    "to": "Created_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Accepted_complete",
+    "to": "Created_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Offer_complete",
+    "to": "Created_complete",
+    "arc_type": "DF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validating_complete",
+    "to": "Complete_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Incomplete_complete",
+    "to": "Complete_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Pending_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete application_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Cancelled_complete",
+    "to": "Complete_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validate application_complete",
+    "to": "Returned_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call incomplete files_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Denied_complete",
+    "to": "Created_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Refused_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Assess potential fraud_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Assess potential fraud_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Assess potential fraud_complete",
+    "to": "Validating_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call after offers_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Submitted_complete",
+    "to": "Concept_complete",
+    "arc_type": "DF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Offer_complete",
+    "to": "Complete_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (mail and online)_complete",
+    "to": "Created_complete",
+    "arc_type": "DP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "offer"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Returned_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Incomplete_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Pending_complete",
+    "to": "Accepted_complete",
+    "arc_type": "DP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Cancelled_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call incomplete files_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call incomplete files_complete",
+    "to": "Returned_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Handle leads_complete",
+    "to": "Complete_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Handle leads_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Refused_complete",
+    "to": "Returned_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call after offers_complete",
+    "to": "Complete_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Concept_complete",
+    "to": "Accepted_complete",
+    "arc_type": "DF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Offer_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (mail and online)_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Returned_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Returned_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Pending_complete",
+    "to": "Validating_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Cancelled_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validate application_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call incomplete files_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call incomplete files_complete",
+    "to": "Incomplete_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Denied_complete",
+    "to": "Returned_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Assess potential fraud_complete",
+    "to": "Created_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Assess potential fraud_complete",
+    "to": "Complete_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call after offers_complete",
+    "to": "Created_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Submitted_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Concept_complete",
+    "to": "Complete_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Accepted_complete",
+    "to": "Returned_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Created_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Created_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Created_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete_complete",
+    "to": "Created_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validating_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validating_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Returned_complete",
+    "to": "Created_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "offer"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Incomplete_complete",
+    "to": "Validating_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete application_complete",
+    "to": "Complete_complete",
+    "arc_type": "DF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validate application_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validate application_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validate application_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Denied_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Refused_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Application_complete",
+    "to": "Handle leads_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Concept_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Accepted_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Accepted_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Created_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "DP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Returned_complete",
+    "to": "Validating_complete",
+    "arc_type": "DP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Incomplete_complete",
+    "to": "Returned_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete application_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call incomplete files_complete",
+    "to": "Created_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Handle leads_complete",
+    "to": "Concept_complete",
+    "arc_type": "DF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Denied_complete",
+    "to": "Refused_complete",
+    "arc_type": "DF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Refused_complete",
+    "to": "Denied_complete",
+    "arc_type": "DP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Submitted_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Created_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validating_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Incomplete_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Incomplete_complete",
+    "to": "Pending_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete application_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Cancelled_complete",
+    "to": "Created_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validate application_complete",
+    "to": "Validating_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Handle leads_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Denied_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Refused_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "offer"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Application_complete",
+    "to": "Concept_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Accepted_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Offer_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Created_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validating_complete",
+    "to": "Created_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Returned_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "DP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "offer"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Complete application_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "DP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validate application_complete",
+    "to": "Created_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call incomplete files_complete",
+    "to": "Accepted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Assess potential fraud_complete",
+    "to": "Submitted_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Assess potential fraud_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call after offers_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Submitted_complete",
+    "to": "Create Application_complete",
+    "arc_type": "DP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        },
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Offer_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Offer_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Create Offer_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (mail and online)_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (mail and online)_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validating_complete",
+    "to": "Create Offer_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Returned_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Returned_complete",
+    "to": "Validate application_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Pending_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Pending_complete",
+    "to": "Cancelled_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Validating_complete",
+    "arc_type": "AS",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Sent (online only)_complete",
+    "to": "Validating_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Validate application_complete",
+    "to": "Sent (mail and online)_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call incomplete files_complete",
+    "to": "Complete_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Handle leads_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EF",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Handle leads_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Handle leads_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Refused_complete",
+    "to": "Create Application_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call after offers_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "resource"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  },
+  {
+    "from": "Call after offers_complete",
+    "to": "Concept_complete",
+    "arc_type": "EP",
+    "label": {
+      "each": [
+        {
+          "type": "Simple",
+          "object_type": "application"
+        }
+      ],
+      "any": [],
+      "all": []
+    },
+    "counts": [
+      1,
+      null
+    ]
+  }
+]

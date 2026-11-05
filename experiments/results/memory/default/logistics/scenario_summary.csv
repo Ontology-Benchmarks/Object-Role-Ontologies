@@ -1,0 +1,2 @@
+qid,dataset,description,counterexamples,counterexamples_min,rows,mean_s,std_s,runs
+Q1,Container Logistics,"init(Forklift, Weigh)",3,3,1986,0.04021297849249095,0.0018312434744893853,4

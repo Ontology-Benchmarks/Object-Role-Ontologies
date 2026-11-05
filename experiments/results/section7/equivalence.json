@@ -1,0 +1,65 @@
+{
+  "Q1": {
+    "oro_rows": 1986,
+    "ocpq_rows": 1986,
+    "oro_objects": 3,
+    "ocpq_objects": 3,
+    "only_oro": [],
+    "only_ocpq": [],
+    "equivalent": true
+  },
+  "Q2": {
+    "oro_rows": 4,
+    "ocpq_rows": 4,
+    "oro_objects": 4,
+    "ocpq_objects": 4,
+    "only_oro": [],
+    "only_ocpq": [],
+    "equivalent": true
+  },
+  "Q3": {
+    "oro_rows": 1965,
+    "ocpq_rows": 1965,
+    "oro_objects": 1965,
+    "ocpq_objects": 1965,
+    "only_oro": [],
+    "only_ocpq": [],
+    "equivalent": true
+  },
+  "Q4": {
+    "oro_rows": 30,
+    "ocpq_rows": 30,
+    "oro_objects": 30,
+    "ocpq_objects": 30,
+    "only_oro": [],
+    "only_ocpq": [],
+    "equivalent": true
+  },
+  "Q5": {
+    "oro_rows": 0,
+    "ocpq_rows": 0,
+    "oro_objects": 0,
+    "ocpq_objects": 0,
+    "only_oro": [],
+    "only_ocpq": [],
+    "equivalent": true
+  },
+  "Q5e": {
+    "oro_rows": 0,
+    "ocpq_rows": 0,
+    "oro_objects": 0,
+    "ocpq_objects": 0,
+    "only_oro": [],
+    "only_ocpq": [],
+    "equivalent": true
+  },
+  "Q6": {
+    "oro_rows": 902,
+    "ocpq_rows": 902,
+    "oro_objects": 902,
+    "ocpq_objects": 902,
+    "only_oro": [],
+    "only_ocpq": [],
+    "equivalent": true
+  }
+}

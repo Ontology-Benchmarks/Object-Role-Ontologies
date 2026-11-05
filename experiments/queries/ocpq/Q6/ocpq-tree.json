@@ -1,0 +1,83 @@
+{
+  "nodes": [
+    {
+      "Box": [
+        {
+          "newEventVars": {
+            "0": [
+              "Sent (mail and online)_complete",
+              "Sent (online only)_complete"
+            ]
+          },
+          "newObjectVars": {
+            "0": [
+              "offer"
+            ]
+          },
+          "filters": [
+            {
+              "type": "O2E",
+              "object": 0,
+              "event": 0,
+              "qualifier": null
+            }
+          ],
+          "sizeFilters": [],
+          "constraints": [
+            {
+              "type": "SizeFilter",
+              "filter": {
+                "type": "NumChilds",
+                "child_name": "A",
+                "min": 1,
+                "max": null
+              }
+            }
+          ]
+        },
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "Box": [
+        {
+          "newEventVars": {
+            "1": [
+              "Returned_complete"
+            ]
+          },
+          "newObjectVars": {},
+          "filters": [
+            {
+              "type": "O2E",
+              "object": 0,
+              "event": 1,
+              "qualifier": null
+            },
+            {
+              "type": "TimeBetweenEvents",
+              "from_event": 0,
+              "to_event": 1,
+              "min_seconds": 1e-06,
+              "max_seconds": null
+            }
+          ],
+          "sizeFilters": [],
+          "constraints": []
+        },
+        []
+      ]
+    }
+  ],
+  "edgeNames": [
+    [
+      [
+        0,
+        1
+      ],
+      "A"
+    ]
+  ]
+}

@@ -1,0 +1,167 @@
+{
+    "relations": [
+        {
+            "name": "lens_log_events",
+            "baseRelation": ["\"log_events\""],
+            "filterExpression": "",
+            "columns": {
+                "added": [],
+                "hidden": []
+            },
+            "uniqueConstraints": {
+                "added": [
+                    {
+                        "name": "pk_log_events",
+                        "determinants": ["\"eid\""],
+                        "isPrimaryKey": true
+                    }
+                ]
+            },
+            "otherFunctionalDependencies": {
+                "added": []
+            },
+            "foreignKeys": {
+                "added": []
+            },
+            "nonNullConstraints": {
+                "added": []
+            },
+            "type": "BasicLens"
+        },
+        {
+            "name": "lens_log_e2o",
+            "baseRelation": ["\"log_e2o\""],
+            "filterExpression": "",
+            "columns": {
+                "added": [],
+                "hidden": []
+            },
+            "uniqueConstraints": {
+                "added": [
+                    {
+                        "name": "pk_log_e2o",
+                        "determinants": ["\"eid\"", "\"object_id\""],
+                        "isPrimaryKey": true
+                    }
+                ]
+            },
+            "otherFunctionalDependencies": {
+                "added": []
+            },
+            "foreignKeys": {
+                "added": [
+                    {
+                        "name": "fk_log_e2o_log_events",
+                        "from": ["\"eid\""],
+                        "to": {
+                            "relation": "lens_log_events",
+                            "columns": ["\"eid\""]
+                        }
+                    }
+                ]
+            },
+            "nonNullConstraints": {
+                "added": []
+            },
+            "type": "BasicLens"
+        },
+        {
+            "name": "lens_log_o2o",
+            "baseRelation": ["\"log_o2o\""],
+            "filterExpression": "",
+            "columns": {
+                "added": [],
+                "hidden": []
+            },
+            "uniqueConstraints": {
+                "added": [
+                    {
+                        "name": "pk_log_o2o",
+                        "determinants": ["\"oid1\"", "\"oid2\"", "\"event_id\""],
+                        "isPrimaryKey": true
+                    }
+                ]
+            },
+            "otherFunctionalDependencies": {
+                "added": []
+            },
+            "foreignKeys": {
+                "added": [
+                    {
+                        "name": "fk_log_o2o_log_events",
+                        "from": ["\"event_id\""],
+                        "to": {
+                            "relation": "lens_log_events",
+                            "columns": ["\"eid\""]
+                        }
+                    },
+                    {
+                        "name": "fk_log_o2o_objects1",
+                        "from": ["\"oid1\""],
+                        "to": {
+                            "relation": ["\"main\"", "\"objects\""],
+                            "columns": ["\"object_id\""]
+                        }
+                    },
+                    {
+                        "name": "fk_log_o2o_objects2",
+                        "from": ["\"oid2\""],
+                        "to": {
+                            "relation": ["\"main\"", "\"objects\""],
+                            "columns": ["\"object_id\""]
+                        }
+                    }
+                ]
+            },
+            "nonNullConstraints": {
+                "added": []
+            },
+            "type": "BasicLens"
+        },
+        {
+            "name": "lens_log_o2o_detailed",
+            "baseRelation": ["\"log_o2o_detailed\""],
+            "filterExpression": "",
+            "columns": {
+                "added": [],
+                "hidden": []
+            },
+            "uniqueConstraints": {
+                "added": [
+                    {
+                        "name": "pk_log_o2o_detailed",
+                        "determinants": ["\"oid1\"", "\"oid2\"", "\"event_id\""],
+                        "isPrimaryKey": true
+                    }
+                ]
+            },
+            "otherFunctionalDependencies": {
+                "added": []
+            },
+            "foreignKeys": {
+                "added": [
+                    {
+                        "name": "fk_log_o2o_detailed_log_events",
+                        "from": ["\"event_id\""],
+                        "to": {
+                            "relation": "lens_log_events",
+                            "columns": ["\"eid\""]
+                        }
+                    },
+                    {
+                        "name": "fk_log_o2o_detailed_log_o2o",
+                        "from": ["\"oid1\"", "\"oid2\"", "\"event_id\""],
+                        "to": {
+                            "relation": "lens_log_o2o",
+                            "columns": ["\"oid1\"", "\"oid2\"", "\"event_id\""]
+                        }
+                    }
+                ]
+            },
+            "nonNullConstraints": {
+                "added": []
+            },
+            "type": "BasicLens"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+dataset,run,qid,description,seconds,rows,counterexamples
+Container Logistics,0,Q1,"init(Forklift, Weigh)",0.04097725701285526,1986,3
+Container Logistics,1,Q1,"init(Forklift, Weigh)",0.04339133499888703,1986,3
+Container Logistics,2,Q1,"init(Forklift, Weigh)",0.04064296800061129,1986,3
+Container Logistics,3,Q1,"init(Forklift, Weigh)",0.04119652998633683,1986,3
+BPI 2017,0,Q2,exactly one closure per offer,0.02839994101668708,4,4
+BPI 2017,0,Q3,"clos(Offer, Sent)",0.0845035680104047,1965,1965
+BPI 2017,0,Q4,"clos(Offer, Returned)",0.05077803900348954,1172,1172
+BPI 2017,1,Q2,exactly one closure per offer,0.028794900979846716,4,4
+BPI 2017,1,Q3,"clos(Offer, Sent)",0.07898178699542768,1965,1965
+BPI 2017,1,Q4,"clos(Offer, Returned)",0.05272120799054392,1172,1172
+BPI 2017,2,Q2,exactly one closure per offer,0.02961708899238147,4,4
+BPI 2017,2,Q3,"clos(Offer, Sent)",0.25550543499412015,1965,1965
+BPI 2017,2,Q4,"clos(Offer, Returned)",0.15958731301361695,1172,1172
+BPI 2017,3,Q2,exactly one closure per offer,0.030124356009764597,4,4
+BPI 2017,3,Q3,"clos(Offer, Sent)",0.24541565499384888,1965,1965
+BPI 2017,3,Q4,"clos(Offer, Returned)",0.13204936400870793,1172,1172

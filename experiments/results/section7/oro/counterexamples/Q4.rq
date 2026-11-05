@@ -1,0 +1,10 @@
+PREFIX ocel: <https://stl.mie.utoronto.ca/ontologies/ocel/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?obj (COUNT(DISTINCT ?ev) AS ?n)
+WHERE {
+    ?obj rdf:type <http://www.example.com/otype_transport_document> .
+    ?ev ocel:involves ?obj ; ocel:hasActivity ?a .
+    VALUES ?a { <https://stl.mie.utoronto.ca/ontologies/ocel/Reschedule%20Container> <https://stl.mie.utoronto.ca/ontologies/ocel/Depart> }
+}
+GROUP BY ?obj
+HAVING (COUNT(DISTINCT ?ev) > 2)

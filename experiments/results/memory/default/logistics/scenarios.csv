@@ -1,0 +1,5 @@
+dataset,run,qid,description,seconds,rows,counterexamples
+Container Logistics,0,Q1,"init(Forklift, Weigh)",0.04126290598651394,1986,3
+Container Logistics,1,Q1,"init(Forklift, Weigh)",0.04152828699443489,1986,3
+Container Logistics,2,Q1,"init(Forklift, Weigh)",0.040518783003790304,1986,3
+Container Logistics,3,Q1,"init(Forklift, Weigh)",0.03754193798522465,1986,3

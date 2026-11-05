@@ -1,0 +1,3 @@
+# Notebook tooling; the library's own dependencies are in pyproject.toml (pip install -e .).
+jupyter
+ipykernel

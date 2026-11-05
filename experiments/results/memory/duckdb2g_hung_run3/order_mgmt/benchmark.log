@@ -1,0 +1,23 @@
+=== Order Management: run 1/4 ===
+--- Starting Inference for order-management.json (with Ontop/SPARQL) ---
+Inference completed for 21008 events in 7.10 seconds.
+[ontology-role] creation_role query took 0.2961 seconds
+[ontology-role] closure_role query took 0.1346 seconds
+[ontology-role] transformation_role query took 2.2612 seconds
+[ontology-role] single_use_role query took 0.0601 seconds
+[ontology-role] resource_like_role query took 0.0545 seconds
+[ontology-role] resource_object_type query took 0.0591 seconds
+[ontology-role] external_object_type query took 0.1917 seconds
+    preprocessing=7.10s ontop_startup=2.82s bottom_up=3.06s top_down_mean=0.2419s (n=172) py_peak=1411MB ontop_peak=4180MB
+=== Order Management: run 2/4 ===
+--- Starting Inference for order-management.json (with Ontop/SPARQL) ---
+Inference completed for 21008 events in 7.28 seconds.
+[ontology-role] creation_role query took 0.3024 seconds
+[ontology-role] closure_role query took 0.1299 seconds
+[ontology-role] transformation_role query took 2.2372 seconds
+[ontology-role] single_use_role query took 0.0555 seconds
+[ontology-role] resource_like_role query took 0.0547 seconds
+[ontology-role] resource_object_type query took 0.0559 seconds
+[ontology-role] external_object_type query took 0.1820 seconds
+    preprocessing=7.29s ontop_startup=2.88s bottom_up=3.02s top_down_mean=0.2414s (n=172) py_peak=1426MB ontop_peak=4387MB
+=== Order Management: run 3/4 ===

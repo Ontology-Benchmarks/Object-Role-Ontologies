@@ -1,0 +1,9 @@
+--- Starting Inference for bpi17_ocel.json (with Ontop/SPARQL) ---
+Inference completed for 23561 events in 2.89 seconds.
+[ontology-role] creation_role query took 0.2954 seconds
+[ontology-role] closure_role query took 0.1284 seconds
+[ontology-role] single_use_role query took 0.0674 seconds
+[ontology-role] resource_like_role query took 0.0698 seconds
+[ontology-role] resource_object_type query took 0.0690 seconds
+[ontology-role] external_object_type query took 0.2207 seconds
+BPI 2017 run 3: total=3.75s bottom_up=0.85s top_down_mean=49.5ms py_peak=789MB ontop_peak=1852MB

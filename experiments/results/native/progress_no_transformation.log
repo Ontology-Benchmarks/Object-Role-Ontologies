@@ -1,0 +1,16 @@
+Order Management run 0: total=8.53s bottom_up=0.89s top_down_mean=164.8ms py_peak=1384MB ontop_peak=5193MB
+Order Management run 1: total=8.24s bottom_up=0.90s top_down_mean=167.1ms py_peak=1368MB ontop_peak=5023MB
+Order Management run 2: total=8.18s bottom_up=0.91s top_down_mean=162.4ms py_peak=1398MB ontop_peak=4976MB
+Order Management run 3: total=8.22s bottom_up=0.89s top_down_mean=170.7ms py_peak=1429MB ontop_peak=5055MB
+Container Logistics run 0: total=4.09s bottom_up=0.92s top_down_mean=49.5ms py_peak=794MB ontop_peak=898MB
+Container Logistics run 1: total=4.31s bottom_up=0.93s top_down_mean=49.7ms py_peak=807MB ontop_peak=901MB
+Container Logistics run 2: total=4.47s bottom_up=0.93s top_down_mean=50.3ms py_peak=791MB ontop_peak=892MB
+Container Logistics run 3: total=4.23s bottom_up=0.92s top_down_mean=51.2ms py_peak=782MB ontop_peak=897MB
+Procure-to-Pay run 0: total=3.71s bottom_up=0.96s top_down_mean=38.6ms py_peak=781MB ontop_peak=1009MB
+Procure-to-Pay run 1: total=3.70s bottom_up=0.98s top_down_mean=38.9ms py_peak=785MB ontop_peak=1025MB
+Procure-to-Pay run 2: total=3.59s bottom_up=0.94s top_down_mean=38.2ms py_peak=780MB ontop_peak=970MB
+Procure-to-Pay run 3: total=3.59s bottom_up=0.93s top_down_mean=38.7ms py_peak=778MB ontop_peak=974MB
+BPI 2017 run 0: total=3.29s bottom_up=0.84s top_down_mean=35.5ms py_peak=789MB ontop_peak=1127MB
+BPI 2017 run 1: total=3.65s bottom_up=0.85s top_down_mean=56.7ms py_peak=769MB ontop_peak=2214MB
+BPI 2017 run 2: total=3.72s bottom_up=0.84s top_down_mean=36.2ms py_peak=774MB ontop_peak=1033MB
+BPI 2017 run 3: total=3.75s bottom_up=0.85s top_down_mean=49.5ms py_peak=789MB ontop_peak=1852MB

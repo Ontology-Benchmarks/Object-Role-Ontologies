@@ -1,0 +1,77 @@
+=== BPI 2017: run 1/4 ===
+--- Starting Inference for bpi17_ocel.json (with Ontop/SPARQL) ---
+Inference completed for 23561 events in 2.52 seconds.
+[ontology-role] creation_role query took 0.2808 seconds
+[ontology-role] closure_role query took 0.1280 seconds
+[ontology-role] transformation_role query took 1.3764 seconds
+[ontology-role] single_use_role query took 0.0545 seconds
+[ontology-role] resource_like_role query took 0.0572 seconds
+[ontology-role] resource_object_type query took 0.0572 seconds
+[ontology-role] external_object_type query took 0.1657 seconds
+    preprocessing=2.52s ontop_startup=2.83s bottom_up=2.12s top_down_mean=0.0349s (n=236) py_peak=822MB ontop_peak=1656MB
+=== BPI 2017: run 2/4 ===
+--- Starting Inference for bpi17_ocel.json (with Ontop/SPARQL) ---
+Inference completed for 23561 events in 2.51 seconds.
+[ontology-role] creation_role query took 0.2787 seconds
+[ontology-role] closure_role query took 0.1204 seconds
+[ontology-role] transformation_role query took 1.3628 seconds
+[ontology-role] single_use_role query took 0.0592 seconds
+[ontology-role] resource_like_role query took 0.0563 seconds
+[ontology-role] resource_object_type query took 0.0554 seconds
+[ontology-role] external_object_type query took 0.1740 seconds
+    preprocessing=2.51s ontop_startup=2.86s bottom_up=2.11s top_down_mean=0.0333s (n=236) py_peak=845MB ontop_peak=1625MB
+=== BPI 2017: run 3/4 ===
+--- Starting Inference for bpi17_ocel.json (with Ontop/SPARQL) ---
+Inference completed for 23561 events in 2.21 seconds.
+[ontology-role] creation_role query took 0.2646 seconds
+[ontology-role] closure_role query took 0.1135 seconds
+[ontology-role] transformation_role query took 1.3508 seconds
+[ontology-role] single_use_role query took 0.0563 seconds
+[ontology-role] resource_like_role query took 0.0588 seconds
+[ontology-role] resource_object_type query took 0.0556 seconds
+[ontology-role] external_object_type query took 0.1707 seconds
+    preprocessing=2.21s ontop_startup=2.84s bottom_up=2.07s top_down_mean=0.0569s (n=236) py_peak=811MB ontop_peak=2036MB
+=== BPI 2017: run 4/4 ===
+--- Starting Inference for bpi17_ocel.json (with Ontop/SPARQL) ---
+Inference completed for 23561 events in 2.49 seconds.
+[ontology-role] creation_role query took 0.2931 seconds
+[ontology-role] closure_role query took 0.1181 seconds
+[ontology-role] transformation_role query took 1.3907 seconds
+[ontology-role] single_use_role query took 0.0552 seconds
+[ontology-role] resource_like_role query took 0.0553 seconds
+[ontology-role] resource_object_type query took 0.0552 seconds
+[ontology-role] external_object_type query took 0.1758 seconds
+    preprocessing=2.49s ontop_startup=2.87s bottom_up=2.15s top_down_mean=0.0579s (n=236) py_peak=783MB ontop_peak=1865MB
+dataset                       BPI 2017
+load_transform_s_mean         1.470256
+load_transform_s_std          0.105045
+duckdb_load_s_mean            0.558857
+duckdb_load_s_std             0.024327
+oig_s_mean                    0.402768
+oig_s_std                     0.021626
+mapping_generation_s_mean     0.000488
+mapping_generation_s_std      0.000015
+preprocessing_s_mean          2.432369
+preprocessing_s_std           0.149073
+ontop_startup_s_mean          2.847897
+ontop_startup_s_std           0.018040
+bottom_up_s_mean              2.114674
+bottom_up_s_std               0.030555
+top_down_mean_s_mean          0.045783
+top_down_mean_s_std           0.013469
+total_s_mean                  4.547043
+total_s_std                   0.175524
+py_peak_mb_mean             815.094727
+py_peak_mb_std               25.474171
+ontop_peak_mb_mean         1795.526367
+ontop_peak_mb_std           192.494450
+runs                          4.000000
+top_down_queries            236.000000
+% tab:performance
+BPI 2017             & $2.43 \pm 0.15$ & $2.11 \pm 0.03$ & $0.046 \pm 0.013$ & $4.55 \pm 0.18$ & 815.09 & 1795.53 \\
+% tab:comparison_bu (ORO columns)
+BPI 2017             & 4.55 & \tbd & \tbd & 2610.62 & \tbd & \tbd \\
+% tab:comparison_td (ORO columns)
+Q2 & BPI 2017 & exactly one closure per offer & 4 & 0.026 & \tbd \\
+Q3 & BPI 2017 & clos(Offer, Sent) & 1965 & 0.193 & \tbd \\
+Q4 & BPI 2017 & clos(Offer, Returned) & 1172 & 0.098 & \tbd \\

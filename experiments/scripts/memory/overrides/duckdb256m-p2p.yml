@@ -1,0 +1,4 @@
+services:
+  ontop:
+    environment:
+      ONTOP_DB_URL: "jdbc:duckdb:/opt/ontop/input/data/p2p/ocel2-p2p.duckdb;memory_limit=256MB"

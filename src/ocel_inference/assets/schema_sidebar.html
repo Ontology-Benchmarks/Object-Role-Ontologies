@@ -1,0 +1,47 @@
+<div id="sidebar">
+    <div id="resizer"></div>
+    <!-- Button to collapse/expand the sidebar -->
+    <div id="toggle-sidebar" onclick="toggleSidebar()" title="Toggle Sidebar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="15" y1="3" x2="15" y2="21"></line>
+        </svg>
+    </div>
+    
+    <div id="sidebar-header">
+        <span id="sidebar-title">Schema Explorer</span>
+    </div>
+
+    <!-- Toggle Controls for Aggregation -->
+    <div id="controls">
+        <div class="control-row">
+            <span class="view-label">Aggregation Mode</span>
+            <label class="switch">
+                <input type="checkbox" id="view-toggle" onchange="toggleViewMode()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="view-status">
+            <span id="view-status-text">Detailed View (All Events)</span>
+        </div>
+    </div>
+    
+    <div class="sidebar-section">
+        <div class="section-title">All Events</div>
+        <div id="event-list"></div>
+    </div>
+    
+    <div class="sidebar-section">
+        <div class="section-title" id="details-title">Selected Details</div>
+    </div>
+    
+    <div id="details-content">
+        <table class="data-table">
+            <thead id="table-head"></thead>
+            <tbody id="table-body"></tbody>
+        </table>
+        <div id="empty-state" style="padding: 20px; color: #70757a; font-size: 12px; text-align: center;">
+            Select an object, edge, or event from the list to view details.
+        </div>
+    </div>
+</div>

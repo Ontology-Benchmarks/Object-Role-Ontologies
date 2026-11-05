@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/mnt/workdrive/PhD/Workspace/ORO comparisons/comparison/oro_memory/run_conditions.py", line 105, in <module>
+    main()
+    ~~~~^^
+  File "/mnt/workdrive/PhD/Workspace/ORO comparisons/comparison/oro_memory/run_conditions.py", line 70, in main
+    recreate_ontop(override)
+    ~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/mnt/workdrive/PhD/Workspace/ORO comparisons/comparison/oro_memory/run_conditions.py", line 39, in recreate_ontop
+    subprocess.run(["docker", "compose", "-p", PROJECT, "-f", COMPOSE, "-f", str(override), "up", "-d",
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    "--no-build", "--no-deps", "--force-recreate", "ontop"], check=True,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['docker', 'compose', '-p', 'ontop-ocel-o2o_devcontainer', '-f', '/home/riley/phd/Workspace/ontop-ocel-o2o/.devcontainer/docker-compose.yml', '-f', '/mnt/workdrive/PhD/Workspace/ORO comparisons/comparison/oro_memory/overrides/none.yml', 'up', '-d', '--no-build', '--no-deps', '--force-recreate', 'ontop']' returned non-zero exit status 1.

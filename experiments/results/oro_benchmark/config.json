@@ -1,0 +1,106 @@
+{
+  "runs": 4,
+  "warmup_runs": 0,
+  "config": {
+    "ontop_sparql_endpoint": "http://ontop:8080/sparql",
+    "docker_socket": "/var/run/docker.sock",
+    "ontop_container": "ontop_service",
+    "top_down_categories": null,
+    "top_down_limit": null,
+    "ready_timeout_s": 180.0,
+    "reload_detect_timeout_s": 20.0,
+    "stable_window_s": 5.0,
+    "poll_interval_s": 0.25
+  },
+  "datasets": [
+    {
+      "name": "Order Management",
+      "ocel_json_path": "input/data/order-management.json",
+      "output_dir": "input/data/order_mgmt/",
+      "scenarios": []
+    },
+    {
+      "name": "Container Logistics",
+      "ocel_json_path": "input/data/ContainerLogistics.json",
+      "output_dir": "input/data/logistics/",
+      "scenarios": [
+        {
+          "qid": "Q1",
+          "description": "init(Forklift, Weigh)",
+          "otype": [
+            "forklift"
+          ],
+          "kind": "pattern",
+          "category": "creation_role",
+          "activity": [
+            "weigh"
+          ],
+          "activities": []
+        }
+      ]
+    },
+    {
+      "name": "Procure-to-Pay",
+      "ocel_json_path": "input/data/ocel2-p2p.json",
+      "output_dir": "input/data/p2p/",
+      "scenarios": []
+    },
+    {
+      "name": "BPI 2017",
+      "ocel_json_path": "input/data/bpi17_ocel.json",
+      "output_dir": "input/data/bpi17/",
+      "scenarios": [
+        {
+          "qid": "Q2",
+          "description": "exactly one closure per offer",
+          "otype": [
+            "offer"
+          ],
+          "kind": "exactly_one",
+          "category": null,
+          "activity": [],
+          "activities": [
+            [
+              "accepted"
+            ],
+            [
+              "cancelled"
+            ],
+            [
+              "refused"
+            ]
+          ]
+        },
+        {
+          "qid": "Q3",
+          "description": "clos(Offer, Sent)",
+          "otype": [
+            "offer"
+          ],
+          "kind": "pattern",
+          "category": "closure_role",
+          "activity": [
+            "sent",
+            "mail",
+            "online"
+          ],
+          "activities": []
+        },
+        {
+          "qid": "Q4",
+          "description": "clos(Offer, Returned)",
+          "otype": [
+            "offer"
+          ],
+          "kind": "pattern",
+          "category": "closure_role",
+          "activity": [
+            "returned"
+          ],
+          "activities": []
+        }
+      ]
+    }
+  ],
+  "notes": []
+}

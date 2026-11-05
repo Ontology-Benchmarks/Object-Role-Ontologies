@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.venv/
+.ipynb_checkpoints/
+.DS_Store
+.vscode/
+*.log
+!experiments/results/**/*.log
+
+# Large files
+*.duckdb
+*.duckdb.wal
+*.jar
+output/**/*.html
+input/data/*.xes.gz
+lib/
+experiments/baselines/harness/target/
+experiments/baselines/totem-env/sqlite/
+experiments/scripts/memory/venv/
+experiments/scripts/memory/runtime/
+experiments/results/native/ontop.log

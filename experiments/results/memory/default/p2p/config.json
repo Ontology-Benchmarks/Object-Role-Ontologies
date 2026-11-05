@@ -1,0 +1,24 @@
+{
+  "runs": 4,
+  "warmup_runs": 0,
+  "config": {
+    "ontop_sparql_endpoint": "http://ontop:8080/sparql",
+    "docker_socket": "/var/run/docker.sock",
+    "ontop_container": "ontop_service",
+    "top_down_categories": null,
+    "top_down_limit": null,
+    "ready_timeout_s": 180.0,
+    "reload_detect_timeout_s": 20.0,
+    "stable_window_s": 5.0,
+    "poll_interval_s": 0.25
+  },
+  "datasets": [
+    {
+      "name": "Procure-to-Pay",
+      "ocel_json_path": "input/data/ocel2-p2p.json",
+      "output_dir": "input/data/p2p/",
+      "scenarios": []
+    }
+  ],
+  "notes": []
+}

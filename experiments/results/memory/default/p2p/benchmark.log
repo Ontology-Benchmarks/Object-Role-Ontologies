@@ -1,0 +1,74 @@
+=== Procure-to-Pay: run 1/4 ===
+--- Starting Inference for ocel2-p2p.json (with Ontop/SPARQL) ---
+Inference completed for 14671 events in 2.44 seconds.
+[ontology-role] creation_role query took 0.3124 seconds
+[ontology-role] closure_role query took 0.1272 seconds
+[ontology-role] transformation_role query took 3.9924 seconds
+[ontology-role] single_use_role query took 0.0510 seconds
+[ontology-role] resource_like_role query took 0.0470 seconds
+[ontology-role] resource_object_type query took 0.0520 seconds
+[ontology-role] external_object_type query took 0.1865 seconds
+    preprocessing=2.44s ontop_startup=2.57s bottom_up=4.77s top_down_mean=0.0341s (n=144) py_peak=740MB ontop_peak=2698MB
+=== Procure-to-Pay: run 2/4 ===
+--- Starting Inference for ocel2-p2p.json (with Ontop/SPARQL) ---
+Inference completed for 14671 events in 2.34 seconds.
+[ontology-role] creation_role query took 0.3111 seconds
+[ontology-role] closure_role query took 0.1349 seconds
+[ontology-role] transformation_role query took 4.1610 seconds
+[ontology-role] single_use_role query took 0.0479 seconds
+[ontology-role] resource_like_role query took 0.0511 seconds
+[ontology-role] resource_object_type query took 0.0475 seconds
+[ontology-role] external_object_type query took 0.1847 seconds
+    preprocessing=2.34s ontop_startup=2.61s bottom_up=4.94s top_down_mean=0.0333s (n=144) py_peak=820MB ontop_peak=2687MB
+=== Procure-to-Pay: run 3/4 ===
+--- Starting Inference for ocel2-p2p.json (with Ontop/SPARQL) ---
+Inference completed for 14671 events in 2.36 seconds.
+[ontology-role] creation_role query took 0.2973 seconds
+[ontology-role] closure_role query took 0.1244 seconds
+[ontology-role] transformation_role query took 3.9144 seconds
+[ontology-role] single_use_role query took 0.0516 seconds
+[ontology-role] resource_like_role query took 0.0506 seconds
+[ontology-role] resource_object_type query took 0.0527 seconds
+[ontology-role] external_object_type query took 0.1816 seconds
+    preprocessing=2.36s ontop_startup=2.59s bottom_up=4.68s top_down_mean=0.0343s (n=144) py_peak=798MB ontop_peak=2636MB
+=== Procure-to-Pay: run 4/4 ===
+--- Starting Inference for ocel2-p2p.json (with Ontop/SPARQL) ---
+Inference completed for 14671 events in 2.37 seconds.
+[ontology-role] creation_role query took 0.2976 seconds
+[ontology-role] closure_role query took 0.1280 seconds
+[ontology-role] transformation_role query took 3.8467 seconds
+[ontology-role] single_use_role query took 0.0544 seconds
+[ontology-role] resource_like_role query took 0.0457 seconds
+[ontology-role] resource_object_type query took 0.0509 seconds
+[ontology-role] external_object_type query took 0.1786 seconds
+    preprocessing=2.37s ontop_startup=2.60s bottom_up=4.61s top_down_mean=0.0335s (n=144) py_peak=792MB ontop_peak=2698MB
+dataset                    Procure-to-Pay
+load_transform_s_mean            1.186174
+load_transform_s_std             0.040638
+duckdb_load_s_mean               0.641023
+duckdb_load_s_std                0.021981
+oig_s_mean                       0.552721
+oig_s_std                        0.006885
+mapping_generation_s_mean        0.000494
+mapping_generation_s_std         0.000008
+preprocessing_s_mean             2.380412
+preprocessing_s_std              0.042980
+ontop_startup_s_mean             2.590558
+ontop_startup_s_std              0.013825
+bottom_up_s_mean                 4.749821
+bottom_up_s_std                  0.145595
+top_down_mean_s_mean             0.033787
+top_down_mean_s_std              0.000489
+total_s_mean                     7.130233
+total_s_std                      0.144194
+py_peak_mb_mean                787.558594
+py_peak_mb_std                  33.755023
+ontop_peak_mb_mean            2679.524414
+ontop_peak_mb_std               29.445346
+runs                             4.000000
+top_down_queries               144.000000
+% tab:performance
+Procure-to-Pay       & $2.38 \pm 0.04$ & $4.75 \pm 0.15$ & $0.034 \pm 0.000$ & $7.13 \pm 0.14$ & 787.56 & 2679.52 \\
+% tab:comparison_bu (ORO columns)
+Procure-to-Pay       & 7.13 & \tbd & \tbd & 3467.08 & \tbd & \tbd \\
+% tab:comparison_td (ORO columns)

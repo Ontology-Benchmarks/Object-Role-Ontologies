@@ -1,0 +1,1341 @@
+@prefix ex: <http://www.example.com/> .
+@prefix oro: <http://www.example.com/oro/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+oro:dl a owl:AnnotationProperty .
+
+<http://www.example.com/oro/log/ContainerLogistics> a owl:Ontology ;
+    rdfs:label "Object Role Ontology of ContainerLogistics" ;
+    rdfs:comment "T-box of the ORO: core axioms (Section 4) and the behavioural axioms inferred bottom-up on the log. The A-box is virtual (Ontop VKG over DuckDB) and uses the same IRIs." .
+
+oro:nonEmpty a owl:AnnotationProperty .
+
+oro:schema a owl:AnnotationProperty .
+
+oro:Event a owl:Class ;
+    rdfs:label "Event" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/Ev/Book%20Vehicles> <http://www.example.com/oro/Ev/Bring%20to%20Loading%20Bay> <http://www.example.com/oro/Ev/Collect%20Goods> <http://www.example.com/oro/Ev/Create%20Transport%20Document> <http://www.example.com/oro/Ev/Depart> <http://www.example.com/oro/Ev/Drive%20to%20Terminal> <http://www.example.com/oro/Ev/Load%20Truck> <http://www.example.com/oro/Ev/Load%20to%20Vehicle> <http://www.example.com/oro/Ev/Order%20Empty%20Containers> <http://www.example.com/oro/Ev/Pick%20Up%20Empty%20Container> <http://www.example.com/oro/Ev/Place%20in%20Stock> <http://www.example.com/oro/Ev/Register%20Customer%20Order> <http://www.example.com/oro/Ev/Reschedule%20Container> <http://www.example.com/oro/Ev/Weigh> ) ] .
+
+oro:Object a owl:Class ;
+    rdfs:label "O" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( ex:otype_container ex:otype_customer_order ex:otype_forklift ex:otype_handling_unit ex:otype_transport_document ex:otype_truck ex:otype_vehicle ) ] .
+
+<http://www.example.com/oro/Reuse/container/Load%20Truck> a owl:Class ;
+    rdfs:label "Reuse_{Load Truck}(container)" ;
+    owl:equivalentClass _:N6066f0a41d1c4b699f488d11189eda2d .
+
+<http://www.example.com/oro/Reuse/transport_document/Depart> a owl:Class ;
+    rdfs:label "Reuse_Depart(transport_document)" ;
+    owl:equivalentClass _:N72b2a9ef7dfe4743ba2d84eafd9b5ee8 .
+
+<http://www.example.com/oro/Reuse/transport_document/Reschedule%20Container> a owl:Class ;
+    rdfs:label "Reuse_{Reschedule Container}(transport_document)" ;
+    owl:equivalentClass _:Nf5c951a67ecb4cb3a6e60fbae655ab76 .
+
+<http://www.example.com/oro/Reuse/vehicle/Book%20Vehicles> a owl:Class ;
+    rdfs:label "Reuse_{Book Vehicles}(vehicle)" ;
+    owl:equivalentClass _:N8e1a0e4ebb5743b387088ab89cf5cba9 .
+
+<http://www.example.com/oro/Reuse/vehicle/Load%20to%20Vehicle> a owl:Class ;
+    rdfs:label "Reuse_{Load to Vehicle}(vehicle)" ;
+    owl:equivalentClass _:N0cb62aa9729c4b32be5d715dedfd1ccd .
+
+<http://www.example.com/oro/Reuse/vehicle/Reschedule%20Container> a owl:Class ;
+    rdfs:label "Reuse_{Reschedule Container}(vehicle)" ;
+    owl:equivalentClass _:N9be8c2d680da43e9bdc45083d46be88a .
+
+<http://www.example.com/oro/Ev/Collect%20Goods> a owl:Class ;
+    rdfs:label "Ev_{Collect Goods}" .
+
+<http://www.example.com/oro/Ev/Pick%20Up%20Empty%20Container> a owl:Class ;
+    rdfs:label "Ev_{Pick Up Empty Container}" .
+
+<http://www.example.com/oro/Ev/Register%20Customer%20Order> a owl:Class ;
+    rdfs:label "Ev_{Register Customer Order}" .
+
+<http://www.example.com/oro/R/container/Bring%20to%20Loading%20Bay> a owl:Class ;
+    rdfs:label "R_{Bring to Loading Bay}(container)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Bring%20to%20Loading%20Bay> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_container ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/container/Drive%20to%20Terminal> a owl:Class ;
+    rdfs:label "R_{Drive to Terminal}(container)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Drive%20to%20Terminal> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_container ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/container/Load%20Truck> a owl:Class ;
+    rdfs:label "R_{Load Truck}(container)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Load%20Truck> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_container ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/container/Load%20to%20Vehicle> a owl:Class ;
+    rdfs:label "R_{Load to Vehicle}(container)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Load%20to%20Vehicle> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_container ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/container/Pick%20Up%20Empty%20Container> a owl:Class ;
+    rdfs:label "R_{Pick Up Empty Container}(container)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Pick%20Up%20Empty%20Container> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_container ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/container/Place%20in%20Stock> a owl:Class ;
+    rdfs:label "R_{Place in Stock}(container)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Place%20in%20Stock> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_container ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/container/Reschedule%20Container> a owl:Class ;
+    rdfs:label "R_{Reschedule Container}(container)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Reschedule%20Container> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_container ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/container/Weigh> a owl:Class ;
+    rdfs:label "R_Weigh(container)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Weigh> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_container ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/transport_document/Book%20Vehicles> a owl:Class ;
+    rdfs:label "R_{Book Vehicles}(transport_document)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Book%20Vehicles> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_transport_document ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/transport_document/Depart> a owl:Class ;
+    rdfs:label "R_Depart(transport_document)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Depart> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_transport_document ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/transport_document/Order%20Empty%20Containers> a owl:Class ;
+    rdfs:label "R_{Order Empty Containers}(transport_document)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Order%20Empty%20Containers> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_transport_document ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/transport_document/Reschedule%20Container> a owl:Class ;
+    rdfs:label "R_{Reschedule Container}(transport_document)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Reschedule%20Container> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_transport_document ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/vehicle/Book%20Vehicles> a owl:Class ;
+    rdfs:label "R_{Book Vehicles}(vehicle)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Book%20Vehicles> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_vehicle ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/vehicle/Load%20to%20Vehicle> a owl:Class ;
+    rdfs:label "R_{Load to Vehicle}(vehicle)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Load%20to%20Vehicle> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_vehicle ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/vehicle/Reschedule%20Container> a owl:Class ;
+    rdfs:label "R_{Reschedule Container}(vehicle)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Reschedule%20Container> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_vehicle ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/Reuse/forklift/Bring%20to%20Loading%20Bay> a owl:Class ;
+    rdfs:label "Reuse_{Bring to Loading Bay}(forklift)" ;
+    owl:equivalentClass _:N9a696c7546f4476d87149c1231806480,
+        _:Ndaa815e86de048488d02a46bda3f7c5f .
+
+<http://www.example.com/oro/Reuse/forklift/Load%20to%20Vehicle> a owl:Class ;
+    rdfs:label "Reuse_{Load to Vehicle}(forklift)" ;
+    owl:equivalentClass _:N00a9aed29373434596a2e2de035345df,
+        _:N0d93af80f45c4a2a80e5ea9bc1c29ca7 .
+
+<http://www.example.com/oro/Reuse/forklift/Place%20in%20Stock> a owl:Class ;
+    rdfs:label "Reuse_{Place in Stock}(forklift)" ;
+    owl:equivalentClass _:N243e30ca8bf940bd8ca6240a7d79d816,
+        _:N89e1fd38fa894e8093215dc9e55e528d .
+
+<http://www.example.com/oro/Reuse/forklift/Weigh> a owl:Class ;
+    rdfs:label "Reuse_Weigh(forklift)" ;
+    owl:equivalentClass _:N1dd34a8a548d4e2a8605756daa953c7d,
+        _:N9a440b7d27704896a5e9862df75128cb .
+
+<http://www.example.com/oro/Reuse/truck/Drive%20to%20Terminal> a owl:Class ;
+    rdfs:label "Reuse_{Drive to Terminal}(truck)" ;
+    owl:equivalentClass _:N0e0848a3d49d43ea8d8c6864b7ed115a,
+        _:N347a782f0bf943468b82bf47b4e47396 .
+
+<http://www.example.com/oro/Reuse/truck/Load%20Truck> a owl:Class ;
+    rdfs:label "Reuse_{Load Truck}(truck)" ;
+    owl:equivalentClass _:N7d43f0af0a064634a6581091d2369ea0,
+        _:Ndb7130b482eb414d9873eba051549536 .
+
+<http://www.example.com/oro/Ev/Book%20Vehicles> a owl:Class ;
+    rdfs:label "Ev_{Book Vehicles}" .
+
+<http://www.example.com/oro/Ev/Bring%20to%20Loading%20Bay> a owl:Class ;
+    rdfs:label "Ev_{Bring to Loading Bay}" .
+
+<http://www.example.com/oro/Ev/Create%20Transport%20Document> a owl:Class ;
+    rdfs:label "Ev_{Create Transport Document}" .
+
+<http://www.example.com/oro/Ev/Drive%20to%20Terminal> a owl:Class ;
+    rdfs:label "Ev_{Drive to Terminal}" .
+
+<http://www.example.com/oro/Ev/Order%20Empty%20Containers> a owl:Class ;
+    rdfs:label "Ev_{Order Empty Containers}" .
+
+<http://www.example.com/oro/Ev/Place%20in%20Stock> a owl:Class ;
+    rdfs:label "Ev_{Place in Stock}" .
+
+<http://www.example.com/oro/Ev/Weigh> a owl:Class ;
+    rdfs:label "Ev_Weigh" .
+
+<http://www.example.com/oro/R/container/Depart> a owl:Class ;
+    rdfs:label "R_Depart(container)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Depart> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_container ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd .
+
+<http://www.example.com/oro/R/container/Order%20Empty%20Containers> a owl:Class ;
+    rdfs:label "R_{Order Empty Containers}(container)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Order%20Empty%20Containers> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_container ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:RStart .
+
+<http://www.example.com/oro/R/customer_order/Register%20Customer%20Order> a owl:Class ;
+    rdfs:label "R_{Register Customer Order}(customer_order)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Register%20Customer%20Order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_customer_order ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:RStart .
+
+<http://www.example.com/oro/R/forklift/Bring%20to%20Loading%20Bay> a owl:Class ;
+    rdfs:label "R_{Bring to Loading Bay}(forklift)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Bring%20to%20Loading%20Bay> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_forklift ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/forklift/Load%20to%20Vehicle> a owl:Class ;
+    rdfs:label "R_{Load to Vehicle}(forklift)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Load%20to%20Vehicle> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_forklift ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/forklift/Place%20in%20Stock> a owl:Class ;
+    rdfs:label "R_{Place in Stock}(forklift)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Place%20in%20Stock> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_forklift ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/forklift/Weigh> a owl:Class ;
+    rdfs:label "R_Weigh(forklift)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Weigh> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_forklift ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/handling_unit/Collect%20Goods> a owl:Class ;
+    rdfs:label "R_{Collect Goods}(handling_unit)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Collect%20Goods> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_handling_unit ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:RStart .
+
+<http://www.example.com/oro/R/handling_unit/Load%20Truck> a owl:Class ;
+    rdfs:label "R_{Load Truck}(handling_unit)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Load%20Truck> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_handling_unit ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd .
+
+<http://www.example.com/oro/R/truck/Drive%20to%20Terminal> a owl:Class ;
+    rdfs:label "R_{Drive to Terminal}(truck)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Drive%20to%20Terminal> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_truck ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/truck/Load%20Truck> a owl:Class ;
+    rdfs:label "R_{Load Truck}(truck)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Load%20Truck> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_truck ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/vehicle/Depart> a owl:Class ;
+    rdfs:label "R_Depart(vehicle)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Depart> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_vehicle ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd .
+
+<http://www.example.com/oro/Ev/Depart> a owl:Class ;
+    rdfs:label "Ev_Depart" .
+
+<http://www.example.com/oro/Ev/Load%20Truck> a owl:Class ;
+    rdfs:label "Ev_{Load Truck}" .
+
+<http://www.example.com/oro/Ev/Load%20to%20Vehicle> a owl:Class ;
+    rdfs:label "Ev_{Load to Vehicle}" .
+
+<http://www.example.com/oro/Ev/Reschedule%20Container> a owl:Class ;
+    rdfs:label "Ev_{Reschedule Container}" .
+
+<http://www.example.com/oro/R/customer_order/Create%20Transport%20Document> a owl:Class ;
+    rdfs:label "R_{Create Transport Document}(customer_order)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Transport%20Document> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_customer_order ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd .
+
+<http://www.example.com/oro/R/transport_document/Create%20Transport%20Document> a owl:Class ;
+    rdfs:label "R_{Create Transport Document}(transport_document)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Transport%20Document> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_transport_document ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:RStart .
+
+ex:otype_customer_order a owl:Class ;
+    rdfs:label "O_{customer_order}" ;
+    rdfs:subClassOf _:N04d5a683edc34f2790bd2d9d80569832,
+        _:N0df499791d464e19811075e85ffb397a .
+
+ex:otype_handling_unit a owl:Class ;
+    rdfs:label "O_{handling_unit}" ;
+    rdfs:subClassOf _:N488d7c747030413ab28bb2a49276f023,
+        _:N921525b7d03e4cdb977b222e2116bab9 .
+
+<http://www.example.com/oro/Role/container> a owl:Class ;
+    rdfs:label "Role(container)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/container> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/container> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/container/Bring%20to%20Loading%20Bay> <http://www.example.com/oro/R/container/Depart> <http://www.example.com/oro/R/container/Drive%20to%20Terminal> <http://www.example.com/oro/R/container/Load%20Truck> <http://www.example.com/oro/R/container/Load%20to%20Vehicle> <http://www.example.com/oro/R/container/Order%20Empty%20Containers> <http://www.example.com/oro/R/container/Pick%20Up%20Empty%20Container> <http://www.example.com/oro/R/container/Place%20in%20Stock> <http://www.example.com/oro/R/container/Reschedule%20Container> <http://www.example.com/oro/R/container/Weigh> ) ] .
+
+<http://www.example.com/oro/Role/customer_order> a owl:Class ;
+    rdfs:label "Role(customer_order)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/customer_order> ;
+            owl:onProperty oro:nextRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/customer_order> ;
+            owl:onProperty oro:laterRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/customer_order/Create%20Transport%20Document> <http://www.example.com/oro/R/customer_order/Register%20Customer%20Order> ) ] .
+
+<http://www.example.com/oro/Role/forklift> a owl:Class ;
+    rdfs:label "Role(forklift)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/forklift> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/forklift> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/forklift/Bring%20to%20Loading%20Bay> <http://www.example.com/oro/R/forklift/Load%20to%20Vehicle> <http://www.example.com/oro/R/forklift/Place%20in%20Stock> <http://www.example.com/oro/R/forklift/Weigh> ) ] .
+
+<http://www.example.com/oro/Role/handling_unit> a owl:Class ;
+    rdfs:label "Role(handling_unit)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/handling_unit> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/handling_unit> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/handling_unit/Collect%20Goods> <http://www.example.com/oro/R/handling_unit/Load%20Truck> ) ] .
+
+<http://www.example.com/oro/Role/transport_document> a owl:Class ;
+    rdfs:label "Role(transport_document)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/transport_document> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/transport_document> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/transport_document/Book%20Vehicles> <http://www.example.com/oro/R/transport_document/Create%20Transport%20Document> <http://www.example.com/oro/R/transport_document/Depart> <http://www.example.com/oro/R/transport_document/Order%20Empty%20Containers> <http://www.example.com/oro/R/transport_document/Reschedule%20Container> ) ] .
+
+<http://www.example.com/oro/Role/truck> a owl:Class ;
+    rdfs:label "Role(truck)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/truck> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/truck> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/truck/Drive%20to%20Terminal> <http://www.example.com/oro/R/truck/Load%20Truck> ) ] .
+
+<http://www.example.com/oro/Role/vehicle> a owl:Class ;
+    rdfs:label "Role(vehicle)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/vehicle> ;
+            owl:onProperty oro:nextRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/vehicle> ;
+            owl:onProperty oro:laterRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/vehicle/Book%20Vehicles> <http://www.example.com/oro/R/vehicle/Depart> <http://www.example.com/oro/R/vehicle/Load%20to%20Vehicle> <http://www.example.com/oro/R/vehicle/Reschedule%20Container> ) ] .
+
+ex:otype_truck a owl:Class ;
+    rdfs:label "O_truck" ;
+    oro:dl "O_truck ⊑ ∀playsRole.¬(R_init(truck) ⊔ R_close(truck))" ;
+    oro:schema "ext" .
+
+oro:REnd a owl:Class ;
+    rdfs:label "R_end" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( oro:Role [ a owl:Class ;
+                        owl:complementOf [ a owl:Restriction ;
+                                owl:onProperty oro:nextRole ;
+                                owl:someValuesFrom oro:Role ] ] ) ] .
+
+oro:RStart a owl:Class ;
+    rdfs:label "R_start" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( oro:Role [ a owl:Class ;
+                        owl:complementOf [ a owl:Restriction ;
+                                owl:onProperty [ owl:inverseOf oro:nextRole ] ;
+                                owl:someValuesFrom oro:Role ] ] ) ] .
+
+ex:otype_vehicle a owl:Class ;
+    rdfs:label "O_vehicle" ;
+    rdfs:subClassOf _:N144a4084c8fb45e4885f2eac3463aef0 .
+
+oro:Role a owl:Class ;
+    rdfs:label "Role" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/Role/container> <http://www.example.com/oro/Role/customer_order> <http://www.example.com/oro/Role/forklift> <http://www.example.com/oro/Role/handling_unit> <http://www.example.com/oro/Role/transport_document> <http://www.example.com/oro/Role/truck> <http://www.example.com/oro/Role/vehicle> ) ] .
+
+ex:otype_transport_document a owl:Class ;
+    rdfs:label "O_{transport_document}" ;
+    rdfs:subClassOf _:N277c104f43c2420f81e3ff3658f54ba6,
+        _:N52b7809e74cd44748d5e4e8b17209ef6,
+        _:N7ed748e034164bd8a51ef2358aa4eb42 .
+
+ex:otype_forklift a owl:Class ;
+    rdfs:label "O_forklift" ;
+    oro:dl "O_forklift ⊑ ∀playsRole.¬(R_init(forklift) ⊔ R_close(forklift))" ;
+    oro:schema "ext" .
+
+oro:laterRole a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "laterRole" ;
+    rdfs:domain oro:Role ;
+    rdfs:range oro:Role .
+
+oro:nextRole a owl:ObjectProperty ;
+    rdfs:label "nextRole" ;
+    rdfs:domain oro:Role ;
+    rdfs:range oro:Role ;
+    rdfs:subPropertyOf oro:laterRole .
+
+ex:otype_container a owl:Class ;
+    rdfs:label "O_container" ;
+    rdfs:subClassOf _:N09d43d8852324966925af6a19af6d9d1,
+        _:N1b4b5cca623a4aea9096a3fa0387eb12,
+        _:N4495ff9710244354b0e2cd38ddeec8d0,
+        _:N54d2d3f99a1c4ffd8e271406fa58c860,
+        _:N5a6f5885cf2642fd9b507a9d40a21478,
+        _:Ncaefaed9b7b7409cb27de19b0322403f,
+        _:Ncf7f559a8ecc449bba19636c660d61c7,
+        _:Nef5bc62f6148489aba3a5bf8a23802ec,
+        _:Nf3a9e886367f4956864f79996f6c387c .
+
+oro:frames a owl:ObjectProperty ;
+    rdfs:label "frames" ;
+    rdfs:domain oro:Event ;
+    rdfs:range oro:Role .
+
+oro:playsRole a owl:ObjectProperty ;
+    rdfs:label "playsRole" ;
+    rdfs:domain oro:Object ;
+    rdfs:range oro:Role .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(container, Load Truck)" ;
+    oro:dl "O_container ⊓ (≥2 playsRole.R_{Load Truck}(container)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/container/Load%20Truck> ;
+    owl:annotatedTarget _:N6066f0a41d1c4b699f488d11189eda2d .
+
+[] a owl:Axiom ;
+    rdfs:label "single(container, Reschedule Container)" ;
+    oro:dl "O_container ⊑ (≤1 playsRole.R_{Reschedule Container}(container))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_container ;
+    owl:annotatedTarget _:N09d43d8852324966925af6a19af6d9d1 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(transport_document, Book Vehicles)" ;
+    oro:dl "O_{transport_document} ⊑ (≤1 playsRole.R_{Book Vehicles}(transport_document))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_transport_document ;
+    owl:annotatedTarget _:N52b7809e74cd44748d5e4e8b17209ef6 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/handling_unit> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/handling_unit> .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/truck> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/truck> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(forklift, Place in Stock)" ;
+    oro:dl "O_forklift ⊓ (≥2 playsRole.R_{Place in Stock}(forklift)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/forklift/Place%20in%20Stock> ;
+    owl:annotatedTarget _:N243e30ca8bf940bd8ca6240a7d79d816 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(vehicle, Depart)" ;
+    oro:dl "O_vehicle ⊑ (≤1 playsRole.R_Depart(vehicle))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_vehicle ;
+    owl:annotatedTarget _:N144a4084c8fb45e4885f2eac3463aef0 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/transport_document> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/transport_document> .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/transport_document> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/transport_document> .
+
+[] a owl:Axiom ;
+    rdfs:label "single(container, Depart)" ;
+    oro:dl "O_container ⊑ (≤1 playsRole.R_Depart(container))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_container ;
+    owl:annotatedTarget _:Nef5bc62f6148489aba3a5bf8a23802ec .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(vehicle, Book Vehicles)" ;
+    oro:dl "O_vehicle ⊓ (≥2 playsRole.R_{Book Vehicles}(vehicle)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/vehicle/Book%20Vehicles> ;
+    owl:annotatedTarget _:N8e1a0e4ebb5743b387088ab89cf5cba9 .
+
+[] a owl:Axiom ;
+    rdfs:label "trans_life(customer_order, transport_document, Create Transport Document)" ;
+    oro:dl "R_{Create Transport Document}(customer_order) ⊑ R_end; R_{Create Transport Document}(transport_document) ⊑ R_start" ;
+    oro:schema "trans_life" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/transport_document/Create%20Transport%20Document> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/vehicle> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/vehicle> .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(container, Depart)" ;
+    oro:dl "R_Depart(container) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/container/Depart> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(forklift)" ;
+    oro:dl "O_forklift ⊓ (≥2 playsRole.R_{Bring to Loading Bay}(forklift)) ⋢ ⊥; O_forklift ⊓ (≥2 playsRole.R_{Load to Vehicle}(forklift)) ⋢ ⊥; O_forklift ⊓ (≥2 playsRole.R_{Place in Stock}(forklift)) ⋢ ⊥; O_forklift ⊓ (≥2 playsRole.R_Weigh(forklift)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/forklift/Load%20to%20Vehicle> ;
+    owl:annotatedTarget _:N0d93af80f45c4a2a80e5ea9bc1c29ca7 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(customer_order, Create Transport Document)" ;
+    oro:dl "O_{customer_order} ⊑ (≤1 playsRole.R_{Create Transport Document}(customer_order))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_customer_order ;
+    owl:annotatedTarget _:N04d5a683edc34f2790bd2d9d80569832 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(truck)" ;
+    oro:dl "O_truck ⊓ (≥2 playsRole.R_{Drive to Terminal}(truck)) ⋢ ⊥; O_truck ⊓ (≥2 playsRole.R_{Load Truck}(truck)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/truck/Load%20Truck> ;
+    owl:annotatedTarget _:Ndb7130b482eb414d9873eba051549536 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/truck> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/truck> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(vehicle, Load to Vehicle)" ;
+    oro:dl "O_vehicle ⊓ (≥2 playsRole.R_{Load to Vehicle}(vehicle)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/vehicle/Load%20to%20Vehicle> ;
+    owl:annotatedTarget _:N0cb62aa9729c4b32be5d715dedfd1ccd .
+
+[] a owl:Axiom ;
+    rdfs:label "single(transport_document, Order Empty Containers)" ;
+    oro:dl "O_{transport_document} ⊑ (≤1 playsRole.R_{Order Empty Containers}(transport_document))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_transport_document ;
+    owl:annotatedTarget _:N277c104f43c2420f81e3ff3658f54ba6 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/customer_order> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/customer_order> .
+
+[] a owl:Axiom ;
+    rdfs:label "single(container, Place in Stock)" ;
+    oro:dl "O_container ⊑ (≤1 playsRole.R_{Place in Stock}(container))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_container ;
+    owl:annotatedTarget _:N5a6f5885cf2642fd9b507a9d40a21478 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(truck, Load Truck)" ;
+    oro:dl "O_truck ⊓ (≥2 playsRole.R_{Load Truck}(truck)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/truck/Load%20Truck> ;
+    owl:annotatedTarget _:N7d43f0af0a064634a6581091d2369ea0 .
+
+[] a owl:Axiom ;
+    rdfs:label "init(container, Order Empty Containers)" ;
+    oro:dl "R_{Order Empty Containers}(container) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/container/Order%20Empty%20Containers> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(forklift, Load to Vehicle)" ;
+    oro:dl "O_forklift ⊓ (≥2 playsRole.R_{Load to Vehicle}(forklift)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/forklift/Load%20to%20Vehicle> ;
+    owl:annotatedTarget _:N00a9aed29373434596a2e2de035345df .
+
+[] a owl:Axiom ;
+    rdfs:label "init(customer_order, Register Customer Order)" ;
+    oro:dl "R_{Register Customer Order}(customer_order) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/customer_order/Register%20Customer%20Order> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/container> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/container> .
+
+[] a owl:Axiom ;
+    rdfs:label "single(container, Order Empty Containers)" ;
+    oro:dl "O_container ⊑ (≤1 playsRole.R_{Order Empty Containers}(container))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_container ;
+    owl:annotatedTarget _:N4495ff9710244354b0e2cd38ddeec8d0 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(transport_document, Depart)" ;
+    oro:dl "O_{transport_document} ⊓ (≥2 playsRole.R_Depart(transport_document)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/transport_document/Depart> ;
+    owl:annotatedTarget _:N72b2a9ef7dfe4743ba2d84eafd9b5ee8 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(forklift)" ;
+    oro:dl "O_forklift ⊓ (≥2 playsRole.R_{Bring to Loading Bay}(forklift)) ⋢ ⊥; O_forklift ⊓ (≥2 playsRole.R_{Load to Vehicle}(forklift)) ⋢ ⊥; O_forklift ⊓ (≥2 playsRole.R_{Place in Stock}(forklift)) ⋢ ⊥; O_forklift ⊓ (≥2 playsRole.R_Weigh(forklift)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/forklift/Weigh> ;
+    owl:annotatedTarget _:N9a440b7d27704896a5e9862df75128cb .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/customer_order> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/customer_order> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(transport_document, Reschedule Container)" ;
+    oro:dl "O_{transport_document} ⊓ (≥2 playsRole.R_{Reschedule Container}(transport_document)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/transport_document/Reschedule%20Container> ;
+    owl:annotatedTarget _:Nf5c951a67ecb4cb3a6e60fbae655ab76 .
+
+[] a owl:Axiom ;
+    rdfs:label "init(transport_document, Create Transport Document)" ;
+    oro:dl "R_{Create Transport Document}(transport_document) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/transport_document/Create%20Transport%20Document> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(handling_unit, Load Truck)" ;
+    oro:dl "R_{Load Truck}(handling_unit) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/handling_unit/Load%20Truck> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "single(container, Pick Up Empty Container)" ;
+    oro:dl "O_container ⊑ (≤1 playsRole.R_{Pick Up Empty Container}(container))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_container ;
+    owl:annotatedTarget _:Ncaefaed9b7b7409cb27de19b0322403f .
+
+[] a owl:Axiom ;
+    rdfs:label "single(container, Drive to Terminal)" ;
+    oro:dl "O_container ⊑ (≤1 playsRole.R_{Drive to Terminal}(container))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_container ;
+    owl:annotatedTarget _:N1b4b5cca623a4aea9096a3fa0387eb12 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/forklift> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/forklift> .
+
+[] a owl:Axiom ;
+    rdfs:label "single(container, Load to Vehicle)" ;
+    oro:dl "O_container ⊑ (≤1 playsRole.R_{Load to Vehicle}(container))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_container ;
+    owl:annotatedTarget _:Nf3a9e886367f4956864f79996f6c387c .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(forklift)" ;
+    oro:dl "O_forklift ⊓ (≥2 playsRole.R_{Bring to Loading Bay}(forklift)) ⋢ ⊥; O_forklift ⊓ (≥2 playsRole.R_{Load to Vehicle}(forklift)) ⋢ ⊥; O_forklift ⊓ (≥2 playsRole.R_{Place in Stock}(forklift)) ⋢ ⊥; O_forklift ⊓ (≥2 playsRole.R_Weigh(forklift)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/forklift/Place%20in%20Stock> ;
+    owl:annotatedTarget _:N89e1fd38fa894e8093215dc9e55e528d .
+
+[] a owl:Axiom ;
+    rdfs:label "single(container, Weigh)" ;
+    oro:dl "O_container ⊑ (≤1 playsRole.R_Weigh(container))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_container ;
+    owl:annotatedTarget _:Ncf7f559a8ecc449bba19636c660d61c7 .
+
+[] a owl:Axiom ;
+    rdfs:label "init(handling_unit, Collect Goods)" ;
+    oro:dl "R_{Collect Goods}(handling_unit) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/handling_unit/Collect%20Goods> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "single(handling_unit, Collect Goods)" ;
+    oro:dl "O_{handling_unit} ⊑ (≤1 playsRole.R_{Collect Goods}(handling_unit))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_handling_unit ;
+    owl:annotatedTarget _:N488d7c747030413ab28bb2a49276f023 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(transport_document, Create Transport Document)" ;
+    oro:dl "O_{transport_document} ⊑ (≤1 playsRole.R_{Create Transport Document}(transport_document))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_transport_document ;
+    owl:annotatedTarget _:N7ed748e034164bd8a51ef2358aa4eb42 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(forklift, Weigh)" ;
+    oro:dl "O_forklift ⊓ (≥2 playsRole.R_Weigh(forklift)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/forklift/Weigh> ;
+    owl:annotatedTarget _:N1dd34a8a548d4e2a8605756daa953c7d .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/vehicle> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/vehicle> .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/forklift> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/forklift> .
+
+[] a owl:Axiom ;
+    rdfs:label "single(customer_order, Register Customer Order)" ;
+    oro:dl "O_{customer_order} ⊑ (≤1 playsRole.R_{Register Customer Order}(customer_order))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_customer_order ;
+    owl:annotatedTarget _:N0df499791d464e19811075e85ffb397a .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/handling_unit> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/handling_unit> .
+
+[] a owl:Axiom ;
+    rdfs:label "trans_life(customer_order, transport_document, Create Transport Document)" ;
+    oro:dl "R_{Create Transport Document}(customer_order) ⊑ R_end; R_{Create Transport Document}(transport_document) ⊑ R_start" ;
+    oro:schema "trans_life" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/customer_order/Create%20Transport%20Document> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(forklift)" ;
+    oro:dl "O_forklift ⊓ (≥2 playsRole.R_{Bring to Loading Bay}(forklift)) ⋢ ⊥; O_forklift ⊓ (≥2 playsRole.R_{Load to Vehicle}(forklift)) ⋢ ⊥; O_forklift ⊓ (≥2 playsRole.R_{Place in Stock}(forklift)) ⋢ ⊥; O_forklift ⊓ (≥2 playsRole.R_Weigh(forklift)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/forklift/Bring%20to%20Loading%20Bay> ;
+    owl:annotatedTarget _:N9a696c7546f4476d87149c1231806480 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(container, Bring to Loading Bay)" ;
+    oro:dl "O_container ⊑ (≤1 playsRole.R_{Bring to Loading Bay}(container))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_container ;
+    owl:annotatedTarget _:N54d2d3f99a1c4ffd8e271406fa58c860 .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(customer_order, Create Transport Document)" ;
+    oro:dl "R_{Create Transport Document}(customer_order) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/customer_order/Create%20Transport%20Document> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(truck)" ;
+    oro:dl "O_truck ⊓ (≥2 playsRole.R_{Drive to Terminal}(truck)) ⋢ ⊥; O_truck ⊓ (≥2 playsRole.R_{Load Truck}(truck)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/truck/Drive%20to%20Terminal> ;
+    owl:annotatedTarget _:N347a782f0bf943468b82bf47b4e47396 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/container> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/container> .
+
+[] a owl:Axiom ;
+    rdfs:label "single(handling_unit, Load Truck)" ;
+    oro:dl "O_{handling_unit} ⊑ (≤1 playsRole.R_{Load Truck}(handling_unit))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_handling_unit ;
+    owl:annotatedTarget _:N921525b7d03e4cdb977b222e2116bab9 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(truck, Drive to Terminal)" ;
+    oro:dl "O_truck ⊓ (≥2 playsRole.R_{Drive to Terminal}(truck)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/truck/Drive%20to%20Terminal> ;
+    owl:annotatedTarget _:N0e0848a3d49d43ea8d8c6864b7ed115a .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(vehicle, Depart)" ;
+    oro:dl "R_Depart(vehicle) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/vehicle/Depart> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(vehicle, Reschedule Container)" ;
+    oro:dl "O_vehicle ⊓ (≥2 playsRole.R_{Reschedule Container}(vehicle)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/vehicle/Reschedule%20Container> ;
+    owl:annotatedTarget _:N9be8c2d680da43e9bdc45083d46be88a .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(forklift, Bring to Loading Bay)" ;
+    oro:dl "O_forklift ⊓ (≥2 playsRole.R_{Bring to Loading Bay}(forklift)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/forklift/Bring%20to%20Loading%20Bay> ;
+    owl:annotatedTarget _:Ndaa815e86de048488d02a46bda3f7c5f .
+
+_:N0464c45825ec4e6d930f61157ecefc35 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/container/Load%20Truck> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N14ea22232df14034accce8a4e624e628 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/truck/Drive%20to%20Terminal> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N1a6462b1e4f14344826fb1f8ce54fe09 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/transport_document/Reschedule%20Container> ;
+    owl:onProperty oro:playsRole .
+
+_:N1ff33e442f72494d987b02ab7ca8905c rdf:first ex:otype_vehicle ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/vehicle/Load%20to%20Vehicle> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N253a9da512d4478bbb047280bffaa083 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/truck/Load%20Truck> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N26cb39f2875440bdbeb03a893cb64586 rdf:first ex:otype_forklift ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/forklift/Place%20in%20Stock> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N26d18efc720143248eefa772a1df0772 rdf:first ex:otype_forklift ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/forklift/Bring%20to%20Loading%20Bay> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N327bd5ac8ed3434f8b6b1fbfb73cadd6 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/forklift/Bring%20to%20Loading%20Bay> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N433d16a4f5b8482db63c7a6db71c0858 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/truck/Load%20Truck> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N4b5dcfc6fa8b4f4983c9460aa4f8d0d0 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/forklift/Weigh> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N4c6e6785703844aba03a1fec2b4445c8 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/forklift/Load%20to%20Vehicle> ;
+    owl:onProperty oro:playsRole .
+
+_:N4fedbe98acf445baa46264a7e67e4e7d rdf:first ex:otype_forklift ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/forklift/Place%20in%20Stock> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N63eabfda7a014cc18f92f7f5a1e147de rdf:first ex:otype_transport_document ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/transport_document/Depart> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N6abf5f224d704e2aa270d4294b28b23c rdf:first ex:otype_truck ;
+    rdf:rest _:N14ea22232df14034accce8a4e624e628 .
+
+_:N73f5cbce87314ac7b014e9bd0e2ad59d rdf:first _:N4c6e6785703844aba03a1fec2b4445c8 ;
+    rdf:rest () .
+
+_:N7809173aaaa942788c11cffe9dae97fc rdf:first ex:otype_container ;
+    rdf:rest _:N0464c45825ec4e6d930f61157ecefc35 .
+
+_:N7b1b873ab87643bf8b24f180392374e6 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/truck/Drive%20to%20Terminal> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N835c7999fc3f4095be4ba8104c2c0cf6 rdf:first ex:otype_vehicle ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/vehicle/Reschedule%20Container> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N84bafa2848474fb4a82b9a83acd3ea54 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/forklift/Load%20to%20Vehicle> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N9b64a90138f545fb96cee35c3d9f45af rdf:first ex:otype_forklift ;
+    rdf:rest _:N4b5dcfc6fa8b4f4983c9460aa4f8d0d0 .
+
+_:N9d3a0b285d184b0a88911f69983424d9 rdf:first ex:otype_forklift ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/forklift/Weigh> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:Naaff2b93206a4a2e9812b9b32b216979 rdf:first ex:otype_vehicle ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/vehicle/Book%20Vehicles> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:Nac979ef48f514898b83b72ec06f378c0 rdf:first _:N1a6462b1e4f14344826fb1f8ce54fe09 ;
+    rdf:rest () .
+
+_:Nae1c23fc302143d48f835b82a70047ea rdf:first ex:otype_forklift ;
+    rdf:rest _:N73f5cbce87314ac7b014e9bd0e2ad59d .
+
+_:Nba84ec10fa904814b8d5d7efea468c4b rdf:first ex:otype_forklift ;
+    rdf:rest _:N84bafa2848474fb4a82b9a83acd3ea54 .
+
+_:Nd76491151e4e46a99bb4fb69dadc9e00 rdf:first ex:otype_transport_document ;
+    rdf:rest _:Nac979ef48f514898b83b72ec06f378c0 .
+
+_:Ne6fcc9fa2e1046b2930411ec2d0cce52 rdf:first ex:otype_truck ;
+    rdf:rest _:N433d16a4f5b8482db63c7a6db71c0858 .
+
+_:Nf6a619277daa47c9b28b8504a34f77ed rdf:first ex:otype_forklift ;
+    rdf:rest _:N327bd5ac8ed3434f8b6b1fbfb73cadd6 .
+
+_:Nf983ce6b3ac140e4aaad163dcd66a53a rdf:first ex:otype_truck ;
+    rdf:rest _:N253a9da512d4478bbb047280bffaa083 .
+
+_:Nfd9dda4e85eb46caba486d63896dfc5a rdf:first ex:otype_truck ;
+    rdf:rest _:N7b1b873ab87643bf8b24f180392374e6 .
+
+_:N00a9aed29373434596a2e2de035345df a owl:Class ;
+    owl:intersectionOf _:Nba84ec10fa904814b8d5d7efea468c4b .
+
+_:N04d5a683edc34f2790bd2d9d80569832 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/customer_order/Create%20Transport%20Document> ;
+    owl:onProperty oro:playsRole .
+
+_:N09d43d8852324966925af6a19af6d9d1 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/container/Reschedule%20Container> ;
+    owl:onProperty oro:playsRole .
+
+_:N0cb62aa9729c4b32be5d715dedfd1ccd a owl:Class ;
+    owl:intersectionOf _:N1ff33e442f72494d987b02ab7ca8905c .
+
+_:N0d93af80f45c4a2a80e5ea9bc1c29ca7 a owl:Class ;
+    owl:intersectionOf _:Nae1c23fc302143d48f835b82a70047ea .
+
+_:N0df499791d464e19811075e85ffb397a a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/customer_order/Register%20Customer%20Order> ;
+    owl:onProperty oro:playsRole .
+
+_:N0e0848a3d49d43ea8d8c6864b7ed115a a owl:Class ;
+    owl:intersectionOf _:Nfd9dda4e85eb46caba486d63896dfc5a .
+
+_:N144a4084c8fb45e4885f2eac3463aef0 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/vehicle/Depart> ;
+    owl:onProperty oro:playsRole .
+
+_:N1b4b5cca623a4aea9096a3fa0387eb12 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/container/Drive%20to%20Terminal> ;
+    owl:onProperty oro:playsRole .
+
+_:N1dd34a8a548d4e2a8605756daa953c7d a owl:Class ;
+    owl:intersectionOf _:N9d3a0b285d184b0a88911f69983424d9 .
+
+_:N243e30ca8bf940bd8ca6240a7d79d816 a owl:Class ;
+    owl:intersectionOf _:N4fedbe98acf445baa46264a7e67e4e7d .
+
+_:N277c104f43c2420f81e3ff3658f54ba6 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/transport_document/Order%20Empty%20Containers> ;
+    owl:onProperty oro:playsRole .
+
+_:N347a782f0bf943468b82bf47b4e47396 a owl:Class ;
+    owl:intersectionOf _:N6abf5f224d704e2aa270d4294b28b23c .
+
+_:N4495ff9710244354b0e2cd38ddeec8d0 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/container/Order%20Empty%20Containers> ;
+    owl:onProperty oro:playsRole .
+
+_:N488d7c747030413ab28bb2a49276f023 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/handling_unit/Collect%20Goods> ;
+    owl:onProperty oro:playsRole .
+
+_:N52b7809e74cd44748d5e4e8b17209ef6 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/transport_document/Book%20Vehicles> ;
+    owl:onProperty oro:playsRole .
+
+_:N54d2d3f99a1c4ffd8e271406fa58c860 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/container/Bring%20to%20Loading%20Bay> ;
+    owl:onProperty oro:playsRole .
+
+_:N5a6f5885cf2642fd9b507a9d40a21478 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/container/Place%20in%20Stock> ;
+    owl:onProperty oro:playsRole .
+
+_:N6066f0a41d1c4b699f488d11189eda2d a owl:Class ;
+    owl:intersectionOf _:N7809173aaaa942788c11cffe9dae97fc .
+
+_:N72b2a9ef7dfe4743ba2d84eafd9b5ee8 a owl:Class ;
+    owl:intersectionOf _:N63eabfda7a014cc18f92f7f5a1e147de .
+
+_:N7d43f0af0a064634a6581091d2369ea0 a owl:Class ;
+    owl:intersectionOf _:Ne6fcc9fa2e1046b2930411ec2d0cce52 .
+
+_:N7ed748e034164bd8a51ef2358aa4eb42 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/transport_document/Create%20Transport%20Document> ;
+    owl:onProperty oro:playsRole .
+
+_:N89e1fd38fa894e8093215dc9e55e528d a owl:Class ;
+    owl:intersectionOf _:N26cb39f2875440bdbeb03a893cb64586 .
+
+_:N8e1a0e4ebb5743b387088ab89cf5cba9 a owl:Class ;
+    owl:intersectionOf _:Naaff2b93206a4a2e9812b9b32b216979 .
+
+_:N921525b7d03e4cdb977b222e2116bab9 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/handling_unit/Load%20Truck> ;
+    owl:onProperty oro:playsRole .
+
+_:N9a440b7d27704896a5e9862df75128cb a owl:Class ;
+    owl:intersectionOf _:N9b64a90138f545fb96cee35c3d9f45af .
+
+_:N9a696c7546f4476d87149c1231806480 a owl:Class ;
+    owl:intersectionOf _:N26d18efc720143248eefa772a1df0772 .
+
+_:N9be8c2d680da43e9bdc45083d46be88a a owl:Class ;
+    owl:intersectionOf _:N835c7999fc3f4095be4ba8104c2c0cf6 .
+
+_:Ncaefaed9b7b7409cb27de19b0322403f a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/container/Pick%20Up%20Empty%20Container> ;
+    owl:onProperty oro:playsRole .
+
+_:Ncf7f559a8ecc449bba19636c660d61c7 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/container/Weigh> ;
+    owl:onProperty oro:playsRole .
+
+_:Ndaa815e86de048488d02a46bda3f7c5f a owl:Class ;
+    owl:intersectionOf _:Nf6a619277daa47c9b28b8504a34f77ed .
+
+_:Ndb7130b482eb414d9873eba051549536 a owl:Class ;
+    owl:intersectionOf _:Nf983ce6b3ac140e4aaad163dcd66a53a .
+
+_:Nef5bc62f6148489aba3a5bf8a23802ec a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/container/Depart> ;
+    owl:onProperty oro:playsRole .
+
+_:Nf3a9e886367f4956864f79996f6c387c a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/container/Load%20to%20Vehicle> ;
+    owl:onProperty oro:playsRole .
+
+_:Nf5c951a67ecb4cb3a6e60fbae655ab76 a owl:Class ;
+    owl:intersectionOf _:Nd76491151e4e46a99bb4fb69dadc9e00 .
+

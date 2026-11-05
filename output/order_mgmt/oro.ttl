@@ -1,0 +1,1981 @@
+@prefix ex: <http://www.example.com/> .
+@prefix oro: <http://www.example.com/oro/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+oro:dl a owl:AnnotationProperty .
+
+<http://www.example.com/oro/log/order-management> a owl:Ontology ;
+    rdfs:label "Object Role Ontology of order-management" ;
+    rdfs:comment "T-box of the ORO: core axioms (Section 4) and the behavioural axioms inferred bottom-up on the log. The A-box is virtual (Ontop VKG over DuckDB) and uses the same IRIs." .
+
+oro:nonEmpty a owl:AnnotationProperty .
+
+oro:schema a owl:AnnotationProperty .
+
+oro:Event a owl:Class ;
+    rdfs:label "Event" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/Ev/confirm%20order> <http://www.example.com/oro/Ev/create%20package> <http://www.example.com/oro/Ev/failed%20delivery> <http://www.example.com/oro/Ev/item%20out%20of%20stock> <http://www.example.com/oro/Ev/package%20delivered> <http://www.example.com/oro/Ev/pay%20order> <http://www.example.com/oro/Ev/payment%20reminder> <http://www.example.com/oro/Ev/pick%20item> <http://www.example.com/oro/Ev/place%20order> <http://www.example.com/oro/Ev/reorder%20item> <http://www.example.com/oro/Ev/send%20package> ) ] .
+
+oro:Object a owl:Class ;
+    rdfs:label "O" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( ex:otype_customers ex:otype_employees ex:otype_items ex:otype_orders ex:otype_packages ex:otype_products ) ] .
+
+<http://www.example.com/oro/Reuse/items/failed%20delivery> a owl:Class ;
+    rdfs:label "Reuse_{failed delivery}(items)" ;
+    owl:equivalentClass _:Ndb6933faf006495895a281c5019025a4 .
+
+<http://www.example.com/oro/Reuse/items/payment%20reminder> a owl:Class ;
+    rdfs:label "Reuse_{payment reminder}(items)" ;
+    owl:equivalentClass _:N850ff9f3aa5d471da53a9308cfd7d43b .
+
+<http://www.example.com/oro/Reuse/orders/payment%20reminder> a owl:Class ;
+    rdfs:label "Reuse_{payment reminder}(orders)" ;
+    owl:equivalentClass _:N43884119e7af4520a307412b6aa256b7 .
+
+<http://www.example.com/oro/Reuse/packages/failed%20delivery> a owl:Class ;
+    rdfs:label "Reuse_{failed delivery}(packages)" ;
+    owl:equivalentClass _:N940c7ba248924658ba85c02b1b17a50d .
+
+<http://www.example.com/oro/R/items/confirm%20order> a owl:Class ;
+    rdfs:label "R_{confirm order}(items)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/confirm%20order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_items ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/items/create%20package> a owl:Class ;
+    rdfs:label "R_{create package}(items)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/create%20package> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_items ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/items/failed%20delivery> a owl:Class ;
+    rdfs:label "R_{failed delivery}(items)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/failed%20delivery> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_items ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/items/item%20out%20of%20stock> a owl:Class ;
+    rdfs:label "R_{item out of stock}(items)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/item%20out%20of%20stock> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_items ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/items/package%20delivered> a owl:Class ;
+    rdfs:label "R_{package delivered}(items)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/package%20delivered> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_items ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/items/pay%20order> a owl:Class ;
+    rdfs:label "R_{pay order}(items)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/pay%20order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_items ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/items/payment%20reminder> a owl:Class ;
+    rdfs:label "R_{payment reminder}(items)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/payment%20reminder> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_items ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/items/pick%20item> a owl:Class ;
+    rdfs:label "R_{pick item}(items)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/pick%20item> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_items ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/items/reorder%20item> a owl:Class ;
+    rdfs:label "R_{reorder item}(items)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/reorder%20item> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_items ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/items/send%20package> a owl:Class ;
+    rdfs:label "R_{send package}(items)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/send%20package> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_items ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/orders/confirm%20order> a owl:Class ;
+    rdfs:label "R_{confirm order}(orders)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/confirm%20order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_orders ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/orders/payment%20reminder> a owl:Class ;
+    rdfs:label "R_{payment reminder}(orders)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/payment%20reminder> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_orders ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/packages/failed%20delivery> a owl:Class ;
+    rdfs:label "R_{failed delivery}(packages)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/failed%20delivery> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_packages ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/packages/send%20package> a owl:Class ;
+    rdfs:label "R_{send package}(packages)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/send%20package> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_packages ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/Reuse/customers/confirm%20order> a owl:Class ;
+    rdfs:label "Reuse_{confirm order}(customers)" ;
+    owl:equivalentClass _:N1e9d2ae3b0d8471abcffb29667b43add,
+        _:N607060f341a04849a9b9e71c2c423c7d .
+
+<http://www.example.com/oro/Reuse/customers/place%20order> a owl:Class ;
+    rdfs:label "Reuse_{place order}(customers)" ;
+    owl:equivalentClass _:N09f3124706304f34b9a80bad9b7585d9,
+        _:N80de83ce4f1e4ab9a9c1a3ffe0703c51 .
+
+<http://www.example.com/oro/Reuse/employees/confirm%20order> a owl:Class ;
+    rdfs:label "Reuse_{confirm order}(employees)" ;
+    owl:equivalentClass _:N5cbd3d8fe4c945a38f680ce397a8a28f,
+        _:Na2bf686882c4412d9601d02c9c86a684 .
+
+<http://www.example.com/oro/Reuse/employees/create%20package> a owl:Class ;
+    rdfs:label "Reuse_{create package}(employees)" ;
+    owl:equivalentClass _:N20dfbd08c7814725a2779238152beb62,
+        _:N68acba38128444fcb8cfb98f258747ef .
+
+<http://www.example.com/oro/Reuse/employees/failed%20delivery> a owl:Class ;
+    rdfs:label "Reuse_{failed delivery}(employees)" ;
+    owl:equivalentClass _:N0c93fca2926f441fb87ee78a82f66063,
+        _:N11475a161832448fae1d3b5714c3e249 .
+
+<http://www.example.com/oro/Reuse/employees/item%20out%20of%20stock> a owl:Class ;
+    rdfs:label "Reuse_{item out of stock}(employees)" ;
+    owl:equivalentClass _:N90f4db47d3a8466b8fc26273fb373887,
+        _:Nd0e689000ef1435482817e4fad3a8e7c .
+
+<http://www.example.com/oro/Reuse/employees/package%20delivered> a owl:Class ;
+    rdfs:label "Reuse_{package delivered}(employees)" ;
+    owl:equivalentClass _:N177bde683dc548578301509b1060ce2f,
+        _:N55c4903b31594946b2842e3f1174e3c4 .
+
+<http://www.example.com/oro/Reuse/employees/pick%20item> a owl:Class ;
+    rdfs:label "Reuse_{pick item}(employees)" ;
+    owl:equivalentClass _:N5efc251654974df585f875188176efab,
+        _:Nd4979369d3554482b49587d1b7afb12c .
+
+<http://www.example.com/oro/Reuse/employees/reorder%20item> a owl:Class ;
+    rdfs:label "Reuse_{reorder item}(employees)" ;
+    owl:equivalentClass _:N233e5b9ccb844cb18a0198b3cdc4c853,
+        _:N9bcdc53d1ac8493980bb04ce7a814178 .
+
+<http://www.example.com/oro/Reuse/employees/send%20package> a owl:Class ;
+    rdfs:label "Reuse_{send package}(employees)" ;
+    owl:equivalentClass _:N706c93bd882b4c79be6ebf4c5801913b,
+        _:N89f2905d64c44b8080b311bf85cdd259 .
+
+<http://www.example.com/oro/Reuse/products/confirm%20order> a owl:Class ;
+    rdfs:label "Reuse_{confirm order}(products)" ;
+    owl:equivalentClass _:N920aca556aa9463e85d63a8a78a2a6c7,
+        _:N9e47e5187e4945628d73201381bf69d9 .
+
+<http://www.example.com/oro/Reuse/products/create%20package> a owl:Class ;
+    rdfs:label "Reuse_{create package}(products)" ;
+    owl:equivalentClass _:N21452c1cb16d4b1899550097f71d5e8f,
+        _:N8508feb4dc4842aba397777fb969b845 .
+
+<http://www.example.com/oro/Reuse/products/failed%20delivery> a owl:Class ;
+    rdfs:label "Reuse_{failed delivery}(products)" ;
+    owl:equivalentClass _:N601bc3469a2a4c3cb7ac3aaa5e898803,
+        _:N8c970c5f6dc045df97a437ab1275721c .
+
+<http://www.example.com/oro/Reuse/products/item%20out%20of%20stock> a owl:Class ;
+    rdfs:label "Reuse_{item out of stock}(products)" ;
+    owl:equivalentClass _:N146d24d5f0cc4f2c8177867b48aa8471,
+        _:N7a78de76c9314b568d7c5da471d9b7c3 .
+
+<http://www.example.com/oro/Reuse/products/package%20delivered> a owl:Class ;
+    rdfs:label "Reuse_{package delivered}(products)" ;
+    owl:equivalentClass _:N3eef3859db2d41829db234f4da1a6d63,
+        _:Nef31b88613d84719bd8963f736fec845 .
+
+<http://www.example.com/oro/Reuse/products/pay%20order> a owl:Class ;
+    rdfs:label "Reuse_{pay order}(products)" ;
+    owl:equivalentClass _:N150375b35e114a24a954a463d91ab3dc,
+        _:Naf0ab54a5c624220b583be3661c21a0a .
+
+<http://www.example.com/oro/Reuse/products/payment%20reminder> a owl:Class ;
+    rdfs:label "Reuse_{payment reminder}(products)" ;
+    owl:equivalentClass _:N7207e6c45e7b4c96b8952a0ab52d2095,
+        _:Na755b7d26c1f4884bea73a8e4cc7e207 .
+
+<http://www.example.com/oro/Reuse/products/pick%20item> a owl:Class ;
+    rdfs:label "Reuse_{pick item}(products)" ;
+    owl:equivalentClass _:N2374f74af3ce4aa89c81ff3cb76c19fe,
+        _:N70cc205b75cb4259b65fadf40902ef0a .
+
+<http://www.example.com/oro/Reuse/products/place%20order> a owl:Class ;
+    rdfs:label "Reuse_{place order}(products)" ;
+    owl:equivalentClass _:N0d891c1abaf74a9081888ab4653811e8,
+        _:N58dfa4ba4f8f43778296c433ade34191 .
+
+<http://www.example.com/oro/Reuse/products/reorder%20item> a owl:Class ;
+    rdfs:label "Reuse_{reorder item}(products)" ;
+    owl:equivalentClass _:Nb9eff4c2fe384baa8505afa519a94fd5,
+        _:Ncf8fbfc5cb6a4cbbb7e3764c6c5372fd .
+
+<http://www.example.com/oro/Reuse/products/send%20package> a owl:Class ;
+    rdfs:label "Reuse_{send package}(products)" ;
+    owl:equivalentClass _:N930785ac59b74783ac45f4d6e2706d72,
+        _:Nf163b02c998e45518eaab3b6c81f2ab8 .
+
+<http://www.example.com/oro/R/customers/confirm%20order> a owl:Class ;
+    rdfs:label "R_{confirm order}(customers)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/confirm%20order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_customers ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/customers/place%20order> a owl:Class ;
+    rdfs:label "R_{place order}(customers)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/place%20order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_customers ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/employees/confirm%20order> a owl:Class ;
+    rdfs:label "R_{confirm order}(employees)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/confirm%20order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_employees ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/employees/create%20package> a owl:Class ;
+    rdfs:label "R_{create package}(employees)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/create%20package> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_employees ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/employees/failed%20delivery> a owl:Class ;
+    rdfs:label "R_{failed delivery}(employees)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/failed%20delivery> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_employees ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/employees/item%20out%20of%20stock> a owl:Class ;
+    rdfs:label "R_{item out of stock}(employees)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/item%20out%20of%20stock> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_employees ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/employees/package%20delivered> a owl:Class ;
+    rdfs:label "R_{package delivered}(employees)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/package%20delivered> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_employees ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/employees/pick%20item> a owl:Class ;
+    rdfs:label "R_{pick item}(employees)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/pick%20item> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_employees ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/employees/reorder%20item> a owl:Class ;
+    rdfs:label "R_{reorder item}(employees)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/reorder%20item> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_employees ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/employees/send%20package> a owl:Class ;
+    rdfs:label "R_{send package}(employees)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/send%20package> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_employees ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/items/place%20order> a owl:Class ;
+    rdfs:label "R_{place order}(items)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/place%20order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_items ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:RStart .
+
+<http://www.example.com/oro/R/orders/pay%20order> a owl:Class ;
+    rdfs:label "R_{pay order}(orders)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/pay%20order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_orders ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd .
+
+<http://www.example.com/oro/R/orders/place%20order> a owl:Class ;
+    rdfs:label "R_{place order}(orders)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/place%20order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_orders ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:RStart .
+
+<http://www.example.com/oro/R/packages/create%20package> a owl:Class ;
+    rdfs:label "R_{create package}(packages)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/create%20package> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_packages ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:RStart .
+
+<http://www.example.com/oro/R/packages/package%20delivered> a owl:Class ;
+    rdfs:label "R_{package delivered}(packages)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/package%20delivered> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_packages ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd .
+
+<http://www.example.com/oro/R/products/confirm%20order> a owl:Class ;
+    rdfs:label "R_{confirm order}(products)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/confirm%20order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_products ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/products/create%20package> a owl:Class ;
+    rdfs:label "R_{create package}(products)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/create%20package> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_products ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/products/failed%20delivery> a owl:Class ;
+    rdfs:label "R_{failed delivery}(products)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/failed%20delivery> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_products ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/products/item%20out%20of%20stock> a owl:Class ;
+    rdfs:label "R_{item out of stock}(products)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/item%20out%20of%20stock> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_products ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/products/package%20delivered> a owl:Class ;
+    rdfs:label "R_{package delivered}(products)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/package%20delivered> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_products ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/products/pay%20order> a owl:Class ;
+    rdfs:label "R_{pay order}(products)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/pay%20order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_products ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/products/payment%20reminder> a owl:Class ;
+    rdfs:label "R_{payment reminder}(products)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/payment%20reminder> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_products ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/products/pick%20item> a owl:Class ;
+    rdfs:label "R_{pick item}(products)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/pick%20item> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_products ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/products/place%20order> a owl:Class ;
+    rdfs:label "R_{place order}(products)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/place%20order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_products ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/products/reorder%20item> a owl:Class ;
+    rdfs:label "R_{reorder item}(products)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/reorder%20item> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_products ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/products/send%20package> a owl:Class ;
+    rdfs:label "R_{send package}(products)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/send%20package> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_products ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/Ev/item%20out%20of%20stock> a owl:Class ;
+    rdfs:label "Ev_{item out of stock}" .
+
+<http://www.example.com/oro/Ev/pay%20order> a owl:Class ;
+    rdfs:label "Ev_{pay order}" .
+
+<http://www.example.com/oro/Ev/payment%20reminder> a owl:Class ;
+    rdfs:label "Ev_{payment reminder}" .
+
+<http://www.example.com/oro/Ev/pick%20item> a owl:Class ;
+    rdfs:label "Ev_{pick item}" .
+
+<http://www.example.com/oro/Ev/reorder%20item> a owl:Class ;
+    rdfs:label "Ev_{reorder item}" .
+
+oro:REnd a owl:Class ;
+    rdfs:label "R_end" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( oro:Role [ a owl:Class ;
+                        owl:complementOf [ a owl:Restriction ;
+                                owl:onProperty oro:nextRole ;
+                                owl:someValuesFrom oro:Role ] ] ) ] .
+
+<http://www.example.com/oro/Ev/create%20package> a owl:Class ;
+    rdfs:label "Ev_{create package}" .
+
+<http://www.example.com/oro/Ev/failed%20delivery> a owl:Class ;
+    rdfs:label "Ev_{failed delivery}" .
+
+<http://www.example.com/oro/Ev/package%20delivered> a owl:Class ;
+    rdfs:label "Ev_{package delivered}" .
+
+<http://www.example.com/oro/Ev/place%20order> a owl:Class ;
+    rdfs:label "Ev_{place order}" .
+
+<http://www.example.com/oro/Ev/send%20package> a owl:Class ;
+    rdfs:label "Ev_{send package}" .
+
+<http://www.example.com/oro/Ev/confirm%20order> a owl:Class ;
+    rdfs:label "Ev_{confirm order}" .
+
+oro:RStart a owl:Class ;
+    rdfs:label "R_start" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( oro:Role [ a owl:Class ;
+                        owl:complementOf [ a owl:Restriction ;
+                                owl:onProperty [ owl:inverseOf oro:nextRole ] ;
+                                owl:someValuesFrom oro:Role ] ] ) ] .
+
+<http://www.example.com/oro/Role/customers> a owl:Class ;
+    rdfs:label "Role(customers)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/customers> ;
+            owl:onProperty oro:nextRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/customers> ;
+            owl:onProperty oro:laterRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/customers/confirm%20order> <http://www.example.com/oro/R/customers/place%20order> ) ] .
+
+<http://www.example.com/oro/Role/employees> a owl:Class ;
+    rdfs:label "Role(employees)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/employees> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/employees> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/employees/confirm%20order> <http://www.example.com/oro/R/employees/create%20package> <http://www.example.com/oro/R/employees/failed%20delivery> <http://www.example.com/oro/R/employees/item%20out%20of%20stock> <http://www.example.com/oro/R/employees/package%20delivered> <http://www.example.com/oro/R/employees/pick%20item> <http://www.example.com/oro/R/employees/reorder%20item> <http://www.example.com/oro/R/employees/send%20package> ) ] .
+
+<http://www.example.com/oro/Role/items> a owl:Class ;
+    rdfs:label "Role(items)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/items> ;
+            owl:onProperty oro:nextRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/items> ;
+            owl:onProperty oro:laterRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/items/confirm%20order> <http://www.example.com/oro/R/items/create%20package> <http://www.example.com/oro/R/items/failed%20delivery> <http://www.example.com/oro/R/items/item%20out%20of%20stock> <http://www.example.com/oro/R/items/package%20delivered> <http://www.example.com/oro/R/items/pay%20order> <http://www.example.com/oro/R/items/payment%20reminder> <http://www.example.com/oro/R/items/pick%20item> <http://www.example.com/oro/R/items/place%20order> <http://www.example.com/oro/R/items/reorder%20item> <http://www.example.com/oro/R/items/send%20package> ) ] .
+
+<http://www.example.com/oro/Role/orders> a owl:Class ;
+    rdfs:label "Role(orders)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/orders> ;
+            owl:onProperty oro:nextRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/orders> ;
+            owl:onProperty oro:laterRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/orders/confirm%20order> <http://www.example.com/oro/R/orders/pay%20order> <http://www.example.com/oro/R/orders/payment%20reminder> <http://www.example.com/oro/R/orders/place%20order> ) ] .
+
+<http://www.example.com/oro/Role/packages> a owl:Class ;
+    rdfs:label "Role(packages)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/packages> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/packages> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/packages/create%20package> <http://www.example.com/oro/R/packages/failed%20delivery> <http://www.example.com/oro/R/packages/package%20delivered> <http://www.example.com/oro/R/packages/send%20package> ) ] .
+
+<http://www.example.com/oro/Role/products> a owl:Class ;
+    rdfs:label "Role(products)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/products> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/products> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/products/confirm%20order> <http://www.example.com/oro/R/products/create%20package> <http://www.example.com/oro/R/products/failed%20delivery> <http://www.example.com/oro/R/products/item%20out%20of%20stock> <http://www.example.com/oro/R/products/package%20delivered> <http://www.example.com/oro/R/products/pay%20order> <http://www.example.com/oro/R/products/payment%20reminder> <http://www.example.com/oro/R/products/pick%20item> <http://www.example.com/oro/R/products/place%20order> <http://www.example.com/oro/R/products/reorder%20item> <http://www.example.com/oro/R/products/send%20package> ) ] .
+
+ex:otype_customers a owl:Class ;
+    rdfs:label "O_customers" ;
+    oro:dl "O_customers ⊑ ∀playsRole.¬(R_init(customers) ⊔ R_close(customers))" ;
+    oro:schema "ext" .
+
+ex:otype_orders a owl:Class ;
+    rdfs:label "O_orders" ;
+    rdfs:subClassOf _:N13688191275747369b530ab6de2c5fa0,
+        _:N4479824dd7a146f7b8f4a3073ff3a4f4,
+        _:Na02394bcd13d4cdea82da70b68cc03b9 .
+
+ex:otype_packages a owl:Class ;
+    rdfs:label "O_packages" ;
+    rdfs:subClassOf _:N4667486e89b34d53972a6bc9ccd2015d,
+        _:N4db259168b484e99bc1fe1c399a0ca76,
+        _:N8c6e42924e88447987d5ece01f50711f .
+
+oro:Role a owl:Class ;
+    rdfs:label "Role" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/Role/customers> <http://www.example.com/oro/Role/employees> <http://www.example.com/oro/Role/items> <http://www.example.com/oro/Role/orders> <http://www.example.com/oro/Role/packages> <http://www.example.com/oro/Role/products> ) ] .
+
+oro:laterRole a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "laterRole" ;
+    rdfs:domain oro:Role ;
+    rdfs:range oro:Role .
+
+oro:nextRole a owl:ObjectProperty ;
+    rdfs:label "nextRole" ;
+    rdfs:domain oro:Role ;
+    rdfs:range oro:Role ;
+    rdfs:subPropertyOf oro:laterRole .
+
+ex:otype_items a owl:Class ;
+    rdfs:label "O_items" ;
+    rdfs:subClassOf _:N1d6e74d146aa44d5810609fc65980f88,
+        _:N26cd374f73ad4433864558265ec4bf18,
+        _:N37c6ab774fcd430ab0ff280f4b5c7c0e,
+        _:N6c6fde2653f54542a0525d4acfb585ba,
+        _:N92387fcd4e1a4332a9b816fa34c47593,
+        _:Ncb028921903148c1aa61ca01f12cc0aa,
+        _:Nd0c9b26e606142419c8a42c9c0e46f94,
+        _:Ndec7bb538d74456097c2af4ad6c9c577,
+        _:Ne44dfa2834634cc290c4639a01b443e1 .
+
+ex:otype_employees a owl:Class ;
+    rdfs:label "O_employees" ;
+    oro:dl "O_employees ⊑ ∀playsRole.¬(R_init(employees) ⊔ R_close(employees))" ;
+    oro:schema "ext" .
+
+ex:otype_products a owl:Class ;
+    rdfs:label "O_products" ;
+    oro:dl "O_products ⊑ ∀playsRole.¬(R_init(products) ⊔ R_close(products))" ;
+    oro:schema "ext" .
+
+oro:frames a owl:ObjectProperty ;
+    rdfs:label "frames" ;
+    rdfs:domain oro:Event ;
+    rdfs:range oro:Role .
+
+oro:playsRole a owl:ObjectProperty ;
+    rdfs:label "playsRole" ;
+    rdfs:domain oro:Object ;
+    rdfs:range oro:Role .
+
+[] a owl:Axiom ;
+    rdfs:label "single(items, send package)" ;
+    oro:dl "O_items ⊑ (≤1 playsRole.R_{send package}(items))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_items ;
+    owl:annotatedTarget _:Ndec7bb538d74456097c2af4ad6c9c577 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(products, confirm order)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{confirm order}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/confirm%20order> ;
+    owl:annotatedTarget _:N920aca556aa9463e85d63a8a78a2a6c7 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(items, payment reminder)" ;
+    oro:dl "O_items ⊓ (≥2 playsRole.R_{payment reminder}(items)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/items/payment%20reminder> ;
+    owl:annotatedTarget _:N850ff9f3aa5d471da53a9308cfd7d43b .
+
+[] a owl:Axiom ;
+    rdfs:label "single(packages, create package)" ;
+    oro:dl "O_packages ⊑ (≤1 playsRole.R_{create package}(packages))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_packages ;
+    owl:annotatedTarget _:N4667486e89b34d53972a6bc9ccd2015d .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(employees)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{confirm order}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{create package}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{failed delivery}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{item out of stock}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{package delivered}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{pick item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{reorder item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{send package}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/create%20package> ;
+    owl:annotatedTarget _:N68acba38128444fcb8cfb98f258747ef .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/items> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/items> .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(products)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{confirm order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{create package}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{failed delivery}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{item out of stock}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{package delivered}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pay order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{payment reminder}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pick item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{place order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{reorder item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{send package}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/confirm%20order> ;
+    owl:annotatedTarget _:N9e47e5187e4945628d73201381bf69d9 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(items, package delivered)" ;
+    oro:dl "O_items ⊑ (≤1 playsRole.R_{package delivered}(items))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_items ;
+    owl:annotatedTarget _:N92387fcd4e1a4332a9b816fa34c47593 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/packages> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/packages> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(products, package delivered)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{package delivered}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/package%20delivered> ;
+    owl:annotatedTarget _:N3eef3859db2d41829db234f4da1a6d63 .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(packages, package delivered)" ;
+    oro:dl "R_{package delivered}(packages) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/packages/package%20delivered> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "single(packages, package delivered)" ;
+    oro:dl "O_packages ⊑ (≤1 playsRole.R_{package delivered}(packages))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_packages ;
+    owl:annotatedTarget _:N8c6e42924e88447987d5ece01f50711f .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(products)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{confirm order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{create package}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{failed delivery}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{item out of stock}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{package delivered}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pay order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{payment reminder}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pick item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{place order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{reorder item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{send package}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/send%20package> ;
+    owl:annotatedTarget _:N930785ac59b74783ac45f4d6e2706d72 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/orders> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/orders> .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(products)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{confirm order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{create package}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{failed delivery}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{item out of stock}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{package delivered}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pay order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{payment reminder}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pick item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{place order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{reorder item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{send package}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/payment%20reminder> ;
+    owl:annotatedTarget _:Na755b7d26c1f4884bea73a8e4cc7e207 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(items, place order)" ;
+    oro:dl "O_items ⊑ (≤1 playsRole.R_{place order}(items))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_items ;
+    owl:annotatedTarget _:Nd0c9b26e606142419c8a42c9c0e46f94 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(orders, pay order)" ;
+    oro:dl "O_orders ⊑ (≤1 playsRole.R_{pay order}(orders))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_orders ;
+    owl:annotatedTarget _:N4479824dd7a146f7b8f4a3073ff3a4f4 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(items, item out of stock)" ;
+    oro:dl "O_items ⊑ (≤1 playsRole.R_{item out of stock}(items))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_items ;
+    owl:annotatedTarget _:Ncb028921903148c1aa61ca01f12cc0aa .
+
+[] a owl:Axiom ;
+    rdfs:label "single(items, create package)" ;
+    oro:dl "O_items ⊑ (≤1 playsRole.R_{create package}(items))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_items ;
+    owl:annotatedTarget _:N37c6ab774fcd430ab0ff280f4b5c7c0e .
+
+[] a owl:Axiom ;
+    rdfs:label "init(items, place order)" ;
+    oro:dl "R_{place order}(items) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/items/place%20order> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/customers> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/customers> .
+
+[] a owl:Axiom ;
+    rdfs:label "single(items, pick item)" ;
+    oro:dl "O_items ⊑ (≤1 playsRole.R_{pick item}(items))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_items ;
+    owl:annotatedTarget _:Ne44dfa2834634cc290c4639a01b443e1 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(employees)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{confirm order}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{create package}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{failed delivery}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{item out of stock}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{package delivered}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{pick item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{reorder item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{send package}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/reorder%20item> ;
+    owl:annotatedTarget _:N9bcdc53d1ac8493980bb04ce7a814178 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(packages, failed delivery)" ;
+    oro:dl "O_packages ⊓ (≥2 playsRole.R_{failed delivery}(packages)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/packages/failed%20delivery> ;
+    owl:annotatedTarget _:N940c7ba248924658ba85c02b1b17a50d .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(customers, confirm order)" ;
+    oro:dl "O_customers ⊓ (≥2 playsRole.R_{confirm order}(customers)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/customers/confirm%20order> ;
+    owl:annotatedTarget _:N607060f341a04849a9b9e71c2c423c7d .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(orders, pay order)" ;
+    oro:dl "R_{pay order}(orders) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/orders/pay%20order> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(employees)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{confirm order}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{create package}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{failed delivery}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{item out of stock}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{package delivered}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{pick item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{reorder item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{send package}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/send%20package> ;
+    owl:annotatedTarget _:N706c93bd882b4c79be6ebf4c5801913b .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(employees, send package)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{send package}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/send%20package> ;
+    owl:annotatedTarget _:N89f2905d64c44b8080b311bf85cdd259 .
+
+[] a owl:Axiom ;
+    rdfs:label "init(orders, place order)" ;
+    oro:dl "R_{place order}(orders) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/orders/place%20order> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/customers> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/customers> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(products, pick item)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{pick item}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/pick%20item> ;
+    owl:annotatedTarget _:N70cc205b75cb4259b65fadf40902ef0a .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(products)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{confirm order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{create package}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{failed delivery}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{item out of stock}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{package delivered}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pay order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{payment reminder}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pick item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{place order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{reorder item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{send package}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/place%20order> ;
+    owl:annotatedTarget _:N58dfa4ba4f8f43778296c433ade34191 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(orders, payment reminder)" ;
+    oro:dl "O_orders ⊓ (≥2 playsRole.R_{payment reminder}(orders)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/orders/payment%20reminder> ;
+    owl:annotatedTarget _:N43884119e7af4520a307412b6aa256b7 .
+
+[] a owl:Axiom ;
+    rdfs:label "init(packages, create package)" ;
+    oro:dl "R_{create package}(packages) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/packages/create%20package> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(products, item out of stock)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{item out of stock}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/item%20out%20of%20stock> ;
+    owl:annotatedTarget _:N146d24d5f0cc4f2c8177867b48aa8471 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(products, payment reminder)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{payment reminder}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/payment%20reminder> ;
+    owl:annotatedTarget _:N7207e6c45e7b4c96b8952a0ab52d2095 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/orders> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/orders> .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(employees)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{confirm order}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{create package}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{failed delivery}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{item out of stock}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{package delivered}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{pick item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{reorder item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{send package}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/pick%20item> ;
+    owl:annotatedTarget _:Nd4979369d3554482b49587d1b7afb12c .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(products)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{confirm order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{create package}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{failed delivery}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{item out of stock}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{package delivered}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pay order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{payment reminder}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pick item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{place order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{reorder item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{send package}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/failed%20delivery> ;
+    owl:annotatedTarget _:N601bc3469a2a4c3cb7ac3aaa5e898803 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(items, failed delivery)" ;
+    oro:dl "O_items ⊓ (≥2 playsRole.R_{failed delivery}(items)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/items/failed%20delivery> ;
+    owl:annotatedTarget _:Ndb6933faf006495895a281c5019025a4 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(products, send package)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{send package}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/send%20package> ;
+    owl:annotatedTarget _:Nf163b02c998e45518eaab3b6c81f2ab8 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/items> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/items> .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/products> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/products> .
+
+[] a owl:Axiom ;
+    rdfs:label "single(packages, send package)" ;
+    oro:dl "O_packages ⊑ (≤1 playsRole.R_{send package}(packages))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_packages ;
+    owl:annotatedTarget _:N4db259168b484e99bc1fe1c399a0ca76 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(products, create package)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{create package}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/create%20package> ;
+    owl:annotatedTarget _:N8508feb4dc4842aba397777fb969b845 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(orders, place order)" ;
+    oro:dl "O_orders ⊑ (≤1 playsRole.R_{place order}(orders))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_orders ;
+    owl:annotatedTarget _:Na02394bcd13d4cdea82da70b68cc03b9 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(products)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{confirm order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{create package}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{failed delivery}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{item out of stock}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{package delivered}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pay order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{payment reminder}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pick item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{place order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{reorder item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{send package}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/item%20out%20of%20stock> ;
+    owl:annotatedTarget _:N7a78de76c9314b568d7c5da471d9b7c3 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(employees, item out of stock)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{item out of stock}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/item%20out%20of%20stock> ;
+    owl:annotatedTarget _:Nd0e689000ef1435482817e4fad3a8e7c .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(employees, package delivered)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{package delivered}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/package%20delivered> ;
+    owl:annotatedTarget _:N55c4903b31594946b2842e3f1174e3c4 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(items, pay order)" ;
+    oro:dl "O_items ⊑ (≤1 playsRole.R_{pay order}(items))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_items ;
+    owl:annotatedTarget _:N6c6fde2653f54542a0525d4acfb585ba .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(products)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{confirm order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{create package}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{failed delivery}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{item out of stock}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{package delivered}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pay order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{payment reminder}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pick item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{place order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{reorder item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{send package}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/package%20delivered> ;
+    owl:annotatedTarget _:Nef31b88613d84719bd8963f736fec845 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(employees)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{confirm order}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{create package}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{failed delivery}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{item out of stock}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{package delivered}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{pick item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{reorder item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{send package}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/package%20delivered> ;
+    owl:annotatedTarget _:N177bde683dc548578301509b1060ce2f .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(products, pay order)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{pay order}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/pay%20order> ;
+    owl:annotatedTarget _:Naf0ab54a5c624220b583be3661c21a0a .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(employees, confirm order)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{confirm order}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/confirm%20order> ;
+    owl:annotatedTarget _:N5cbd3d8fe4c945a38f680ce397a8a28f .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/employees> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/employees> .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(employees)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{confirm order}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{create package}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{failed delivery}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{item out of stock}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{package delivered}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{pick item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{reorder item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{send package}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/failed%20delivery> ;
+    owl:annotatedTarget _:N11475a161832448fae1d3b5714c3e249 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(products, failed delivery)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{failed delivery}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/failed%20delivery> ;
+    owl:annotatedTarget _:N8c970c5f6dc045df97a437ab1275721c .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/employees> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/employees> .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(products)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{confirm order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{create package}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{failed delivery}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{item out of stock}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{package delivered}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pay order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{payment reminder}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pick item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{place order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{reorder item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{send package}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/reorder%20item> ;
+    owl:annotatedTarget _:Ncf8fbfc5cb6a4cbbb7e3764c6c5372fd .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(products, place order)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{place order}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/place%20order> ;
+    owl:annotatedTarget _:N0d891c1abaf74a9081888ab4653811e8 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(products, reorder item)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{reorder item}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/reorder%20item> ;
+    owl:annotatedTarget _:Nb9eff4c2fe384baa8505afa519a94fd5 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(products)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{confirm order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{create package}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{failed delivery}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{item out of stock}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{package delivered}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pay order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{payment reminder}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pick item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{place order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{reorder item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{send package}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/pay%20order> ;
+    owl:annotatedTarget _:N150375b35e114a24a954a463d91ab3dc .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/packages> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/packages> .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(customers)" ;
+    oro:dl "O_customers ⊓ (≥2 playsRole.R_{confirm order}(customers)) ⋢ ⊥; O_customers ⊓ (≥2 playsRole.R_{place order}(customers)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/customers/confirm%20order> ;
+    owl:annotatedTarget _:N1e9d2ae3b0d8471abcffb29667b43add .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(employees, failed delivery)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{failed delivery}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/failed%20delivery> ;
+    owl:annotatedTarget _:N0c93fca2926f441fb87ee78a82f66063 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(employees, reorder item)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{reorder item}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/reorder%20item> ;
+    owl:annotatedTarget _:N233e5b9ccb844cb18a0198b3cdc4c853 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(employees)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{confirm order}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{create package}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{failed delivery}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{item out of stock}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{package delivered}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{pick item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{reorder item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{send package}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/item%20out%20of%20stock> ;
+    owl:annotatedTarget _:N90f4db47d3a8466b8fc26273fb373887 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(orders, confirm order)" ;
+    oro:dl "O_orders ⊑ (≤1 playsRole.R_{confirm order}(orders))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_orders ;
+    owl:annotatedTarget _:N13688191275747369b530ab6de2c5fa0 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(customers, place order)" ;
+    oro:dl "O_customers ⊓ (≥2 playsRole.R_{place order}(customers)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/customers/place%20order> ;
+    owl:annotatedTarget _:N09f3124706304f34b9a80bad9b7585d9 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/products> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/products> .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(products)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{confirm order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{create package}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{failed delivery}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{item out of stock}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{package delivered}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pay order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{payment reminder}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pick item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{place order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{reorder item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{send package}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/create%20package> ;
+    owl:annotatedTarget _:N21452c1cb16d4b1899550097f71d5e8f .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(products)" ;
+    oro:dl "O_products ⊓ (≥2 playsRole.R_{confirm order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{create package}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{failed delivery}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{item out of stock}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{package delivered}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pay order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{payment reminder}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{pick item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{place order}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{reorder item}(products)) ⋢ ⊥; O_products ⊓ (≥2 playsRole.R_{send package}(products)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/products/pick%20item> ;
+    owl:annotatedTarget _:N2374f74af3ce4aa89c81ff3cb76c19fe .
+
+[] a owl:Axiom ;
+    rdfs:label "single(items, reorder item)" ;
+    oro:dl "O_items ⊑ (≤1 playsRole.R_{reorder item}(items))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_items ;
+    owl:annotatedTarget _:N26cd374f73ad4433864558265ec4bf18 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(employees, create package)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{create package}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/create%20package> ;
+    owl:annotatedTarget _:N20dfbd08c7814725a2779238152beb62 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(employees, pick item)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{pick item}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/pick%20item> ;
+    owl:annotatedTarget _:N5efc251654974df585f875188176efab .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(employees)" ;
+    oro:dl "O_employees ⊓ (≥2 playsRole.R_{confirm order}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{create package}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{failed delivery}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{item out of stock}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{package delivered}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{pick item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{reorder item}(employees)) ⋢ ⊥; O_employees ⊓ (≥2 playsRole.R_{send package}(employees)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/employees/confirm%20order> ;
+    owl:annotatedTarget _:Na2bf686882c4412d9601d02c9c86a684 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(items, confirm order)" ;
+    oro:dl "O_items ⊑ (≤1 playsRole.R_{confirm order}(items))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_items ;
+    owl:annotatedTarget _:N1d6e74d146aa44d5810609fc65980f88 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(customers)" ;
+    oro:dl "O_customers ⊓ (≥2 playsRole.R_{confirm order}(customers)) ⋢ ⊥; O_customers ⊓ (≥2 playsRole.R_{place order}(customers)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/customers/place%20order> ;
+    owl:annotatedTarget _:N80de83ce4f1e4ab9a9c1a3ffe0703c51 .
+
+_:N09da617c7ab74f24a957e39417c35770 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/products/confirm%20order> ;
+    owl:onProperty oro:playsRole .
+
+_:N0b1d00ac178144c797cded003c7a39ad rdf:first ex:otype_products ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/products/pick%20item> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N0cb4cc5e666d45a1b9cfa904ed9973fa a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/products/confirm%20order> ;
+    owl:onProperty oro:playsRole .
+
+_:N0e18028ef2e348648a4f08d32b9602e1 rdf:first ex:otype_products ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/products/place%20order> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N1394326557a74bd8b625b12e6907dc31 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/employees/package%20delivered> ;
+    owl:onProperty oro:playsRole .
+
+_:N140d4cc0825f482a88405bbe64a496fe rdf:first ex:otype_employees ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/employees/create%20package> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N142e6de8613d4c168881b76cba7859e4 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/items/payment%20reminder> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N17c41b7257af4a51b45b7110fc019a01 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/products/send%20package> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N1cd287d4708b42468a70122ec5602a5c rdf:first ex:otype_employees ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/employees/pick%20item> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N1d7d5127ea5843f289fe547adc5aefba rdf:first ex:otype_products ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/products/create%20package> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N1e3e2372c1cd41be8e1d475556d91627 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/items/failed%20delivery> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N2196ef84eb0a459289be153b7c1d42d9 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/customers/place%20order> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N23330eac189d47a6b6daa3af4d38a155 rdf:first ex:otype_employees ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/employees/package%20delivered> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N27943f8147974214b9c5ad37356c56e6 rdf:first ex:otype_employees ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/employees/create%20package> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N27cf450d008a4f80b753622bc598d68e rdf:first ex:otype_items ;
+    rdf:rest _:N142e6de8613d4c168881b76cba7859e4 .
+
+_:N28eb1c776755441c9bb805d975199422 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/products/package%20delivered> ;
+    owl:onProperty oro:playsRole .
+
+_:N2a6a75ffc6cb4e0f8f140d3e3248ea9e a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/employees/failed%20delivery> ;
+    owl:onProperty oro:playsRole .
+
+_:N2d71aef61a0b4f2bba8c379cf7791837 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/employees/send%20package> ;
+    owl:onProperty oro:playsRole .
+
+_:N2e152a8b4cd147248c271ec4eb8fea93 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/customers/confirm%20order> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N2f9a2a1d84b04a63ae4c96b0547a98e7 rdf:first ex:otype_employees ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/employees/confirm%20order> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N2fe7e0b712454758a0121d9e92a5b5bd rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/employees/send%20package> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N30e504ff4a034bb790fd171b928424b1 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/customers/confirm%20order> ;
+    owl:onProperty oro:playsRole .
+
+_:N3221488ad3f54a9da4fef9e4acbc4cce a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/products/reorder%20item> ;
+    owl:onProperty oro:playsRole .
+
+_:N34d63906079347c0bc25d12f1e327894 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/employees/pick%20item> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N3987666d829b49c280d83d0fd8538f9f rdf:first _:N0cb4cc5e666d45a1b9cfa904ed9973fa ;
+    rdf:rest () .
+
+_:N3a5bbb98e0d64304a9c6354a783382f9 rdf:first ex:otype_employees ;
+    rdf:rest ( _:N1394326557a74bd8b625b12e6907dc31 ) .
+
+_:N3a6850a33aaf4d12b09fd2283519abd9 rdf:first ex:otype_products ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/products/pick%20item> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N3b6aad99beee432e8a57d2a017b9d37f rdf:first ex:otype_orders ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/orders/payment%20reminder> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N3bc76a577330478d902d81ebed6ff861 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/products/pay%20order> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N3ee74a3ddf1542e383530aa61eb6d76e rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/products/failed%20delivery> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N42a99d48f2ab4e94a767c6fafac706e4 rdf:first ex:otype_employees ;
+    rdf:rest ( _:N2a6a75ffc6cb4e0f8f140d3e3248ea9e ) .
+
+_:N43bdf2080c13432ca4421fe26dd95ead rdf:first ex:otype_products ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/products/item%20out%20of%20stock> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N43e02b9e22434de5a5cc2fd6b2c42cb5 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/employees/reorder%20item> ;
+    owl:onProperty oro:playsRole .
+
+_:N45d97b223e1445189d49a42519bcdd76 rdf:first ex:otype_employees ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/employees/item%20out%20of%20stock> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N45ee7595559449bc8ae81a1736e86a95 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/products/payment%20reminder> ;
+    owl:onProperty oro:playsRole .
+
+_:N465531e5ba0742489d4aaa054ea4432e a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/employees/item%20out%20of%20stock> ;
+    owl:onProperty oro:playsRole .
+
+_:N46f6af26ed7e497d98403cc32bcbb5b7 rdf:first ex:otype_products ;
+    rdf:rest ( _:N28eb1c776755441c9bb805d975199422 ) .
+
+_:N4a96f23b29164f2caed59ccf1fbcc66f rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/employees/failed%20delivery> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N4c479dbaaf14411caf42c66b521b6d12 rdf:first ex:otype_customers ;
+    rdf:rest _:N2e152a8b4cd147248c271ec4eb8fea93 .
+
+_:N4c53b2d416a64784a6ed81d8e345f1de rdf:first _:N09da617c7ab74f24a957e39417c35770 ;
+    rdf:rest () .
+
+_:N516537eb678b47b48a21b31afa190c67 rdf:first ex:otype_employees ;
+    rdf:rest ( _:N43e02b9e22434de5a5cc2fd6b2c42cb5 ) .
+
+_:N57c1ae7173284408bc683ef004c4a7c4 rdf:first ex:otype_products ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/products/send%20package> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N58dca66268814c7da69165821577e6f1 rdf:first ex:otype_items ;
+    rdf:rest _:N1e3e2372c1cd41be8e1d475556d91627 .
+
+_:N5d3958ed7c174e428e4cf59bf2582298 rdf:first ex:otype_products ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/products/pay%20order> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N5e643f6a24dd4c8c8b084b97d4f5c952 rdf:first ex:otype_products ;
+    rdf:rest ( _:N3221488ad3f54a9da4fef9e4acbc4cce ) .
+
+_:N5e660c8eb1bd462387e207a1fcfc1c30 rdf:first ex:otype_employees ;
+    rdf:rest ( _:N465531e5ba0742489d4aaa054ea4432e ) .
+
+_:N612053b97fc94b7a8eab6575305b817f rdf:first ex:otype_customers ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/customers/place%20order> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N6519e49490964f3a92ebf08c0545d615 rdf:first ex:otype_products ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/products/package%20delivered> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N69f13c44c4ff4bd1b90b1e796165a785 rdf:first _:N45ee7595559449bc8ae81a1736e86a95 ;
+    rdf:rest () .
+
+_:N6a0a5626266642c4b9450c583309c505 rdf:first ex:otype_employees ;
+    rdf:rest _:N4a96f23b29164f2caed59ccf1fbcc66f .
+
+_:N6d6f06cf1c5d45e787e3f1f64143a0a7 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/packages/failed%20delivery> ;
+    owl:onProperty oro:playsRole .
+
+_:N71ff2b2bc2ec4904826e553cedaa3158 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/products/place%20order> ;
+    owl:onProperty oro:playsRole .
+
+_:N7a5df128afde44feaefec27c7ca2e23a rdf:first ex:otype_products ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/products/item%20out%20of%20stock> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N7d98b37832584c4aa632fbcddde1469b rdf:first _:N30e504ff4a034bb790fd171b928424b1 ;
+    rdf:rest () .
+
+_:N89d92232b2e84354ab7ad379850024ed rdf:first ex:otype_products ;
+    rdf:rest _:N3ee74a3ddf1542e383530aa61eb6d76e .
+
+_:N8bbb26079ae44efb8953f66010508a47 rdf:first ex:otype_products ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/products/payment%20reminder> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N8e5bd35c64f84750bb9e30453c9f19e3 rdf:first ex:otype_products ;
+    rdf:rest _:N17c41b7257af4a51b45b7110fc019a01 .
+
+_:N9097601299a348389db8f9788c3b336a a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/products/failed%20delivery> ;
+    owl:onProperty oro:playsRole .
+
+_:N9d5e94347cc741c9b041b84d7eb46fe6 rdf:first ex:otype_employees ;
+    rdf:rest _:N2fe7e0b712454758a0121d9e92a5b5bd .
+
+_:Na2a3b7afeb09435a82f9b8c956b1ee1a rdf:first ex:otype_employees ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/employees/reorder%20item> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:Na536752c1ebe48f7a0ad5496f4fea16f a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/employees/confirm%20order> ;
+    owl:onProperty oro:playsRole .
+
+_:Nac48d9c1d5b348b688b86548c9a1ef65 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/products/create%20package> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:Nb6cebb64c85b4bb1a2c116f56a29bd30 rdf:first ex:otype_employees ;
+    rdf:rest ( _:N2d71aef61a0b4f2bba8c379cf7791837 ) .
+
+_:Nbb1fb7335b7e4379a9a6b97b6298bb6a rdf:first ex:otype_customers ;
+    rdf:rest _:N2196ef84eb0a459289be153b7c1d42d9 .
+
+_:Nbc4756879be942b5bad868360a5a91ca rdf:first ex:otype_products ;
+    rdf:rest _:N4c53b2d416a64784a6ed81d8e345f1de .
+
+_:Nbecf7e6890e4450582de9320b30505ab rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/products/reorder%20item> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:Nc35b66233b9142f882ddc318f3fac80d rdf:first _:N9097601299a348389db8f9788c3b336a ;
+    rdf:rest () .
+
+_:Nc89317cecaa84910a5c6a2ec083ad753 rdf:first ex:otype_products ;
+    rdf:rest _:N69f13c44c4ff4bd1b90b1e796165a785 .
+
+_:Nca051a61d4f341e5b8396d1ebe2fe28a rdf:first _:N71ff2b2bc2ec4904826e553cedaa3158 ;
+    rdf:rest () .
+
+_:Ncb71e14378b045e19b37e7da29db32fb rdf:first ex:otype_customers ;
+    rdf:rest _:N7d98b37832584c4aa632fbcddde1469b .
+
+_:Ncf4baf5b24744fd3be27022e55509b18 rdf:first ex:otype_products ;
+    rdf:rest _:Nca051a61d4f341e5b8396d1ebe2fe28a .
+
+_:Nd054b949e43b4c4b8caf5d1359150e62 rdf:first ex:otype_packages ;
+    rdf:rest ( _:N6d6f06cf1c5d45e787e3f1f64143a0a7 ) .
+
+_:Nd441b702d5da4058a07fe8dd5f8d9f9b rdf:first ex:otype_products ;
+    rdf:rest _:N3bc76a577330478d902d81ebed6ff861 .
+
+_:Nd65495d54e1247979e4bc46b62755377 rdf:first ex:otype_employees ;
+    rdf:rest ( _:Na536752c1ebe48f7a0ad5496f4fea16f ) .
+
+_:Ndef845d901304cfa912f2e56b3f8650a rdf:first ex:otype_products ;
+    rdf:rest _:Nac48d9c1d5b348b688b86548c9a1ef65 .
+
+_:Nf052e256166e416aa12526a04d957b3c rdf:first ex:otype_employees ;
+    rdf:rest _:N34d63906079347c0bc25d12f1e327894 .
+
+_:Nf0b7c142e84f48119027a26e5a58762e rdf:first ex:otype_products ;
+    rdf:rest _:Nbecf7e6890e4450582de9320b30505ab .
+
+_:Nf30ffb049fa74523b741491e3ddf2a50 rdf:first ex:otype_products ;
+    rdf:rest _:Nc35b66233b9142f882ddc318f3fac80d .
+
+_:Nfac00aa5c97a482fad096c9732d64ffc rdf:first ex:otype_products ;
+    rdf:rest _:N3987666d829b49c280d83d0fd8538f9f .
+
+_:N09f3124706304f34b9a80bad9b7585d9 a owl:Class ;
+    owl:intersectionOf _:Nbb1fb7335b7e4379a9a6b97b6298bb6a .
+
+_:N0c93fca2926f441fb87ee78a82f66063 a owl:Class ;
+    owl:intersectionOf _:N42a99d48f2ab4e94a767c6fafac706e4 .
+
+_:N0d891c1abaf74a9081888ab4653811e8 a owl:Class ;
+    owl:intersectionOf _:N0e18028ef2e348648a4f08d32b9602e1 .
+
+_:N11475a161832448fae1d3b5714c3e249 a owl:Class ;
+    owl:intersectionOf _:N6a0a5626266642c4b9450c583309c505 .
+
+_:N13688191275747369b530ab6de2c5fa0 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/orders/confirm%20order> ;
+    owl:onProperty oro:playsRole .
+
+_:N146d24d5f0cc4f2c8177867b48aa8471 a owl:Class ;
+    owl:intersectionOf _:N43bdf2080c13432ca4421fe26dd95ead .
+
+_:N150375b35e114a24a954a463d91ab3dc a owl:Class ;
+    owl:intersectionOf _:Nd441b702d5da4058a07fe8dd5f8d9f9b .
+
+_:N177bde683dc548578301509b1060ce2f a owl:Class ;
+    owl:intersectionOf _:N23330eac189d47a6b6daa3af4d38a155 .
+
+_:N1d6e74d146aa44d5810609fc65980f88 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/items/confirm%20order> ;
+    owl:onProperty oro:playsRole .
+
+_:N1e9d2ae3b0d8471abcffb29667b43add a owl:Class ;
+    owl:intersectionOf _:Ncb71e14378b045e19b37e7da29db32fb .
+
+_:N20dfbd08c7814725a2779238152beb62 a owl:Class ;
+    owl:intersectionOf _:N140d4cc0825f482a88405bbe64a496fe .
+
+_:N21452c1cb16d4b1899550097f71d5e8f a owl:Class ;
+    owl:intersectionOf _:N1d7d5127ea5843f289fe547adc5aefba .
+
+_:N233e5b9ccb844cb18a0198b3cdc4c853 a owl:Class ;
+    owl:intersectionOf _:Na2a3b7afeb09435a82f9b8c956b1ee1a .
+
+_:N2374f74af3ce4aa89c81ff3cb76c19fe a owl:Class ;
+    owl:intersectionOf _:N3a6850a33aaf4d12b09fd2283519abd9 .
+
+_:N26cd374f73ad4433864558265ec4bf18 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/items/reorder%20item> ;
+    owl:onProperty oro:playsRole .
+
+_:N37c6ab774fcd430ab0ff280f4b5c7c0e a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/items/create%20package> ;
+    owl:onProperty oro:playsRole .
+
+_:N3eef3859db2d41829db234f4da1a6d63 a owl:Class ;
+    owl:intersectionOf _:N46f6af26ed7e497d98403cc32bcbb5b7 .
+
+_:N43884119e7af4520a307412b6aa256b7 a owl:Class ;
+    owl:intersectionOf _:N3b6aad99beee432e8a57d2a017b9d37f .
+
+_:N4479824dd7a146f7b8f4a3073ff3a4f4 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/orders/pay%20order> ;
+    owl:onProperty oro:playsRole .
+
+_:N4667486e89b34d53972a6bc9ccd2015d a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/packages/create%20package> ;
+    owl:onProperty oro:playsRole .
+
+_:N4db259168b484e99bc1fe1c399a0ca76 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/packages/send%20package> ;
+    owl:onProperty oro:playsRole .
+
+_:N55c4903b31594946b2842e3f1174e3c4 a owl:Class ;
+    owl:intersectionOf _:N3a5bbb98e0d64304a9c6354a783382f9 .
+
+_:N58dfa4ba4f8f43778296c433ade34191 a owl:Class ;
+    owl:intersectionOf _:Ncf4baf5b24744fd3be27022e55509b18 .
+
+_:N5cbd3d8fe4c945a38f680ce397a8a28f a owl:Class ;
+    owl:intersectionOf _:N2f9a2a1d84b04a63ae4c96b0547a98e7 .
+
+_:N5efc251654974df585f875188176efab a owl:Class ;
+    owl:intersectionOf _:N1cd287d4708b42468a70122ec5602a5c .
+
+_:N601bc3469a2a4c3cb7ac3aaa5e898803 a owl:Class ;
+    owl:intersectionOf _:Nf30ffb049fa74523b741491e3ddf2a50 .
+
+_:N607060f341a04849a9b9e71c2c423c7d a owl:Class ;
+    owl:intersectionOf _:N4c479dbaaf14411caf42c66b521b6d12 .
+
+_:N68acba38128444fcb8cfb98f258747ef a owl:Class ;
+    owl:intersectionOf _:N27943f8147974214b9c5ad37356c56e6 .
+
+_:N6c6fde2653f54542a0525d4acfb585ba a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/items/pay%20order> ;
+    owl:onProperty oro:playsRole .
+
+_:N706c93bd882b4c79be6ebf4c5801913b a owl:Class ;
+    owl:intersectionOf _:Nb6cebb64c85b4bb1a2c116f56a29bd30 .
+
+_:N70cc205b75cb4259b65fadf40902ef0a a owl:Class ;
+    owl:intersectionOf _:N0b1d00ac178144c797cded003c7a39ad .
+
+_:N7207e6c45e7b4c96b8952a0ab52d2095 a owl:Class ;
+    owl:intersectionOf _:Nc89317cecaa84910a5c6a2ec083ad753 .
+
+_:N7a78de76c9314b568d7c5da471d9b7c3 a owl:Class ;
+    owl:intersectionOf _:N7a5df128afde44feaefec27c7ca2e23a .
+
+_:N80de83ce4f1e4ab9a9c1a3ffe0703c51 a owl:Class ;
+    owl:intersectionOf _:N612053b97fc94b7a8eab6575305b817f .
+
+_:N8508feb4dc4842aba397777fb969b845 a owl:Class ;
+    owl:intersectionOf _:Ndef845d901304cfa912f2e56b3f8650a .
+
+_:N850ff9f3aa5d471da53a9308cfd7d43b a owl:Class ;
+    owl:intersectionOf _:N27cf450d008a4f80b753622bc598d68e .
+
+_:N89f2905d64c44b8080b311bf85cdd259 a owl:Class ;
+    owl:intersectionOf _:N9d5e94347cc741c9b041b84d7eb46fe6 .
+
+_:N8c6e42924e88447987d5ece01f50711f a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/packages/package%20delivered> ;
+    owl:onProperty oro:playsRole .
+
+_:N8c970c5f6dc045df97a437ab1275721c a owl:Class ;
+    owl:intersectionOf _:N89d92232b2e84354ab7ad379850024ed .
+
+_:N90f4db47d3a8466b8fc26273fb373887 a owl:Class ;
+    owl:intersectionOf _:N45d97b223e1445189d49a42519bcdd76 .
+
+_:N920aca556aa9463e85d63a8a78a2a6c7 a owl:Class ;
+    owl:intersectionOf _:Nfac00aa5c97a482fad096c9732d64ffc .
+
+_:N92387fcd4e1a4332a9b816fa34c47593 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/items/package%20delivered> ;
+    owl:onProperty oro:playsRole .
+
+_:N930785ac59b74783ac45f4d6e2706d72 a owl:Class ;
+    owl:intersectionOf _:N8e5bd35c64f84750bb9e30453c9f19e3 .
+
+_:N940c7ba248924658ba85c02b1b17a50d a owl:Class ;
+    owl:intersectionOf _:Nd054b949e43b4c4b8caf5d1359150e62 .
+
+_:N9bcdc53d1ac8493980bb04ce7a814178 a owl:Class ;
+    owl:intersectionOf _:N516537eb678b47b48a21b31afa190c67 .
+
+_:N9e47e5187e4945628d73201381bf69d9 a owl:Class ;
+    owl:intersectionOf _:Nbc4756879be942b5bad868360a5a91ca .
+
+_:Na02394bcd13d4cdea82da70b68cc03b9 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/orders/place%20order> ;
+    owl:onProperty oro:playsRole .
+
+_:Na2bf686882c4412d9601d02c9c86a684 a owl:Class ;
+    owl:intersectionOf _:Nd65495d54e1247979e4bc46b62755377 .
+
+_:Na755b7d26c1f4884bea73a8e4cc7e207 a owl:Class ;
+    owl:intersectionOf _:N8bbb26079ae44efb8953f66010508a47 .
+
+_:Naf0ab54a5c624220b583be3661c21a0a a owl:Class ;
+    owl:intersectionOf _:N5d3958ed7c174e428e4cf59bf2582298 .
+
+_:Nb9eff4c2fe384baa8505afa519a94fd5 a owl:Class ;
+    owl:intersectionOf _:N5e643f6a24dd4c8c8b084b97d4f5c952 .
+
+_:Ncb028921903148c1aa61ca01f12cc0aa a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/items/item%20out%20of%20stock> ;
+    owl:onProperty oro:playsRole .
+
+_:Ncf8fbfc5cb6a4cbbb7e3764c6c5372fd a owl:Class ;
+    owl:intersectionOf _:Nf0b7c142e84f48119027a26e5a58762e .
+
+_:Nd0c9b26e606142419c8a42c9c0e46f94 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/items/place%20order> ;
+    owl:onProperty oro:playsRole .
+
+_:Nd0e689000ef1435482817e4fad3a8e7c a owl:Class ;
+    owl:intersectionOf _:N5e660c8eb1bd462387e207a1fcfc1c30 .
+
+_:Nd4979369d3554482b49587d1b7afb12c a owl:Class ;
+    owl:intersectionOf _:Nf052e256166e416aa12526a04d957b3c .
+
+_:Ndb6933faf006495895a281c5019025a4 a owl:Class ;
+    owl:intersectionOf _:N58dca66268814c7da69165821577e6f1 .
+
+_:Ndec7bb538d74456097c2af4ad6c9c577 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/items/send%20package> ;
+    owl:onProperty oro:playsRole .
+
+_:Ne44dfa2834634cc290c4639a01b443e1 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/items/pick%20item> ;
+    owl:onProperty oro:playsRole .
+
+_:Nef31b88613d84719bd8963f736fec845 a owl:Class ;
+    owl:intersectionOf _:N6519e49490964f3a92ebf08c0545d615 .
+
+_:Nf163b02c998e45518eaab3b6c81f2ab8 a owl:Class ;
+    owl:intersectionOf _:N57c1ae7173284408bc683ef004c4a7c4 .
+

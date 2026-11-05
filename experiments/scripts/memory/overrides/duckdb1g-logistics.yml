@@ -1,0 +1,4 @@
+services:
+  ontop:
+    environment:
+      ONTOP_DB_URL: "jdbc:duckdb:/opt/ontop/input/data/logistics/ContainerLogistics.duckdb;memory_limit=1GB"

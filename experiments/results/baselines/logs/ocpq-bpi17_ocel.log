@@ -1,0 +1,556 @@
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "FirstWithdrawalAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "NumberOfTerms" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "Accepted" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "MonthlyCost" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "Selected" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "CreditScore" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "OfferedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "FirstWithdrawalAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "NumberOfTerms" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "Accepted" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "MonthlyCost" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "Selected" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "CreditScore" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "OfferedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "FirstWithdrawalAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "NumberOfTerms" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "Accepted" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "MonthlyCost" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "Selected" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "CreditScore" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "OfferedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_0" of type "Create Application_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1" of type "Submitted_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_5" of type "Concept_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_8" of type "Accepted_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "FirstWithdrawalAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "NumberOfTerms" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "Accepted" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "MonthlyCost" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "Selected" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "CreditScore" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "OfferedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_9" of type "Create Offer_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_10" of type "Created_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_11" of type "Sent (mail and online)_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_15" of type "Complete_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_22" of type "Validating_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_23" of type "Returned_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_28" of type "Incomplete_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_38" of type "Pending_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_234" of type "Complete application_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_244" of type "Cancelled_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1136" of type "Sent (online only)_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1148" of type "Validate application_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_1152" of type "Call incomplete files_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3083" of type "Handle leads_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3112" of type "Denied_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_3113" of type "Refused_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_13910" of type "Assess potential fraud_complete" has attribute "batch" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "case:LoanGoal" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "case:ApplicationType" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "case:RequestedAmount" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "processID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "eventID" not in the existing type schema; auto-growing the type
+[rust4pm] warning: event "E_59753" of type "Call after offers_complete" has attribute "batch" not in the existing type schema; auto-growing the type

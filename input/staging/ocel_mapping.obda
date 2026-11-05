@@ -1,0 +1,398 @@
+[PrefixDeclaration]
+ex:		http://www.example.com/
+ocel:		https://stl.mie.utoronto.ca/ontologies/ocel/
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+xsd:		http://www.w3.org/2001/XMLSchema#
+
+[MappingDeclaration] @collection [[
+
+mappingId	events
+target		ex:{eid} a ocel:Event ; ocel:hasActivity ocel:{activity} ; ocel:timestamp {timestamp}^^xsd:dateTime .
+source		SELECT * FROM log_events
+
+mappingId	e2o
+target		ex:{eid} ocel:involves ex:{object_id} .
+source		SELECT eid, object_id FROM log_e2o
+
+mappingId	objects
+target		ex:{object_id} a ocel:Object ; ocel:earliestEvent ex:{earliest_event_id} ; ocel:latestEvent ex:{latest_event_id} .
+source		SELECT object_id, earliest_event_id, latest_event_id FROM objects
+
+mappingId	object_interaction_graph
+target		ex:o2o_{oid1}_{oid2}_{event_id} a ocel:ObjectRelationship ; ocel:relatesA ex:{oid1} ; ocel:relatesB ex:{oid2} ; ocel:viaEvent ex:{event_id} .
+source		SELECT oid1, oid2, event_id FROM o2o
+
+mappingId	aggregated_object_interaction_graph
+target		ex:eventRole_{activity}_{otype} a ex:EventObjectRole ; ex:playsRoleIn ocel:{activity} ; ex:isRoleOf ex:otype_{otype} ; ex:participationPopulation {part_pop}^^xsd:integer ; ex:totalPopulation {total_pop}^^xsd:integer ; ex:objectRoleMinCardinality {object_role_min_card}^^xsd:integer ; ex:objectRoleMaxCardinality {object_role_max_card}^^xsd:integer ; ex:eventRoleMinCardinality {event_role_min_card}^^xsd:integer ; ex:eventRoleMaxCardinality {event_role_max_card}^^xsd:integer ; ex:minCardinality {min_card}^^xsd:integer ; ex:maxCardinality {max_card}^^xsd:integer .
+source		SELECT activity, otype, part_pop, total_pop, object_role_min_card, object_role_max_card, event_role_min_card, event_role_max_card, min_card, max_card FROM o2o_event_object_roles
+
+mappingId	objects_type_resource
+target		ex:{object_id} a ex:otype_resource .
+source		SELECT object_id FROM obj_resource
+
+mappingId	objects_type_application
+target		ex:{object_id} a ex:otype_application .
+source		SELECT object_id FROM obj_application
+
+mappingId	objects_type_offer
+target		ex:{object_id} a ex:otype_offer .
+source		SELECT object_id FROM obj_offer
+
+mappingId	objects_type_workflow
+target		ex:{object_id} a ex:otype_workflow .
+source		SELECT object_id FROM obj_workflow
+
+mappingId	oro_roles
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/Role> ; <http://www.example.com/oro/memberOf> ex:eventRole_{activity}_{otype} . ex:{object_id} <http://www.example.com/oro/playsRole> <http://www.example.com/oro/role/{object_id}/{eid}> . ex:{eid} <http://www.example.com/oro/frames> <http://www.example.com/oro/role/{object_id}/{eid}> .
+source		SELECT object_id, eid, otype, activity FROM oro_roles
+
+mappingId	oro_objects
+target		ex:{object_id} a <http://www.example.com/oro/Object> .
+source		SELECT object_id FROM objects
+
+mappingId	oro_events
+target		ex:{eid} a <http://www.example.com/oro/Event> .
+source		SELECT eid FROM log_events
+
+mappingId	oro_next_role
+target		<http://www.example.com/oro/role/{object_id}/{eid1}> <http://www.example.com/oro/nextRole> <http://www.example.com/oro/role/{object_id}/{eid2}> .
+source		SELECT object_id, eid1, eid2 FROM oro_next_role
+
+mappingId	oro_later_role
+target		<http://www.example.com/oro/role/{object_id}/{eid1}> <http://www.example.com/oro/laterRole> <http://www.example.com/oro/role/{object_id}/{eid2}> .
+source		SELECT a.object_id, a.eid AS eid1, b.eid AS eid2 FROM oro_roles a JOIN oro_roles b ON a.object_id = b.object_id AND a.pos < b.pos
+
+mappingId	oro_role_class_0
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Accepted_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Accepted_complete'
+
+mappingId	oro_role_class_1
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Assess%20potential%20fraud_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Assess potential fraud_complete'
+
+mappingId	oro_role_class_2
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Call%20after%20offers_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Call after offers_complete'
+
+mappingId	oro_role_class_3
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Call%20incomplete%20files_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Call incomplete files_complete'
+
+mappingId	oro_role_class_4
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Cancelled_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Cancelled_complete'
+
+mappingId	oro_role_class_5
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Complete%20application_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Complete application_complete'
+
+mappingId	oro_role_class_6
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Complete_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Complete_complete'
+
+mappingId	oro_role_class_7
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Concept_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Concept_complete'
+
+mappingId	oro_role_class_8
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Create%20Application_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Create Application_complete'
+
+mappingId	oro_role_class_9
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Create%20Offer_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Create Offer_complete'
+
+mappingId	oro_role_class_10
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Created_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Created_complete'
+
+mappingId	oro_role_class_11
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Denied_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Denied_complete'
+
+mappingId	oro_role_class_12
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Handle%20leads_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Handle leads_complete'
+
+mappingId	oro_role_class_13
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Incomplete_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Incomplete_complete'
+
+mappingId	oro_role_class_14
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Pending_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Pending_complete'
+
+mappingId	oro_role_class_15
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Refused_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Refused_complete'
+
+mappingId	oro_role_class_16
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Returned_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Returned_complete'
+
+mappingId	oro_role_class_17
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Sent%20%28mail%20and%20online%29_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Sent (mail and online)_complete'
+
+mappingId	oro_role_class_18
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Sent%20%28online%20only%29_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Sent (online only)_complete'
+
+mappingId	oro_role_class_19
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Submitted_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Submitted_complete'
+
+mappingId	oro_role_class_20
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Validate%20application_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Validate application_complete'
+
+mappingId	oro_role_class_21
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/application/Validating_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application' AND activity = 'Validating_complete'
+
+mappingId	oro_role_class_22
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/offer/Accepted_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'offer' AND activity = 'Accepted_complete'
+
+mappingId	oro_role_class_23
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/offer/Cancelled_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'offer' AND activity = 'Cancelled_complete'
+
+mappingId	oro_role_class_24
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/offer/Created_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'offer' AND activity = 'Created_complete'
+
+mappingId	oro_role_class_25
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/offer/Refused_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'offer' AND activity = 'Refused_complete'
+
+mappingId	oro_role_class_26
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/offer/Returned_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'offer' AND activity = 'Returned_complete'
+
+mappingId	oro_role_class_27
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/offer/Sent%20%28mail%20and%20online%29_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'offer' AND activity = 'Sent (mail and online)_complete'
+
+mappingId	oro_role_class_28
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/offer/Sent%20%28online%20only%29_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'offer' AND activity = 'Sent (online only)_complete'
+
+mappingId	oro_role_class_29
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Accepted_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Accepted_complete'
+
+mappingId	oro_role_class_30
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Assess%20potential%20fraud_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Assess potential fraud_complete'
+
+mappingId	oro_role_class_31
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Call%20after%20offers_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Call after offers_complete'
+
+mappingId	oro_role_class_32
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Call%20incomplete%20files_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Call incomplete files_complete'
+
+mappingId	oro_role_class_33
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Cancelled_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Cancelled_complete'
+
+mappingId	oro_role_class_34
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Complete%20application_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Complete application_complete'
+
+mappingId	oro_role_class_35
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Complete_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Complete_complete'
+
+mappingId	oro_role_class_36
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Concept_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Concept_complete'
+
+mappingId	oro_role_class_37
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Create%20Application_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Create Application_complete'
+
+mappingId	oro_role_class_38
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Create%20Offer_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Create Offer_complete'
+
+mappingId	oro_role_class_39
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Created_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Created_complete'
+
+mappingId	oro_role_class_40
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Denied_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Denied_complete'
+
+mappingId	oro_role_class_41
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Handle%20leads_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Handle leads_complete'
+
+mappingId	oro_role_class_42
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Incomplete_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Incomplete_complete'
+
+mappingId	oro_role_class_43
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Pending_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Pending_complete'
+
+mappingId	oro_role_class_44
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Refused_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Refused_complete'
+
+mappingId	oro_role_class_45
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Returned_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Returned_complete'
+
+mappingId	oro_role_class_46
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Sent%20%28mail%20and%20online%29_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Sent (mail and online)_complete'
+
+mappingId	oro_role_class_47
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Sent%20%28online%20only%29_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Sent (online only)_complete'
+
+mappingId	oro_role_class_48
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Submitted_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Submitted_complete'
+
+mappingId	oro_role_class_49
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Validate%20application_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Validate application_complete'
+
+mappingId	oro_role_class_50
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/resource/Validating_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource' AND activity = 'Validating_complete'
+
+mappingId	oro_role_class_51
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/workflow/Assess%20potential%20fraud_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'workflow' AND activity = 'Assess potential fraud_complete'
+
+mappingId	oro_role_class_52
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/workflow/Call%20after%20offers_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'workflow' AND activity = 'Call after offers_complete'
+
+mappingId	oro_role_class_53
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/workflow/Call%20incomplete%20files_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'workflow' AND activity = 'Call incomplete files_complete'
+
+mappingId	oro_role_class_54
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/workflow/Complete%20application_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'workflow' AND activity = 'Complete application_complete'
+
+mappingId	oro_role_class_55
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/workflow/Handle%20leads_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'workflow' AND activity = 'Handle leads_complete'
+
+mappingId	oro_role_class_56
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/R/workflow/Validate%20application_complete> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'workflow' AND activity = 'Validate application_complete'
+
+mappingId	oro_role_type_0
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/Role/application> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'application'
+
+mappingId	oro_role_type_1
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/Role/offer> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'offer'
+
+mappingId	oro_role_type_2
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/Role/resource> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'resource'
+
+mappingId	oro_role_type_3
+target		<http://www.example.com/oro/role/{object_id}/{eid}> a <http://www.example.com/oro/Role/workflow> .
+source		SELECT object_id, eid FROM oro_roles WHERE otype = 'workflow'
+
+mappingId	oro_event_class_0
+target		ex:{eid} a <http://www.example.com/oro/Ev/Accepted_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Accepted_complete'
+
+mappingId	oro_event_class_1
+target		ex:{eid} a <http://www.example.com/oro/Ev/Assess%20potential%20fraud_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Assess potential fraud_complete'
+
+mappingId	oro_event_class_2
+target		ex:{eid} a <http://www.example.com/oro/Ev/Call%20after%20offers_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Call after offers_complete'
+
+mappingId	oro_event_class_3
+target		ex:{eid} a <http://www.example.com/oro/Ev/Call%20incomplete%20files_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Call incomplete files_complete'
+
+mappingId	oro_event_class_4
+target		ex:{eid} a <http://www.example.com/oro/Ev/Cancelled_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Cancelled_complete'
+
+mappingId	oro_event_class_5
+target		ex:{eid} a <http://www.example.com/oro/Ev/Complete%20application_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Complete application_complete'
+
+mappingId	oro_event_class_6
+target		ex:{eid} a <http://www.example.com/oro/Ev/Complete_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Complete_complete'
+
+mappingId	oro_event_class_7
+target		ex:{eid} a <http://www.example.com/oro/Ev/Concept_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Concept_complete'
+
+mappingId	oro_event_class_8
+target		ex:{eid} a <http://www.example.com/oro/Ev/Create%20Application_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Create Application_complete'
+
+mappingId	oro_event_class_9
+target		ex:{eid} a <http://www.example.com/oro/Ev/Create%20Offer_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Create Offer_complete'
+
+mappingId	oro_event_class_10
+target		ex:{eid} a <http://www.example.com/oro/Ev/Created_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Created_complete'
+
+mappingId	oro_event_class_11
+target		ex:{eid} a <http://www.example.com/oro/Ev/Denied_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Denied_complete'
+
+mappingId	oro_event_class_12
+target		ex:{eid} a <http://www.example.com/oro/Ev/Handle%20leads_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Handle leads_complete'
+
+mappingId	oro_event_class_13
+target		ex:{eid} a <http://www.example.com/oro/Ev/Incomplete_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Incomplete_complete'
+
+mappingId	oro_event_class_14
+target		ex:{eid} a <http://www.example.com/oro/Ev/Pending_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Pending_complete'
+
+mappingId	oro_event_class_15
+target		ex:{eid} a <http://www.example.com/oro/Ev/Refused_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Refused_complete'
+
+mappingId	oro_event_class_16
+target		ex:{eid} a <http://www.example.com/oro/Ev/Returned_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Returned_complete'
+
+mappingId	oro_event_class_17
+target		ex:{eid} a <http://www.example.com/oro/Ev/Sent%20%28mail%20and%20online%29_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Sent (mail and online)_complete'
+
+mappingId	oro_event_class_18
+target		ex:{eid} a <http://www.example.com/oro/Ev/Sent%20%28online%20only%29_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Sent (online only)_complete'
+
+mappingId	oro_event_class_19
+target		ex:{eid} a <http://www.example.com/oro/Ev/Submitted_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Submitted_complete'
+
+mappingId	oro_event_class_20
+target		ex:{eid} a <http://www.example.com/oro/Ev/Validate%20application_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Validate application_complete'
+
+mappingId	oro_event_class_21
+target		ex:{eid} a <http://www.example.com/oro/Ev/Validating_complete> .
+source		SELECT eid FROM log_events WHERE activity = 'Validating_complete'
+
+]]

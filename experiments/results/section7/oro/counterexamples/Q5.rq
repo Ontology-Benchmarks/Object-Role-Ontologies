@@ -1,0 +1,39 @@
+PREFIX ex: <http://www.example.com/>
+PREFIX ocel: <https://stl.mie.utoronto.ca/ontologies/ocel/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?obj ?event ?eventTimestamp ?eventActivity ?previousEvent ?previousActivity
+WHERE {
+    {
+        SELECT ?obj ?event ?eventTimestamp ?eventActivity (MAX(?earlierTimestamp) AS ?previousTimestamp)
+        WHERE {
+            VALUES ?eventActivity { <https://stl.mie.utoronto.ca/ontologies/ocel/Returned_complete> }
+            ?obj rdf:type <http://www.example.com/otype_offer> .
+            ?event ocel:involves ?obj ;
+                   ocel:hasActivity ?eventActivity ;
+                   ocel:timestamp ?eventTimestamp .
+            OPTIONAL {
+                ?earlierEvent ocel:involves ?obj ;
+                              ocel:timestamp ?earlierTimestamp .
+                FILTER(?earlierTimestamp < ?eventTimestamp)
+            }
+        }
+        GROUP BY ?obj ?event ?eventTimestamp ?eventActivity
+    }
+    # Join on the timestamp via FILTER: an unbound ?previousTimestamp (no earlier
+    # event) then matches nothing instead of every event of the object.
+    OPTIONAL {
+        VALUES ?sourceActivity { <https://stl.mie.utoronto.ca/ontologies/ocel/Sent%20%28mail%20and%20online%29_complete> <https://stl.mie.utoronto.ca/ontologies/ocel/Sent%20%28online%20only%29_complete> }
+        ?sourceEvent ocel:involves ?obj ;
+                     ocel:hasActivity ?sourceActivity ;
+                     ocel:timestamp ?sourceTimestamp .
+        FILTER(?sourceTimestamp = ?previousTimestamp)
+    }
+    FILTER(!BOUND(?sourceEvent))
+    OPTIONAL {
+        ?previousEvent ocel:involves ?obj ;
+                       ocel:timestamp ?candidateTimestamp ;
+                       ocel:hasActivity ?previousActivity .
+        FILTER(?candidateTimestamp = ?previousTimestamp)
+    }
+}
+ORDER BY ?obj ?eventTimestamp ?event

@@ -1,0 +1,38 @@
+{
+  "Q1": {
+    "oro_rows": 1986,
+    "ocpq_rows": 1986,
+    "oro_objects": 3,
+    "ocpq_objects": 3,
+    "only_oro": [],
+    "only_ocpq": [],
+    "equivalent": true
+  },
+  "Q2": {
+    "oro_rows": 4,
+    "ocpq_rows": 4,
+    "oro_objects": 4,
+    "ocpq_objects": 4,
+    "only_oro": [],
+    "only_ocpq": [],
+    "equivalent": true
+  },
+  "Q3": {
+    "oro_rows": 1965,
+    "ocpq_rows": 1965,
+    "oro_objects": 1965,
+    "ocpq_objects": 1965,
+    "only_oro": [],
+    "only_ocpq": [],
+    "equivalent": true
+  },
+  "Q4": {
+    "oro_rows": 1172,
+    "ocpq_rows": 1172,
+    "oro_objects": 1172,
+    "ocpq_objects": 1172,
+    "only_oro": [],
+    "only_ocpq": [],
+    "equivalent": true
+  }
+}

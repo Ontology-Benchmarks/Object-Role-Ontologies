@@ -1,0 +1,4 @@
+qid,dataset,description,counterexamples,counterexamples_min,rows,mean_s,std_s,runs
+Q2,BPI 2017,exactly one closure per offer,4,4,4,0.026092848500411492,0.0004654788145014138,4
+Q3,BPI 2017,"clos(Offer, Sent)",1965,1965,1965,0.1928952367452439,0.12973580647484087,4
+Q4,BPI 2017,"clos(Offer, Returned)",1172,1172,1172,0.09825143425405258,0.0572395768154871,4

@@ -1,0 +1,1702 @@
+@prefix ex: <http://www.example.com/> .
+@prefix oro: <http://www.example.com/oro/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+oro:dl a owl:AnnotationProperty .
+
+<http://www.example.com/oro/log/ocel2-p2p> a owl:Ontology ;
+    rdfs:label "Object Role Ontology of ocel2-p2p" ;
+    rdfs:comment "T-box of the ORO: core axioms (Section 4) and the behavioural axioms inferred bottom-up on the log. The A-box is virtual (Ontop VKG over DuckDB) and uses the same IRIs." .
+
+oro:nonEmpty a owl:AnnotationProperty .
+
+oro:schema a owl:AnnotationProperty .
+
+oro:Event a owl:Class ;
+    rdfs:label "Event" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/Ev/Approve%20Purchase%20Order> <http://www.example.com/oro/Ev/Approve%20Purchase%20Requisition> <http://www.example.com/oro/Ev/Create%20Goods%20Receipt> <http://www.example.com/oro/Ev/Create%20Invoice%20Receipt> <http://www.example.com/oro/Ev/Create%20Purchase%20Order> <http://www.example.com/oro/Ev/Create%20Purchase%20Requisition> <http://www.example.com/oro/Ev/Create%20Request%20for%20Quotation> <http://www.example.com/oro/Ev/Delegate%20Purchase%20Requisition%20Approval> <http://www.example.com/oro/Ev/Execute%20Payment> <http://www.example.com/oro/Ev/Perform%20Two-Way%20Match> ) ] .
+
+oro:Object a owl:Class ;
+    rdfs:label "O" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( ex:otype_goods_receipt ex:otype_invoice_receipt ex:otype_material ex:otype_payment ex:otype_purchase_order ex:otype_purchase_requisition ex:otype_quotation ex:otype_resource ) ] .
+
+<http://www.example.com/oro/Reuse/goods_receipt/Create%20Goods%20Receipt> a owl:Class ;
+    rdfs:label "Reuse_{Create Goods Receipt}(goods_receipt)" ;
+    owl:equivalentClass _:Ne657cbcc1aa64a52bf94607e4d17045d .
+
+<http://www.example.com/oro/Reuse/goods_receipt/Execute%20Payment> a owl:Class ;
+    rdfs:label "Reuse_{Execute Payment}(goods_receipt)" ;
+    owl:equivalentClass _:N291292ae57544fb4b4ade444f1f3549d .
+
+<http://www.example.com/oro/Reuse/purchase_order/Create%20Goods%20Receipt> a owl:Class ;
+    rdfs:label "Reuse_{Create Goods Receipt}(purchase_order)" ;
+    owl:equivalentClass _:N8daf2dc3c8024d699b56c56da3675275 .
+
+<http://www.example.com/oro/Reuse/purchase_order/Execute%20Payment> a owl:Class ;
+    rdfs:label "Reuse_{Execute Payment}(purchase_order)" ;
+    owl:equivalentClass _:Nb723c4565b654270960ac3d9b1c684d7 .
+
+<http://www.example.com/oro/Reuse/quotation/Approve%20Purchase%20Order> a owl:Class ;
+    rdfs:label "Reuse_{Approve Purchase Order}(quotation)" ;
+    owl:equivalentClass _:N38c78dc0fe494c798bde476b6f0fe4ee .
+
+<http://www.example.com/oro/Reuse/quotation/Create%20Purchase%20Order> a owl:Class ;
+    rdfs:label "Reuse_{Create Purchase Order}(quotation)" ;
+    owl:equivalentClass _:N63f5f5a3045a43f1b4673a47be5484da .
+
+<http://www.example.com/oro/R/goods_receipt/Create%20Goods%20Receipt> a owl:Class ;
+    rdfs:label "R_{Create Goods Receipt}(goods_receipt)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Goods%20Receipt> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_goods_receipt ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/goods_receipt/Create%20Invoice%20Receipt> a owl:Class ;
+    rdfs:label "R_{Create Invoice Receipt}(goods_receipt)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Invoice%20Receipt> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_goods_receipt ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/goods_receipt/Execute%20Payment> a owl:Class ;
+    rdfs:label "R_{Execute Payment}(goods_receipt)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Execute%20Payment> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_goods_receipt ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/goods_receipt/Perform%20Two-Way%20Match> a owl:Class ;
+    rdfs:label "R_{Perform Two-Way Match}(goods_receipt)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Perform%20Two-Way%20Match> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_goods_receipt ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/purchase_order/Approve%20Purchase%20Order> a owl:Class ;
+    rdfs:label "R_{Approve Purchase Order}(purchase_order)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Approve%20Purchase%20Order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_purchase_order ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/purchase_order/Create%20Goods%20Receipt> a owl:Class ;
+    rdfs:label "R_{Create Goods Receipt}(purchase_order)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Goods%20Receipt> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_purchase_order ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/purchase_order/Execute%20Payment> a owl:Class ;
+    rdfs:label "R_{Execute Payment}(purchase_order)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Execute%20Payment> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_purchase_order ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/purchase_requisition/Approve%20Purchase%20Requisition> a owl:Class ;
+    rdfs:label "R_{Approve Purchase Requisition}(purchase_requisition)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Approve%20Purchase%20Requisition> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_purchase_requisition ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/purchase_requisition/Delegate%20Purchase%20Requisition%20Approval> a owl:Class ;
+    rdfs:label "R_{Delegate Purchase Requisition Approval}(purchase_requisition)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Delegate%20Purchase%20Requisition%20Approval> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_purchase_requisition ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/quotation/Approve%20Purchase%20Order> a owl:Class ;
+    rdfs:label "R_{Approve Purchase Order}(quotation)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Approve%20Purchase%20Order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_quotation ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/quotation/Create%20Purchase%20Order> a owl:Class ;
+    rdfs:label "R_{Create Purchase Order}(quotation)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Purchase%20Order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_quotation ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/Reuse/invoice_receipt/Create%20Invoice%20Receipt> a owl:Class ;
+    rdfs:label "Reuse_{Create Invoice Receipt}(invoice_receipt)" ;
+    owl:equivalentClass _:N2e77ef9d780343f883a0e958c5fc9c95,
+        _:Necf89a0e00474d26a8ae717f697ab828 .
+
+<http://www.example.com/oro/Reuse/invoice_receipt/Execute%20Payment> a owl:Class ;
+    rdfs:label "Reuse_{Execute Payment}(invoice_receipt)" ;
+    owl:equivalentClass _:N0df702a7ce3d4a2285e62e8e9be803f9,
+        _:N611600b9bd7e47b4b9e7b52523285aa8 .
+
+<http://www.example.com/oro/Reuse/invoice_receipt/Perform%20Two-Way%20Match> a owl:Class ;
+    rdfs:label "Reuse_{Perform Two-Way Match}(invoice_receipt)" ;
+    owl:equivalentClass _:N5ec29585ec324fc5bb94e8794c2eaf58,
+        _:Nb26854f52adb4a6a9b61a6ce69d5488a .
+
+<http://www.example.com/oro/Reuse/payment/Execute%20Payment> a owl:Class ;
+    rdfs:label "Reuse_{Execute Payment}(payment)" ;
+    owl:equivalentClass _:N81b9f6de867441c287dba8db108d71b5,
+        _:Ncdb487cbad6a4da7baceea3673f8f36c .
+
+<http://www.example.com/oro/Reuse/resource/Approve%20Purchase%20Order> a owl:Class ;
+    rdfs:label "Reuse_{Approve Purchase Order}(resource)" ;
+    owl:equivalentClass _:N68103dd58aef48dcbc9e57553757649c,
+        _:Ncf5d50681c674efb85c1087850761adb .
+
+<http://www.example.com/oro/Reuse/resource/Approve%20Purchase%20Requisition> a owl:Class ;
+    rdfs:label "Reuse_{Approve Purchase Requisition}(resource)" ;
+    owl:equivalentClass _:N275853fa75e44119ab58ba56feed8eb8,
+        _:N9f4d4240d1a04564944b79fe809afe8a .
+
+<http://www.example.com/oro/Reuse/resource/Create%20Goods%20Receipt> a owl:Class ;
+    rdfs:label "Reuse_{Create Goods Receipt}(resource)" ;
+    owl:equivalentClass _:N532e1af3769f4700b4c0ef19bfda7946,
+        _:Ncac07dd1f6db406cab3f6c83e4ebf0ef .
+
+<http://www.example.com/oro/Reuse/resource/Create%20Invoice%20Receipt> a owl:Class ;
+    rdfs:label "Reuse_{Create Invoice Receipt}(resource)" ;
+    owl:equivalentClass _:N245cc68e6b4a47609c862dbcfba34ab2,
+        _:N7246e9839ae348ac948bf134621afe16 .
+
+<http://www.example.com/oro/Reuse/resource/Create%20Purchase%20Order> a owl:Class ;
+    rdfs:label "Reuse_{Create Purchase Order}(resource)" ;
+    owl:equivalentClass _:N4c93ffc48b0f4cd3818800bd3b559a18,
+        _:N5783d39d0c01456bb91ef439971273d8 .
+
+<http://www.example.com/oro/Reuse/resource/Create%20Purchase%20Requisition> a owl:Class ;
+    rdfs:label "Reuse_{Create Purchase Requisition}(resource)" ;
+    owl:equivalentClass _:N88a8ab1386764f4ab6532b0dca8691f4,
+        _:Nc34a451b807f4ec6b568e9fea61ef6e7 .
+
+<http://www.example.com/oro/Reuse/resource/Create%20Request%20for%20Quotation> a owl:Class ;
+    rdfs:label "Reuse_{Create Request for Quotation}(resource)" ;
+    owl:equivalentClass _:N305b9a9c960b43b3ae57acef2bb14e39,
+        _:N36d141236a2f4f9cb1112c1674e56646 .
+
+<http://www.example.com/oro/Reuse/resource/Delegate%20Purchase%20Requisition%20Approval> a owl:Class ;
+    rdfs:label "Reuse_{Delegate Purchase Requisition Approval}(resource)" ;
+    owl:equivalentClass _:N293d7b9023844bdda6c5e12842f8146e,
+        _:Nc1549d64a34548e0a107b320fef8ccbe .
+
+<http://www.example.com/oro/Reuse/resource/Execute%20Payment> a owl:Class ;
+    rdfs:label "Reuse_{Execute Payment}(resource)" ;
+    owl:equivalentClass _:N1f6f244b81534981b6a65c8ca888791b,
+        _:N43c169d9e8e34c36977ba00bd0730f3e .
+
+<http://www.example.com/oro/Reuse/resource/Perform%20Two-Way%20Match> a owl:Class ;
+    rdfs:label "Reuse_{Perform Two-Way Match}(resource)" ;
+    owl:equivalentClass _:N346dd80948224ed2ab772a60c3cd9881,
+        _:N5faec92528ca4048be8acf53ebb496c4 .
+
+<http://www.example.com/oro/R/invoice_receipt/Create%20Invoice%20Receipt> a owl:Class ;
+    rdfs:label "R_{Create Invoice Receipt}(invoice_receipt)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Invoice%20Receipt> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_invoice_receipt ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/invoice_receipt/Execute%20Payment> a owl:Class ;
+    rdfs:label "R_{Execute Payment}(invoice_receipt)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Execute%20Payment> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_invoice_receipt ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/invoice_receipt/Perform%20Two-Way%20Match> a owl:Class ;
+    rdfs:label "R_{Perform Two-Way Match}(invoice_receipt)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Perform%20Two-Way%20Match> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_invoice_receipt ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/material/Approve%20Purchase%20Requisition> a owl:Class ;
+    rdfs:label "R_{Approve Purchase Requisition}(material)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Approve%20Purchase%20Requisition> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_material ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd .
+
+<http://www.example.com/oro/R/material/Create%20Purchase%20Requisition> a owl:Class ;
+    rdfs:label "R_{Create Purchase Requisition}(material)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Purchase%20Requisition> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_material ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:RStart .
+
+<http://www.example.com/oro/R/material/Delegate%20Purchase%20Requisition%20Approval> a owl:Class ;
+    rdfs:label "R_{Delegate Purchase Requisition Approval}(material)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Delegate%20Purchase%20Requisition%20Approval> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_material ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd .
+
+<http://www.example.com/oro/R/payment/Execute%20Payment> a owl:Class ;
+    rdfs:label "R_{Execute Payment}(payment)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Execute%20Payment> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_payment ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/purchase_order/Create%20Purchase%20Order> a owl:Class ;
+    rdfs:label "R_{Create Purchase Order}(purchase_order)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Purchase%20Order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_purchase_order ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:RStart .
+
+<http://www.example.com/oro/R/purchase_requisition/Create%20Purchase%20Requisition> a owl:Class ;
+    rdfs:label "R_{Create Purchase Requisition}(purchase_requisition)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Purchase%20Requisition> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_purchase_requisition ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:RStart .
+
+<http://www.example.com/oro/R/resource/Approve%20Purchase%20Order> a owl:Class ;
+    rdfs:label "R_{Approve Purchase Order}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Approve%20Purchase%20Order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Approve%20Purchase%20Requisition> a owl:Class ;
+    rdfs:label "R_{Approve Purchase Requisition}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Approve%20Purchase%20Requisition> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Create%20Goods%20Receipt> a owl:Class ;
+    rdfs:label "R_{Create Goods Receipt}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Goods%20Receipt> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Create%20Invoice%20Receipt> a owl:Class ;
+    rdfs:label "R_{Create Invoice Receipt}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Invoice%20Receipt> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Create%20Purchase%20Order> a owl:Class ;
+    rdfs:label "R_{Create Purchase Order}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Purchase%20Order> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Create%20Purchase%20Requisition> a owl:Class ;
+    rdfs:label "R_{Create Purchase Requisition}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Purchase%20Requisition> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Create%20Request%20for%20Quotation> a owl:Class ;
+    rdfs:label "R_{Create Request for Quotation}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Request%20for%20Quotation> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Delegate%20Purchase%20Requisition%20Approval> a owl:Class ;
+    rdfs:label "R_{Delegate Purchase Requisition Approval}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Delegate%20Purchase%20Requisition%20Approval> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Execute%20Payment> a owl:Class ;
+    rdfs:label "R_{Execute Payment}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Execute%20Payment> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/R/resource/Perform%20Two-Way%20Match> a owl:Class ;
+    rdfs:label "R_{Perform Two-Way Match}(resource)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Perform%20Two-Way%20Match> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_resource ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ] .
+
+<http://www.example.com/oro/Ev/Approve%20Purchase%20Order> a owl:Class ;
+    rdfs:label "Ev_{Approve Purchase Order}" .
+
+<http://www.example.com/oro/Ev/Approve%20Purchase%20Requisition> a owl:Class ;
+    rdfs:label "Ev_{Approve Purchase Requisition}" .
+
+<http://www.example.com/oro/Ev/Create%20Goods%20Receipt> a owl:Class ;
+    rdfs:label "Ev_{Create Goods Receipt}" .
+
+<http://www.example.com/oro/Ev/Create%20Invoice%20Receipt> a owl:Class ;
+    rdfs:label "Ev_{Create Invoice Receipt}" .
+
+<http://www.example.com/oro/Ev/Create%20Purchase%20Order> a owl:Class ;
+    rdfs:label "Ev_{Create Purchase Order}" .
+
+<http://www.example.com/oro/Ev/Create%20Purchase%20Requisition> a owl:Class ;
+    rdfs:label "Ev_{Create Purchase Requisition}" .
+
+<http://www.example.com/oro/Ev/Create%20Request%20for%20Quotation> a owl:Class ;
+    rdfs:label "Ev_{Create Request for Quotation}" .
+
+<http://www.example.com/oro/Ev/Delegate%20Purchase%20Requisition%20Approval> a owl:Class ;
+    rdfs:label "Ev_{Delegate Purchase Requisition Approval}" .
+
+<http://www.example.com/oro/Ev/Perform%20Two-Way%20Match> a owl:Class ;
+    rdfs:label "Ev_{Perform Two-Way Match}" .
+
+<http://www.example.com/oro/R/purchase_requisition/Create%20Request%20for%20Quotation> a owl:Class ;
+    rdfs:label "R_{Create Request for Quotation}(purchase_requisition)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Request%20for%20Quotation> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_purchase_requisition ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:REnd .
+
+<http://www.example.com/oro/R/quotation/Create%20Request%20for%20Quotation> a owl:Class ;
+    rdfs:label "R_{Create Request for Quotation}(quotation)" ;
+    rdfs:subClassOf [ a owl:Class ;
+            owl:intersectionOf ( [ a owl:Restriction ;
+                        owl:onClass <http://www.example.com/oro/Ev/Create%20Request%20for%20Quotation> ;
+                        owl:onProperty [ owl:inverseOf oro:frames ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] [ a owl:Restriction ;
+                        owl:onClass ex:otype_quotation ;
+                        owl:onProperty [ owl:inverseOf oro:playsRole ] ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] ) ],
+        oro:RStart .
+
+ex:otype_payment a owl:Class ;
+    rdfs:label "O_payment" ;
+    oro:dl "O_payment ⊑ ∀playsRole.¬(R_init(payment) ⊔ R_close(payment))" ;
+    oro:schema "ext" .
+
+<http://www.example.com/oro/Ev/Execute%20Payment> a owl:Class ;
+    rdfs:label "Ev_{Execute Payment}" .
+
+oro:REnd a owl:Class ;
+    rdfs:label "R_end" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( oro:Role [ a owl:Class ;
+                        owl:complementOf [ a owl:Restriction ;
+                                owl:onProperty oro:nextRole ;
+                                owl:someValuesFrom oro:Role ] ] ) ] .
+
+<http://www.example.com/oro/Role/goods_receipt> a owl:Class ;
+    rdfs:label "Role(goods_receipt)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/goods_receipt> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/goods_receipt> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/goods_receipt/Create%20Goods%20Receipt> <http://www.example.com/oro/R/goods_receipt/Create%20Invoice%20Receipt> <http://www.example.com/oro/R/goods_receipt/Execute%20Payment> <http://www.example.com/oro/R/goods_receipt/Perform%20Two-Way%20Match> ) ] .
+
+<http://www.example.com/oro/Role/invoice_receipt> a owl:Class ;
+    rdfs:label "Role(invoice_receipt)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/invoice_receipt> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/invoice_receipt> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/invoice_receipt/Create%20Invoice%20Receipt> <http://www.example.com/oro/R/invoice_receipt/Execute%20Payment> <http://www.example.com/oro/R/invoice_receipt/Perform%20Two-Way%20Match> ) ] .
+
+<http://www.example.com/oro/Role/material> a owl:Class ;
+    rdfs:label "Role(material)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/material> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/material> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/material/Approve%20Purchase%20Requisition> <http://www.example.com/oro/R/material/Create%20Purchase%20Requisition> <http://www.example.com/oro/R/material/Delegate%20Purchase%20Requisition%20Approval> ) ] .
+
+<http://www.example.com/oro/Role/payment> a owl:Class ;
+    rdfs:label "Role(payment)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/payment> ;
+            owl:onProperty oro:nextRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/payment> ;
+            owl:onProperty oro:laterRole ] ;
+    owl:equivalentClass <http://www.example.com/oro/R/payment/Execute%20Payment> .
+
+<http://www.example.com/oro/Role/purchase_order> a owl:Class ;
+    rdfs:label "Role(purchase_order)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/purchase_order> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/purchase_order> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/purchase_order/Approve%20Purchase%20Order> <http://www.example.com/oro/R/purchase_order/Create%20Goods%20Receipt> <http://www.example.com/oro/R/purchase_order/Create%20Purchase%20Order> <http://www.example.com/oro/R/purchase_order/Execute%20Payment> ) ] .
+
+<http://www.example.com/oro/Role/purchase_requisition> a owl:Class ;
+    rdfs:label "Role(purchase_requisition)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/purchase_requisition> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/purchase_requisition> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/purchase_requisition/Approve%20Purchase%20Requisition> <http://www.example.com/oro/R/purchase_requisition/Create%20Purchase%20Requisition> <http://www.example.com/oro/R/purchase_requisition/Create%20Request%20for%20Quotation> <http://www.example.com/oro/R/purchase_requisition/Delegate%20Purchase%20Requisition%20Approval> ) ] .
+
+<http://www.example.com/oro/Role/quotation> a owl:Class ;
+    rdfs:label "Role(quotation)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/quotation> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/quotation> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/quotation/Approve%20Purchase%20Order> <http://www.example.com/oro/R/quotation/Create%20Purchase%20Order> <http://www.example.com/oro/R/quotation/Create%20Request%20for%20Quotation> ) ] .
+
+<http://www.example.com/oro/Role/resource> a owl:Class ;
+    rdfs:label "Role(resource)" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/resource> ;
+            owl:onProperty oro:laterRole ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://www.example.com/oro/Role/resource> ;
+            owl:onProperty oro:nextRole ] ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/R/resource/Approve%20Purchase%20Order> <http://www.example.com/oro/R/resource/Approve%20Purchase%20Requisition> <http://www.example.com/oro/R/resource/Create%20Goods%20Receipt> <http://www.example.com/oro/R/resource/Create%20Invoice%20Receipt> <http://www.example.com/oro/R/resource/Create%20Purchase%20Order> <http://www.example.com/oro/R/resource/Create%20Purchase%20Requisition> <http://www.example.com/oro/R/resource/Create%20Request%20for%20Quotation> <http://www.example.com/oro/R/resource/Delegate%20Purchase%20Requisition%20Approval> <http://www.example.com/oro/R/resource/Execute%20Payment> <http://www.example.com/oro/R/resource/Perform%20Two-Way%20Match> ) ] .
+
+ex:otype_material a owl:Class ;
+    rdfs:label "O_material" ;
+    rdfs:subClassOf _:N686f682742584691b87e1ed2c0055d45,
+        _:N74771a33730a46eca058044432a6ef4d,
+        _:Nebb16db6fc9a4dc0ba7c2126766c2087 .
+
+ex:otype_quotation a owl:Class ;
+    rdfs:label "O_quotation" ;
+    rdfs:subClassOf _:N3c7f4165e49e4dbca340a9b76c319e54 .
+
+oro:RStart a owl:Class ;
+    rdfs:label "R_start" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( oro:Role [ a owl:Class ;
+                        owl:complementOf [ a owl:Restriction ;
+                                owl:onProperty [ owl:inverseOf oro:nextRole ] ;
+                                owl:someValuesFrom oro:Role ] ] ) ] .
+
+ex:otype_goods_receipt a owl:Class ;
+    rdfs:label "O_{goods_receipt}" ;
+    oro:dl "O_{goods_receipt} ⊑ ∀playsRole.¬(R_init(goods_receipt) ⊔ R_close(goods_receipt))" ;
+    oro:schema "ext" ;
+    rdfs:subClassOf _:Nb0ef552356ea4caca4c8d1bffab3d122,
+        _:Nbda8d6802dca40f0b9941a27f2b2daa9 .
+
+ex:otype_purchase_order a owl:Class ;
+    rdfs:label "O_{purchase_order}" ;
+    rdfs:subClassOf _:N08971478e51849ad83285db15879204e,
+        _:N217e7b3442004a8ca089d9fab6087109 .
+
+ex:otype_purchase_requisition a owl:Class ;
+    rdfs:label "O_{purchase_requisition}" ;
+    rdfs:subClassOf _:N88ba3dec492d4a87ab837319b296d38e,
+        _:N8bf0da4424354eba89ba2c1967fe5d9b,
+        _:Nd6b81de3b43045a18b15aeeafdec5627,
+        _:Nea62153ec3cb47b98c9990ad69fe7a9a .
+
+oro:Role a owl:Class ;
+    rdfs:label "Role" ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:unionOf ( <http://www.example.com/oro/Role/goods_receipt> <http://www.example.com/oro/Role/invoice_receipt> <http://www.example.com/oro/Role/material> <http://www.example.com/oro/Role/payment> <http://www.example.com/oro/Role/purchase_order> <http://www.example.com/oro/Role/purchase_requisition> <http://www.example.com/oro/Role/quotation> <http://www.example.com/oro/Role/resource> ) ] .
+
+ex:otype_invoice_receipt a owl:Class ;
+    rdfs:label "O_{invoice_receipt}" ;
+    oro:dl "O_{invoice_receipt} ⊑ ∀playsRole.¬(R_init(invoice_receipt) ⊔ R_close(invoice_receipt))" ;
+    oro:schema "ext" .
+
+oro:laterRole a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "laterRole" ;
+    rdfs:domain oro:Role ;
+    rdfs:range oro:Role .
+
+oro:nextRole a owl:ObjectProperty ;
+    rdfs:label "nextRole" ;
+    rdfs:domain oro:Role ;
+    rdfs:range oro:Role ;
+    rdfs:subPropertyOf oro:laterRole .
+
+ex:otype_resource a owl:Class ;
+    rdfs:label "O_resource" ;
+    oro:dl "O_resource ⊑ ∀playsRole.¬(R_init(resource) ⊔ R_close(resource))" ;
+    oro:schema "ext" .
+
+oro:frames a owl:ObjectProperty ;
+    rdfs:label "frames" ;
+    rdfs:domain oro:Event ;
+    rdfs:range oro:Role .
+
+oro:playsRole a owl:ObjectProperty ;
+    rdfs:label "playsRole" ;
+    rdfs:domain oro:Object ;
+    rdfs:range oro:Role .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(purchase_order, Execute Payment)" ;
+    oro:dl "O_{purchase_order} ⊓ (≥2 playsRole.R_{Execute Payment}(purchase_order)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/purchase_order/Execute%20Payment> ;
+    owl:annotatedTarget _:Nb723c4565b654270960ac3d9b1c684d7 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Create Goods Receipt)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Create Goods Receipt}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Create%20Goods%20Receipt> ;
+    owl:annotatedTarget _:Ncac07dd1f6db406cab3f6c83e4ebf0ef .
+
+[] a owl:Axiom ;
+    rdfs:label "single(purchase_order, Create Purchase Order)" ;
+    oro:dl "O_{purchase_order} ⊑ (≤1 playsRole.R_{Create Purchase Order}(purchase_order))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_purchase_order ;
+    owl:annotatedTarget _:N217e7b3442004a8ca089d9fab6087109 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(purchase_requisition, Create Request for Quotation)" ;
+    oro:dl "O_{purchase_requisition} ⊑ (≤1 playsRole.R_{Create Request for Quotation}(purchase_requisition))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_purchase_requisition ;
+    owl:annotatedTarget _:N88ba3dec492d4a87ab837319b296d38e .
+
+[] a owl:Axiom ;
+    rdfs:label "single(quotation, Create Request for Quotation)" ;
+    oro:dl "O_quotation ⊑ (≤1 playsRole.R_{Create Request for Quotation}(quotation))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_quotation ;
+    owl:annotatedTarget _:N3c7f4165e49e4dbca340a9b76c319e54 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/material> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/material> .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Goods Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Request for Quotation}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Delegate Purchase Requisition Approval}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Execute Payment}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Execute%20Payment> ;
+    owl:annotatedTarget _:N1f6f244b81534981b6a65c8ca888791b .
+
+[] a owl:Axiom ;
+    rdfs:label "trans_life(purchase_requisition, quotation, Create Request for Quotation)" ;
+    oro:dl "R_{Create Request for Quotation}(purchase_requisition) ⊑ R_end; R_{Create Request for Quotation}(quotation) ⊑ R_start" ;
+    oro:schema "trans_life" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/purchase_requisition/Create%20Request%20for%20Quotation> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "init(purchase_order, Create Purchase Order)" ;
+    oro:dl "R_{Create Purchase Order}(purchase_order) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/purchase_order/Create%20Purchase%20Order> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(invoice_receipt, Perform Two-Way Match)" ;
+    oro:dl "O_{invoice_receipt} ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(invoice_receipt)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/invoice_receipt/Perform%20Two-Way%20Match> ;
+    owl:annotatedTarget _:N5ec29585ec324fc5bb94e8794c2eaf58 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(material, Create Purchase Requisition)" ;
+    oro:dl "O_material ⊑ (≤1 playsRole.R_{Create Purchase Requisition}(material))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_material ;
+    owl:annotatedTarget _:N74771a33730a46eca058044432a6ef4d .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/purchase_order> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/purchase_order> .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/goods_receipt> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/goods_receipt> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Create Purchase Order)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Create Purchase Order}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Create%20Purchase%20Order> ;
+    owl:annotatedTarget _:N5783d39d0c01456bb91ef439971273d8 .
+
+[] a owl:Axiom ;
+    rdfs:label "single(goods_receipt, Create Invoice Receipt)" ;
+    oro:dl "O_{goods_receipt} ⊑ (≤1 playsRole.R_{Create Invoice Receipt}(goods_receipt))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_goods_receipt ;
+    owl:annotatedTarget _:Nb0ef552356ea4caca4c8d1bffab3d122 .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(purchase_requisition, Create Request for Quotation)" ;
+    oro:dl "R_{Create Request for Quotation}(purchase_requisition) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/purchase_requisition/Create%20Request%20for%20Quotation> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(goods_receipt, Create Goods Receipt)" ;
+    oro:dl "O_{goods_receipt} ⊓ (≥2 playsRole.R_{Create Goods Receipt}(goods_receipt)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/goods_receipt/Create%20Goods%20Receipt> ;
+    owl:annotatedTarget _:Ne657cbcc1aa64a52bf94607e4d17045d .
+
+[] a owl:Axiom ;
+    rdfs:label "init(material, Create Purchase Requisition)" ;
+    oro:dl "R_{Create Purchase Requisition}(material) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/material/Create%20Purchase%20Requisition> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Execute Payment)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Execute Payment}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Execute%20Payment> ;
+    owl:annotatedTarget _:N43c169d9e8e34c36977ba00bd0730f3e .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Perform Two-Way Match)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Perform%20Two-Way%20Match> ;
+    owl:annotatedTarget _:N5faec92528ca4048be8acf53ebb496c4 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/invoice_receipt> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/invoice_receipt> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(payment, Execute Payment)" ;
+    oro:dl "O_payment ⊓ (≥2 playsRole.R_{Execute Payment}(payment)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/payment/Execute%20Payment> ;
+    owl:annotatedTarget _:Ncdb487cbad6a4da7baceea3673f8f36c .
+
+[] a owl:Axiom ;
+    rdfs:label "single(material, Delegate Purchase Requisition Approval)" ;
+    oro:dl "O_material ⊑ (≤1 playsRole.R_{Delegate Purchase Requisition Approval}(material))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_material ;
+    owl:annotatedTarget _:Nebb16db6fc9a4dc0ba7c2126766c2087 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/material> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/material> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Create Invoice Receipt)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Create%20Invoice%20Receipt> ;
+    owl:annotatedTarget _:N245cc68e6b4a47609c862dbcfba34ab2 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Delegate Purchase Requisition Approval)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Delegate Purchase Requisition Approval}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Delegate%20Purchase%20Requisition%20Approval> ;
+    owl:annotatedTarget _:Nc1549d64a34548e0a107b320fef8ccbe .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(invoice_receipt)" ;
+    oro:dl "O_{invoice_receipt} ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(invoice_receipt)) ⋢ ⊥; O_{invoice_receipt} ⊓ (≥2 playsRole.R_{Execute Payment}(invoice_receipt)) ⋢ ⊥; O_{invoice_receipt} ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(invoice_receipt)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/invoice_receipt/Perform%20Two-Way%20Match> ;
+    owl:annotatedTarget _:Nb26854f52adb4a6a9b61a6ce69d5488a .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(goods_receipt, Execute Payment)" ;
+    oro:dl "O_{goods_receipt} ⊓ (≥2 playsRole.R_{Execute Payment}(goods_receipt)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/goods_receipt/Execute%20Payment> ;
+    owl:annotatedTarget _:N291292ae57544fb4b4ade444f1f3549d .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/payment> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/payment> .
+
+[] a owl:Axiom ;
+    rdfs:label "trans_life(purchase_requisition, quotation, Create Request for Quotation)" ;
+    oro:dl "R_{Create Request for Quotation}(purchase_requisition) ⊑ R_end; R_{Create Request for Quotation}(quotation) ⊑ R_start" ;
+    oro:schema "trans_life" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/quotation/Create%20Request%20for%20Quotation> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "single(purchase_requisition, Create Purchase Requisition)" ;
+    oro:dl "O_{purchase_requisition} ⊑ (≤1 playsRole.R_{Create Purchase Requisition}(purchase_requisition))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_purchase_requisition ;
+    owl:annotatedTarget _:N8bf0da4424354eba89ba2c1967fe5d9b .
+
+[] a owl:Axiom ;
+    rdfs:label "single(purchase_requisition, Approve Purchase Requisition)" ;
+    oro:dl "O_{purchase_requisition} ⊑ (≤1 playsRole.R_{Approve Purchase Requisition}(purchase_requisition))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_purchase_requisition ;
+    owl:annotatedTarget _:Nea62153ec3cb47b98c9990ad69fe7a9a .
+
+[] a owl:Axiom ;
+    rdfs:label "init(quotation, Create Request for Quotation)" ;
+    oro:dl "R_{Create Request for Quotation}(quotation) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/quotation/Create%20Request%20for%20Quotation> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/purchase_requisition> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/purchase_requisition> .
+
+[] a owl:Axiom ;
+    rdfs:label "single(material, Approve Purchase Requisition)" ;
+    oro:dl "O_material ⊑ (≤1 playsRole.R_{Approve Purchase Requisition}(material))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_material ;
+    owl:annotatedTarget _:N686f682742584691b87e1ed2c0055d45 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Approve Purchase Requisition)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Requisition}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Approve%20Purchase%20Requisition> ;
+    owl:annotatedTarget _:N275853fa75e44119ab58ba56feed8eb8 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Goods Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Request for Quotation}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Delegate Purchase Requisition Approval}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Execute Payment}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Approve%20Purchase%20Order> ;
+    owl:annotatedTarget _:Ncf5d50681c674efb85c1087850761adb .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(invoice_receipt, Execute Payment)" ;
+    oro:dl "O_{invoice_receipt} ⊓ (≥2 playsRole.R_{Execute Payment}(invoice_receipt)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/invoice_receipt/Execute%20Payment> ;
+    owl:annotatedTarget _:N611600b9bd7e47b4b9e7b52523285aa8 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Goods Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Request for Quotation}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Delegate Purchase Requisition Approval}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Execute Payment}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Perform%20Two-Way%20Match> ;
+    owl:annotatedTarget _:N346dd80948224ed2ab772a60c3cd9881 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/quotation> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/quotation> .
+
+[] a owl:Axiom ;
+    rdfs:label "single(purchase_order, Approve Purchase Order)" ;
+    oro:dl "O_{purchase_order} ⊑ (≤1 playsRole.R_{Approve Purchase Order}(purchase_order))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_purchase_order ;
+    owl:annotatedTarget _:N08971478e51849ad83285db15879204e .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(material, Delegate Purchase Requisition Approval)" ;
+    oro:dl "R_{Delegate Purchase Requisition Approval}(material) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/material/Delegate%20Purchase%20Requisition%20Approval> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Axiom ;
+    rdfs:label "single(goods_receipt, Perform Two-Way Match)" ;
+    oro:dl "O_{goods_receipt} ⊑ (≤1 playsRole.R_{Perform Two-Way Match}(goods_receipt))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_goods_receipt ;
+    owl:annotatedTarget _:Nbda8d6802dca40f0b9941a27f2b2daa9 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/resource> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/resource> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(quotation, Approve Purchase Order)" ;
+    oro:dl "O_quotation ⊓ (≥2 playsRole.R_{Approve Purchase Order}(quotation)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/quotation/Approve%20Purchase%20Order> ;
+    owl:annotatedTarget _:N38c78dc0fe494c798bde476b6f0fe4ee .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Goods Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Request for Quotation}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Delegate Purchase Requisition Approval}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Execute Payment}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Create%20Invoice%20Receipt> ;
+    owl:annotatedTarget _:N7246e9839ae348ac948bf134621afe16 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Goods Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Request for Quotation}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Delegate Purchase Requisition Approval}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Execute Payment}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Approve%20Purchase%20Requisition> ;
+    owl:annotatedTarget _:N9f4d4240d1a04564944b79fe809afe8a .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/resource> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/resource> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Approve Purchase Order)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Order}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Approve%20Purchase%20Order> ;
+    owl:annotatedTarget _:N68103dd58aef48dcbc9e57553757649c .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Create Purchase Requisition)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Create Purchase Requisition}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Create%20Purchase%20Requisition> ;
+    owl:annotatedTarget _:Nc34a451b807f4ec6b568e9fea61ef6e7 .
+
+[] a owl:Axiom ;
+    rdfs:label "init(purchase_requisition, Create Purchase Requisition)" ;
+    oro:dl "R_{Create Purchase Requisition}(purchase_requisition) ⊑ R_start" ;
+    oro:schema "init" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/purchase_requisition/Create%20Purchase%20Requisition> ;
+    owl:annotatedTarget oro:RStart .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Goods Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Request for Quotation}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Delegate Purchase Requisition Approval}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Execute Payment}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Create%20Purchase%20Requisition> ;
+    owl:annotatedTarget _:N88a8ab1386764f4ab6532b0dca8691f4 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(invoice_receipt)" ;
+    oro:dl "O_{invoice_receipt} ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(invoice_receipt)) ⋢ ⊥; O_{invoice_receipt} ⊓ (≥2 playsRole.R_{Execute Payment}(invoice_receipt)) ⋢ ⊥; O_{invoice_receipt} ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(invoice_receipt)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/invoice_receipt/Create%20Invoice%20Receipt> ;
+    owl:annotatedTarget _:N2e77ef9d780343f883a0e958c5fc9c95 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/payment> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/payment> .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Goods Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Request for Quotation}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Delegate Purchase Requisition Approval}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Execute Payment}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Create%20Purchase%20Order> ;
+    owl:annotatedTarget _:N4c93ffc48b0f4cd3818800bd3b559a18 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(invoice_receipt)" ;
+    oro:dl "O_{invoice_receipt} ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(invoice_receipt)) ⋢ ⊥; O_{invoice_receipt} ⊓ (≥2 playsRole.R_{Execute Payment}(invoice_receipt)) ⋢ ⊥; O_{invoice_receipt} ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(invoice_receipt)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/invoice_receipt/Execute%20Payment> ;
+    owl:annotatedTarget _:N0df702a7ce3d4a2285e62e8e9be803f9 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(invoice_receipt, Create Invoice Receipt)" ;
+    oro:dl "O_{invoice_receipt} ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(invoice_receipt)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/invoice_receipt/Create%20Invoice%20Receipt> ;
+    owl:annotatedTarget _:Necf89a0e00474d26a8ae717f697ab828 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(payment)" ;
+    oro:dl "O_payment ⊓ (≥2 playsRole.R_{Execute Payment}(payment)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/payment/Execute%20Payment> ;
+    owl:annotatedTarget _:N81b9f6de867441c287dba8db108d71b5 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/invoice_receipt> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/invoice_receipt> .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Goods Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Request for Quotation}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Delegate Purchase Requisition Approval}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Execute Payment}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Delegate%20Purchase%20Requisition%20Approval> ;
+    owl:annotatedTarget _:N293d7b9023844bdda6c5e12842f8146e .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(purchase_order, Create Goods Receipt)" ;
+    oro:dl "O_{purchase_order} ⊓ (≥2 playsRole.R_{Create Goods Receipt}(purchase_order)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/purchase_order/Create%20Goods%20Receipt> ;
+    owl:annotatedTarget _:N8daf2dc3c8024d699b56c56da3675275 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/purchase_requisition> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/purchase_requisition> .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(resource, Create Request for Quotation)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Create Request for Quotation}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Create%20Request%20for%20Quotation> ;
+    owl:annotatedTarget _:N305b9a9c960b43b3ae57acef2bb14e39 .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/purchase_order> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/purchase_order> .
+
+[] a owl:Axiom ;
+    rdfs:label "clos(material, Approve Purchase Requisition)" ;
+    oro:dl "R_{Approve Purchase Requisition}(material) ⊑ R_end" ;
+    oro:schema "clos" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource <http://www.example.com/oro/R/material/Approve%20Purchase%20Requisition> ;
+    owl:annotatedTarget oro:REnd .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/goods_receipt> ;
+    owl:onProperty oro:nextRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/goods_receipt> .
+
+[] a owl:Axiom ;
+    rdfs:label "single(purchase_requisition, Delegate Purchase Requisition Approval)" ;
+    oro:dl "O_{purchase_requisition} ⊑ (≤1 playsRole.R_{Delegate Purchase Requisition Approval}(purchase_requisition))" ;
+    oro:schema "single" ;
+    owl:annotatedProperty rdfs:subClassOf ;
+    owl:annotatedSource ex:otype_purchase_requisition ;
+    owl:annotatedTarget _:Nd6b81de3b43045a18b15aeeafdec5627 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Goods Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Request for Quotation}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Delegate Purchase Requisition Approval}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Execute Payment}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Create%20Request%20for%20Quotation> ;
+    owl:annotatedTarget _:N36d141236a2f4f9cb1112c1674e56646 .
+
+[] a owl:Axiom ;
+    rdfs:label "eres(resource)" ;
+    oro:dl "O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Approve Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Goods Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Invoice Receipt}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Order}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Purchase Requisition}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Create Request for Quotation}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Delegate Purchase Requisition Approval}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Execute Payment}(resource)) ⋢ ⊥; O_resource ⊓ (≥2 playsRole.R_{Perform Two-Way Match}(resource)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "eres" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/resource/Create%20Goods%20Receipt> ;
+    owl:annotatedTarget _:N532e1af3769f4700b4c0ef19bfda7946 .
+
+[] a owl:Axiom ;
+    rdfs:label "reuse(quotation, Create Purchase Order)" ;
+    oro:dl "O_quotation ⊓ (≥2 playsRole.R_{Create Purchase Order}(quotation)) ⋢ ⊥" ;
+    oro:nonEmpty true ;
+    oro:schema "reuse" ;
+    owl:annotatedProperty owl:equivalentClass ;
+    owl:annotatedSource <http://www.example.com/oro/Reuse/quotation/Create%20Purchase%20Order> ;
+    owl:annotatedTarget _:N63f5f5a3045a43f1b4673a47be5484da .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf <http://www.example.com/oro/Role/quotation> ;
+    owl:onProperty oro:laterRole ;
+    owl:someValuesFrom <http://www.example.com/oro/Role/quotation> .
+
+_:N01330b6a264149f48bd68c5a44fc2323 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Create%20Goods%20Receipt> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N026cc4fc64f64fb39058641951ef6378 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/payment/Execute%20Payment> ;
+    owl:onProperty oro:playsRole .
+
+_:N0490d850a2844db1946f660d8f4775ea a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/goods_receipt/Execute%20Payment> ;
+    owl:onProperty oro:playsRole .
+
+_:N07247e733c364f578933f0ee99421b65 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Delegate%20Purchase%20Requisition%20Approval> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N0848dbce7bc54b7eadcdba4c39db28a2 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/invoice_receipt/Create%20Invoice%20Receipt> ;
+    owl:onProperty oro:playsRole .
+
+_:N10242e416c0e4f6f90d65a20d4594768 rdf:first ex:otype_purchase_order ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/purchase_order/Create%20Goods%20Receipt> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N11cbf4ad66024351b5f99d70538c2c7c a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/payment/Execute%20Payment> ;
+    owl:onProperty oro:playsRole .
+
+_:N14a34c86dcb64be38d73d826425ba0f2 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/invoice_receipt/Perform%20Two-Way%20Match> ;
+    owl:onProperty oro:playsRole .
+
+_:N1651e938f3cf445b953798b3c17955f2 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Create%20Request%20for%20Quotation> ;
+    owl:onProperty oro:playsRole .
+
+_:N17bbd34b9cd04b9fa5d3a6d9f5a9058e rdf:first ex:otype_quotation ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/quotation/Create%20Purchase%20Order> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N18a4ccabd59d4a239461fef23b4f3439 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Create%20Invoice%20Receipt> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N1a3855422cb24714aca085af3137b837 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Approve%20Purchase%20Order> ;
+    owl:onProperty oro:playsRole .
+
+_:N1ba60098c22f42b89f1de87c6aed35a1 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/quotation/Approve%20Purchase%20Order> ;
+    owl:onProperty oro:playsRole .
+
+_:N1cbad60044e649dcb2af47a3e4a3eff9 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Create%20Invoice%20Receipt> ;
+    owl:onProperty oro:playsRole .
+
+_:N1f1474cf15c74a6f9828f3227d1e0dfe a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Perform%20Two-Way%20Match> ;
+    owl:onProperty oro:playsRole .
+
+_:N1f3f3cb2bf12486098c4133e07aba8b6 rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Create%20Purchase%20Requisition> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N20b63d03eb034636a374d9ca79e03908 rdf:first ex:otype_invoice_receipt ;
+    rdf:rest ( _:N14a34c86dcb64be38d73d826425ba0f2 ) .
+
+_:N22dd866d004a4c09abb7f22fcd15f107 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Create%20Purchase%20Requisition> ;
+    owl:onProperty oro:playsRole .
+
+_:N2556c97d4a504f28afe56a57b17c3d7b a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/invoice_receipt/Execute%20Payment> ;
+    owl:onProperty oro:playsRole .
+
+_:N2812df802b6d4bbb9647449568d9adc3 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Perform%20Two-Way%20Match> ;
+    owl:onProperty oro:playsRole .
+
+_:N2f206c78560641ab8b10ec6829f4d6d1 rdf:first _:N11cbf4ad66024351b5f99d70538c2c7c ;
+    rdf:rest () .
+
+_:N32c05321d65141759c5721b55868197f rdf:first ex:otype_resource ;
+    rdf:rest _:N01330b6a264149f48bd68c5a44fc2323 .
+
+_:N390ea3a5dad247cda59baefbae01260b rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/invoice_receipt/Execute%20Payment> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N3c5230954c474974958f63c0051bf2ad rdf:first _:N0848dbce7bc54b7eadcdba4c39db28a2 ;
+    rdf:rest () .
+
+_:N3dda239785c14d7a8fa9cbb380d7f149 rdf:first _:N026cc4fc64f64fb39058641951ef6378 ;
+    rdf:rest () .
+
+_:N3fb70e90f31e47989b6230540c4477f8 rdf:first ex:otype_resource ;
+    rdf:rest _:N07247e733c364f578933f0ee99421b65 .
+
+_:N4377656a729a473887f649dd534776ed rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Delegate%20Purchase%20Requisition%20Approval> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N4a35b50903a949f0834acf8ad089bc8e rdf:first ex:otype_resource ;
+    rdf:rest ( _:N1cbad60044e649dcb2af47a3e4a3eff9 ) .
+
+_:N4a5ca2f00395402380921e5e5038cdc5 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Execute%20Payment> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N4fcfe30a01054e68bcaf941e4550f31b rdf:first ex:otype_resource ;
+    rdf:rest ( _:N1f1474cf15c74a6f9828f3227d1e0dfe ) .
+
+_:N562feca48b95458ea567818dce4bd581 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/invoice_receipt/Perform%20Two-Way%20Match> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N5c05e247d9f3432f83204341bdcb0af6 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Create%20Purchase%20Order> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N5fb30270a3b34418b0d21bcaca2588d2 rdf:first ex:otype_resource ;
+    rdf:rest _:N5c05e247d9f3432f83204341bdcb0af6 .
+
+_:N66400b8c616042229b97e136982cb16e rdf:first ex:otype_resource ;
+    rdf:rest ( _:N1a3855422cb24714aca085af3137b837 ) .
+
+_:N67115d13a9964897bbf07ee8659d3db0 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Approve%20Purchase%20Requisition> ;
+    owl:onProperty oro:playsRole .
+
+_:N68608fb354b14b70a23edd9ce4f16279 a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Create%20Goods%20Receipt> ;
+    owl:onProperty oro:playsRole .
+
+_:N6c020b551765432e95c5625ee8decd6b rdf:first ex:otype_purchase_order ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/purchase_order/Execute%20Payment> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N6ee41408b39e461fa2166831f8dff2f5 rdf:first _:N1651e938f3cf445b953798b3c17955f2 ;
+    rdf:rest () .
+
+_:N705ad78f7c9344eebaef8d3bd9dd9d7a rdf:first ex:otype_resource ;
+    rdf:rest _:N4a5ca2f00395402380921e5e5038cdc5 .
+
+_:N719bb435bc7b4c52bc2110aa6035efae rdf:first ex:otype_payment ;
+    rdf:rest _:N3dda239785c14d7a8fa9cbb380d7f149 .
+
+_:N77c463a527384556b58f1c618ccfa2ee rdf:first ex:otype_invoice_receipt ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/invoice_receipt/Create%20Invoice%20Receipt> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:N77eee06588af44d582eeed5ec0a5100f rdf:first ex:otype_invoice_receipt ;
+    rdf:rest _:N562feca48b95458ea567818dce4bd581 .
+
+_:N78f8229e8f264559b7d95f4bd62a1268 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/goods_receipt/Create%20Goods%20Receipt> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N7aa5ca282ba34c4d95b594ebff3e3f7c rdf:first _:N2556c97d4a504f28afe56a57b17c3d7b ;
+    rdf:rest () .
+
+_:N7d293d484bc94cb5b0dbd44409850656 rdf:first ex:otype_invoice_receipt ;
+    rdf:rest _:N390ea3a5dad247cda59baefbae01260b .
+
+_:N828efab412cb4cad9829c90f6352168d rdf:first _:N1ba60098c22f42b89f1de87c6aed35a1 ;
+    rdf:rest () .
+
+_:N82c16a3b88be477b8004c14fa26b6282 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Execute%20Payment> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N866ce9e5b6394dc295fe066e74c03479 rdf:first _:N67115d13a9964897bbf07ee8659d3db0 ;
+    rdf:rest () .
+
+_:N973768da69c64b12afd3aea15f031429 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Create%20Purchase%20Order> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:N9fa3f5f557764a1eb3a2e7fbc2de670b rdf:first ex:otype_invoice_receipt ;
+    rdf:rest _:N7aa5ca282ba34c4d95b594ebff3e3f7c .
+
+_:Na07e7965b2e7446c9bb1f9d9760238e8 rdf:first ex:otype_resource ;
+    rdf:rest _:N973768da69c64b12afd3aea15f031429 .
+
+_:Na2d805da67ce4f18aefde565dd033f19 rdf:first ex:otype_resource ;
+    rdf:rest _:N866ce9e5b6394dc295fe066e74c03479 .
+
+_:Naa1d6ad4ae954e4ea3a719f901ae4a87 rdf:first [ a owl:Restriction ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass <http://www.example.com/oro/R/resource/Create%20Request%20for%20Quotation> ;
+            owl:onProperty oro:playsRole ] ;
+    rdf:rest () .
+
+_:Naf9b467ce55a45b8b028912677109c63 rdf:first ex:otype_resource ;
+    rdf:rest _:Naa1d6ad4ae954e4ea3a719f901ae4a87 .
+
+_:Nb0594fa3384845faaec60a5e53c3defc rdf:first _:N0490d850a2844db1946f660d8f4775ea ;
+    rdf:rest () .
+
+_:Nbd25856db53d41518ba3ffc7d134e09c rdf:first _:N22dd866d004a4c09abb7f22fcd15f107 ;
+    rdf:rest () .
+
+_:Nbeb23e2ac41644a1a1b90897f05b9b6b rdf:first ex:otype_resource ;
+    rdf:rest ( [ a owl:Restriction ;
+                owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                owl:onClass <http://www.example.com/oro/R/resource/Approve%20Purchase%20Order> ;
+                owl:onProperty oro:playsRole ] ) .
+
+_:Nc32669e4180f47a697acdc8991e6fd43 rdf:first ex:otype_goods_receipt ;
+    rdf:rest _:N78f8229e8f264559b7d95f4bd62a1268 .
+
+_:Nd27b3eb4ccc54a48970b00be88018b13 rdf:first ex:otype_goods_receipt ;
+    rdf:rest _:Nb0594fa3384845faaec60a5e53c3defc .
+
+_:Nd2932ef8de7c463ab8e2b8266315fbfb rdf:first ex:otype_resource ;
+    rdf:rest _:Nbd25856db53d41518ba3ffc7d134e09c .
+
+_:Nd30aa35a9b9a4245956468269ea4bdac rdf:first ex:otype_quotation ;
+    rdf:rest _:N828efab412cb4cad9829c90f6352168d .
+
+_:Nd6d0bffda635401d8afd5fbf701deecc a owl:Restriction ;
+    owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/resource/Approve%20Purchase%20Requisition> ;
+    owl:onProperty oro:playsRole .
+
+_:Ndae07d4d73854de68ce36dc63d016d19 rdf:first _:N68608fb354b14b70a23edd9ce4f16279 ;
+    rdf:rest () .
+
+_:Ndd91577d42c3478eb25b6e57a8d6a3dd rdf:first ex:otype_resource ;
+    rdf:rest ( _:N2812df802b6d4bbb9647449568d9adc3 ) .
+
+_:Nde4a71f385764ec992a6646617c99f45 rdf:first ex:otype_invoice_receipt ;
+    rdf:rest _:N3c5230954c474974958f63c0051bf2ad .
+
+_:Ne2c9769f548f4b82a2131939bf222156 rdf:first ex:otype_resource ;
+    rdf:rest _:N82c16a3b88be477b8004c14fa26b6282 .
+
+_:Nea5325a5d30d444688352f1cdabb8f1d rdf:first _:Nd6d0bffda635401d8afd5fbf701deecc ;
+    rdf:rest () .
+
+_:Nf03a055bd74e45149b7d167c91a5f6f7 rdf:first ex:otype_resource ;
+    rdf:rest _:N6ee41408b39e461fa2166831f8dff2f5 .
+
+_:Nf214e7a4a59748739fc4cbf863c7767a rdf:first ex:otype_resource ;
+    rdf:rest _:Nea5325a5d30d444688352f1cdabb8f1d .
+
+_:Nf5815fca5cbf44e6a2a71c2a8e0256cd rdf:first ex:otype_payment ;
+    rdf:rest _:N2f206c78560641ab8b10ec6829f4d6d1 .
+
+_:Nfa9dcb83b77a48448e2e65a2990b26e8 rdf:first ex:otype_resource ;
+    rdf:rest _:N18a4ccabd59d4a239461fef23b4f3439 .
+
+_:Nfb36808ec70b41979746d34e33f9f619 rdf:first ex:otype_resource ;
+    rdf:rest _:Ndae07d4d73854de68ce36dc63d016d19 .
+
+_:N08971478e51849ad83285db15879204e a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/purchase_order/Approve%20Purchase%20Order> ;
+    owl:onProperty oro:playsRole .
+
+_:N0df702a7ce3d4a2285e62e8e9be803f9 a owl:Class ;
+    owl:intersectionOf _:N9fa3f5f557764a1eb3a2e7fbc2de670b .
+
+_:N1f6f244b81534981b6a65c8ca888791b a owl:Class ;
+    owl:intersectionOf _:N705ad78f7c9344eebaef8d3bd9dd9d7a .
+
+_:N217e7b3442004a8ca089d9fab6087109 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/purchase_order/Create%20Purchase%20Order> ;
+    owl:onProperty oro:playsRole .
+
+_:N245cc68e6b4a47609c862dbcfba34ab2 a owl:Class ;
+    owl:intersectionOf _:N4a35b50903a949f0834acf8ad089bc8e .
+
+_:N275853fa75e44119ab58ba56feed8eb8 a owl:Class ;
+    owl:intersectionOf _:Na2d805da67ce4f18aefde565dd033f19 .
+
+_:N291292ae57544fb4b4ade444f1f3549d a owl:Class ;
+    owl:intersectionOf _:Nd27b3eb4ccc54a48970b00be88018b13 .
+
+_:N293d7b9023844bdda6c5e12842f8146e a owl:Class ;
+    owl:intersectionOf _:N4377656a729a473887f649dd534776ed .
+
+_:N2e77ef9d780343f883a0e958c5fc9c95 a owl:Class ;
+    owl:intersectionOf _:Nde4a71f385764ec992a6646617c99f45 .
+
+_:N305b9a9c960b43b3ae57acef2bb14e39 a owl:Class ;
+    owl:intersectionOf _:Nf03a055bd74e45149b7d167c91a5f6f7 .
+
+_:N346dd80948224ed2ab772a60c3cd9881 a owl:Class ;
+    owl:intersectionOf _:N4fcfe30a01054e68bcaf941e4550f31b .
+
+_:N36d141236a2f4f9cb1112c1674e56646 a owl:Class ;
+    owl:intersectionOf _:Naf9b467ce55a45b8b028912677109c63 .
+
+_:N38c78dc0fe494c798bde476b6f0fe4ee a owl:Class ;
+    owl:intersectionOf _:Nd30aa35a9b9a4245956468269ea4bdac .
+
+_:N3c7f4165e49e4dbca340a9b76c319e54 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/quotation/Create%20Request%20for%20Quotation> ;
+    owl:onProperty oro:playsRole .
+
+_:N43c169d9e8e34c36977ba00bd0730f3e a owl:Class ;
+    owl:intersectionOf _:Ne2c9769f548f4b82a2131939bf222156 .
+
+_:N4c93ffc48b0f4cd3818800bd3b559a18 a owl:Class ;
+    owl:intersectionOf _:Na07e7965b2e7446c9bb1f9d9760238e8 .
+
+_:N532e1af3769f4700b4c0ef19bfda7946 a owl:Class ;
+    owl:intersectionOf _:Nfb36808ec70b41979746d34e33f9f619 .
+
+_:N5783d39d0c01456bb91ef439971273d8 a owl:Class ;
+    owl:intersectionOf _:N5fb30270a3b34418b0d21bcaca2588d2 .
+
+_:N5ec29585ec324fc5bb94e8794c2eaf58 a owl:Class ;
+    owl:intersectionOf _:N77eee06588af44d582eeed5ec0a5100f .
+
+_:N5faec92528ca4048be8acf53ebb496c4 a owl:Class ;
+    owl:intersectionOf _:Ndd91577d42c3478eb25b6e57a8d6a3dd .
+
+_:N611600b9bd7e47b4b9e7b52523285aa8 a owl:Class ;
+    owl:intersectionOf _:N7d293d484bc94cb5b0dbd44409850656 .
+
+_:N63f5f5a3045a43f1b4673a47be5484da a owl:Class ;
+    owl:intersectionOf _:N17bbd34b9cd04b9fa5d3a6d9f5a9058e .
+
+_:N68103dd58aef48dcbc9e57553757649c a owl:Class ;
+    owl:intersectionOf _:N66400b8c616042229b97e136982cb16e .
+
+_:N686f682742584691b87e1ed2c0055d45 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/material/Approve%20Purchase%20Requisition> ;
+    owl:onProperty oro:playsRole .
+
+_:N7246e9839ae348ac948bf134621afe16 a owl:Class ;
+    owl:intersectionOf _:Nfa9dcb83b77a48448e2e65a2990b26e8 .
+
+_:N74771a33730a46eca058044432a6ef4d a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/material/Create%20Purchase%20Requisition> ;
+    owl:onProperty oro:playsRole .
+
+_:N81b9f6de867441c287dba8db108d71b5 a owl:Class ;
+    owl:intersectionOf _:N719bb435bc7b4c52bc2110aa6035efae .
+
+_:N88a8ab1386764f4ab6532b0dca8691f4 a owl:Class ;
+    owl:intersectionOf _:N1f3f3cb2bf12486098c4133e07aba8b6 .
+
+_:N88ba3dec492d4a87ab837319b296d38e a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/purchase_requisition/Create%20Request%20for%20Quotation> ;
+    owl:onProperty oro:playsRole .
+
+_:N8bf0da4424354eba89ba2c1967fe5d9b a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/purchase_requisition/Create%20Purchase%20Requisition> ;
+    owl:onProperty oro:playsRole .
+
+_:N8daf2dc3c8024d699b56c56da3675275 a owl:Class ;
+    owl:intersectionOf _:N10242e416c0e4f6f90d65a20d4594768 .
+
+_:N9f4d4240d1a04564944b79fe809afe8a a owl:Class ;
+    owl:intersectionOf _:Nf214e7a4a59748739fc4cbf863c7767a .
+
+_:Nb0ef552356ea4caca4c8d1bffab3d122 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/goods_receipt/Create%20Invoice%20Receipt> ;
+    owl:onProperty oro:playsRole .
+
+_:Nb26854f52adb4a6a9b61a6ce69d5488a a owl:Class ;
+    owl:intersectionOf _:N20b63d03eb034636a374d9ca79e03908 .
+
+_:Nb723c4565b654270960ac3d9b1c684d7 a owl:Class ;
+    owl:intersectionOf _:N6c020b551765432e95c5625ee8decd6b .
+
+_:Nbda8d6802dca40f0b9941a27f2b2daa9 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/goods_receipt/Perform%20Two-Way%20Match> ;
+    owl:onProperty oro:playsRole .
+
+_:Nc1549d64a34548e0a107b320fef8ccbe a owl:Class ;
+    owl:intersectionOf _:N3fb70e90f31e47989b6230540c4477f8 .
+
+_:Nc34a451b807f4ec6b568e9fea61ef6e7 a owl:Class ;
+    owl:intersectionOf _:Nd2932ef8de7c463ab8e2b8266315fbfb .
+
+_:Ncac07dd1f6db406cab3f6c83e4ebf0ef a owl:Class ;
+    owl:intersectionOf _:N32c05321d65141759c5721b55868197f .
+
+_:Ncdb487cbad6a4da7baceea3673f8f36c a owl:Class ;
+    owl:intersectionOf _:Nf5815fca5cbf44e6a2a71c2a8e0256cd .
+
+_:Ncf5d50681c674efb85c1087850761adb a owl:Class ;
+    owl:intersectionOf _:Nbeb23e2ac41644a1a1b90897f05b9b6b .
+
+_:Nd6b81de3b43045a18b15aeeafdec5627 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/purchase_requisition/Delegate%20Purchase%20Requisition%20Approval> ;
+    owl:onProperty oro:playsRole .
+
+_:Ne657cbcc1aa64a52bf94607e4d17045d a owl:Class ;
+    owl:intersectionOf _:Nc32669e4180f47a697acdc8991e6fd43 .
+
+_:Nea62153ec3cb47b98c9990ad69fe7a9a a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/purchase_requisition/Approve%20Purchase%20Requisition> ;
+    owl:onProperty oro:playsRole .
+
+_:Nebb16db6fc9a4dc0ba7c2126766c2087 a owl:Restriction ;
+    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass <http://www.example.com/oro/R/material/Delegate%20Purchase%20Requisition%20Approval> ;
+    owl:onProperty oro:playsRole .
+
+_:Necf89a0e00474d26a8ae717f697ab828 a owl:Class ;
+    owl:intersectionOf _:N77c463a527384556b58f1c618ccfa2ee .
+
